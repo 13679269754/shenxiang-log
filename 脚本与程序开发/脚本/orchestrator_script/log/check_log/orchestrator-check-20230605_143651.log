@@ -1,0 +1,75 @@
+Mon, 05 Jun 2023 14:36:51 get_config_info.py[line:79] INFO Now get the proxysql instance info.
+Mon, 05 Jun 2023 14:36:51 get_config_info.py[line:85] INFO Instance of proxysql :172.30.2.216:6032
+Mon, 05 Jun 2023 14:36:51 mysql_utils.py[line:30] INFO Now execute sql on : 172.30.2.212:3106
+Mon, 05 Jun 2023 14:36:51 mysql_utils.py[line:31] INFO sql: start slave;
+Mon, 05 Jun 2023 14:37:01 mysql_utils.py[line:30] INFO Now execute sql on : 172.30.2.211:3106
+Mon, 05 Jun 2023 14:37:01 mysql_utils.py[line:31] INFO sql: show variables like 'super_read_only';
+Mon, 05 Jun 2023 14:37:01 mysql_utils.py[line:30] INFO Now execute sql on : 172.30.2.211:3106
+Mon, 05 Jun 2023 14:37:01 mysql_utils.py[line:31] INFO sql: show variables like 'read_only';
+Mon, 05 Jun 2023 14:37:01 mysql_utils.py[line:30] INFO Now execute sql on : 172.30.2.212:3106
+Mon, 05 Jun 2023 14:37:01 mysql_utils.py[line:31] INFO sql: show variables like 'super_read_only';
+Mon, 05 Jun 2023 14:37:01 mysql_utils.py[line:30] INFO Now execute sql on : 172.30.2.212:3106
+Mon, 05 Jun 2023 14:37:01 mysql_utils.py[line:31] INFO sql: show variables like 'read_only';
+Mon, 05 Jun 2023 14:37:01 mysql_utils.py[line:30] INFO Now execute sql on : 172.30.2.213:3106
+Mon, 05 Jun 2023 14:37:01 mysql_utils.py[line:31] INFO sql: show variables like 'super_read_only';
+Mon, 05 Jun 2023 14:37:01 mysql_utils.py[line:30] INFO Now execute sql on : 172.30.2.213:3106
+Mon, 05 Jun 2023 14:37:01 mysql_utils.py[line:31] INFO sql: show variables like 'read_only';
+Mon, 05 Jun 2023 14:37:01 mysql_utils.py[line:30] INFO Now execute sql on : 172.30.2.214:3106
+Mon, 05 Jun 2023 14:37:01 mysql_utils.py[line:31] INFO sql: show variables like 'super_read_only';
+Mon, 05 Jun 2023 14:37:01 mysql_utils.py[line:30] INFO Now execute sql on : 172.30.2.214:3106
+Mon, 05 Jun 2023 14:37:01 mysql_utils.py[line:31] INFO sql: show variables like 'read_only';
+Mon, 05 Jun 2023 14:37:01 mysql_utils.py[line:30] INFO Now execute sql on : 172.30.2.215:3106
+Mon, 05 Jun 2023 14:37:01 mysql_utils.py[line:31] INFO sql: show variables like 'super_read_only';
+Mon, 05 Jun 2023 14:37:01 mysql_utils.py[line:30] INFO Now execute sql on : 172.30.2.215:3106
+Mon, 05 Jun 2023 14:37:01 mysql_utils.py[line:31] INFO sql: show variables like 'read_only';
+Mon, 05 Jun 2023 14:37:01 orchestrator_check.py[line:230] INFO Master 172.30.2.211:3106 read only 检测成功
+Slave   172.30.2.212:3106 read only 检测成功
+Slave   172.30.2.213:3106 read only 检测成功
+Slave   172.30.2.214:3106 read only 检测成功
+Slave   172.30.2.215:3106 read only 检测成功
+
+Mon, 05 Jun 2023 14:37:02 mysql_utils.py[line:30] INFO Now execute sql on : 172.30.2.216:6032
+Mon, 05 Jun 2023 14:37:02 mysql_utils.py[line:31] INFO sql: select * from mysql_servers order by 1,2;
+Mon, 05 Jun 2023 14:37:02 orchestrator_check.py[line:149] INFO Table mysql_servers backup info: 
+10                  172.30.2.211        3106                0                   ONLINE              1                   0                   4000                10                  0                   0                                       
+30                  172.30.2.212        3106                0                   ONLINE              1                   0                   4000                10                  0                   0                                       
+30                  172.30.2.213        3106                0                   ONLINE              1                   0                   4000                10                  0                   0                                       
+30                  172.30.2.214        3106                0                   ONLINE              1                   0                   4000                10                  0                   0                                       
+
+Mon, 05 Jun 2023 14:37:02 mysql_utils.py[line:30] INFO Now execute sql on : 172.30.2.216:6032
+Mon, 05 Jun 2023 14:37:02 mysql_utils.py[line:31] INFO sql: select * from runtime_mysql_servers order by 1,2;
+Mon, 05 Jun 2023 14:37:02 orchestrator_check.py[line:153] INFO Table runtime_mysql_servers_backup_info backup info: 
+10                  172.30.2.211        3106                0                   ONLINE              1                   0                   4000                10                  0                   0                                       
+30                  172.30.2.212        3106                0                   ONLINE              1                   0                   4000                10                  0                   0                                       
+30                  172.30.2.213        3106                0                   ONLINE              1                   0                   4000                10                  0                   0                                       
+30                  172.30.2.214        3106                0                   ONLINE              1                   0                   4000                10                  0                   0                                       
+
+Mon, 05 Jun 2023 14:37:02 mysql_utils.py[line:30] INFO Now execute sql on : 172.30.2.216:6032
+Mon, 05 Jun 2023 14:37:02 mysql_utils.py[line:31] INFO sql: select * from stats_proxysql_servers_checksums where diff_check > 0 order by 1,2;
+Mon, 05 Jun 2023 14:37:02 orchestrator_check.py[line:163] INFO Table stats_proxysql_servers_checksums info: 
+
+Mon, 05 Jun 2023 14:37:02 orchestrator_check.py[line:125] INFO Now check the proxysql
+Mon, 05 Jun 2023 14:37:02 mysql_utils.py[line:30] INFO Now execute sql on : 172.30.2.216:6032
+Mon, 05 Jun 2023 14:37:02 mysql_utils.py[line:31] INFO sql: select * from runtime_mysql_servers where hostname='172.30.2.211' and port = '3106' and status = 'ONLINE' and hostgroup_id = 10
+Mon, 05 Jun 2023 14:37:02 mysql_utils.py[line:30] INFO Now execute sql on : 172.30.2.216:6032
+Mon, 05 Jun 2023 14:37:02 mysql_utils.py[line:31] INFO sql: select * from runtime_mysql_servers where hostname='172.30.2.211' and port = '3106' and status = 'ONLINE' and hostgroup_id = 30
+Mon, 05 Jun 2023 14:37:02 orchestrator_check.py[line:125] INFO Now check the proxysql
+Mon, 05 Jun 2023 14:37:02 mysql_utils.py[line:30] INFO Now execute sql on : 172.30.2.216:6032
+Mon, 05 Jun 2023 14:37:02 mysql_utils.py[line:31] INFO sql: select * from runtime_mysql_servers where hostname='172.30.2.212' and port = '3106' and status = 'ONLINE' and hostgroup_id = 10
+Mon, 05 Jun 2023 14:37:02 mysql_utils.py[line:30] INFO Now execute sql on : 172.30.2.216:6032
+Mon, 05 Jun 2023 14:37:02 mysql_utils.py[line:31] INFO sql: select * from runtime_mysql_servers where hostname='172.30.2.212' and port = '3106' and status = 'ONLINE' and hostgroup_id = 30
+Mon, 05 Jun 2023 14:37:02 orchestrator_check.py[line:125] INFO Now check the proxysql
+Mon, 05 Jun 2023 14:37:02 mysql_utils.py[line:30] INFO Now execute sql on : 172.30.2.216:6032
+Mon, 05 Jun 2023 14:37:02 mysql_utils.py[line:31] INFO sql: select * from runtime_mysql_servers where hostname='172.30.2.213' and port = '3106' and status = 'ONLINE' and hostgroup_id = 10
+Mon, 05 Jun 2023 14:37:02 mysql_utils.py[line:30] INFO Now execute sql on : 172.30.2.216:6032
+Mon, 05 Jun 2023 14:37:02 mysql_utils.py[line:31] INFO sql: select * from runtime_mysql_servers where hostname='172.30.2.213' and port = '3106' and status = 'ONLINE' and hostgroup_id = 30
+Mon, 05 Jun 2023 14:37:02 orchestrator_check.py[line:125] INFO Now check the proxysql
+Mon, 05 Jun 2023 14:37:02 mysql_utils.py[line:30] INFO Now execute sql on : 172.30.2.216:6032
+Mon, 05 Jun 2023 14:37:02 mysql_utils.py[line:31] INFO sql: select * from runtime_mysql_servers where hostname='172.30.2.214' and port = '3106' and status = 'ONLINE' and hostgroup_id = 10
+Mon, 05 Jun 2023 14:37:02 mysql_utils.py[line:30] INFO Now execute sql on : 172.30.2.216:6032
+Mon, 05 Jun 2023 14:37:02 mysql_utils.py[line:31] INFO sql: select * from runtime_mysql_servers where hostname='172.30.2.214' and port = '3106' and status = 'ONLINE' and hostgroup_id = 30
+Mon, 05 Jun 2023 14:37:02 orchestrator_check.py[line:125] INFO Now check the proxysql
+Mon, 05 Jun 2023 14:37:02 mysql_utils.py[line:30] INFO Now execute sql on : 172.30.2.216:6032
+Mon, 05 Jun 2023 14:37:02 mysql_utils.py[line:31] INFO sql: select * from runtime_mysql_servers where hostname='172.30.2.215' and port = '3106' and status = 'ONLINE' and hostgroup_id = 10
+Mon, 05 Jun 2023 14:37:02 mysql_utils.py[line:30] INFO Now execute sql on : 172.30.2.216:6032
+Mon, 05 Jun 2023 14:37:02 mysql_utils.py[line:31] INFO sql: select * from runtime_mysql_servers where hostname='172.30.2.215' and port = '3106' and status = 'ONLINE' and hostgroup_id = 30

@@ -1,0 +1,31 @@
+Tue, 04 Jul 2023 19:21:50 get_config_info.py[line:80] INFO Now get the proxysql instance info.
+Tue, 04 Jul 2023 19:21:50 get_config_info.py[line:86] INFO Instance of proxysql :172.29.28.195:6032
+Tue, 04 Jul 2023 19:21:50 mysql_utils.py[line:30] INFO Now execute sql on : 172.29.28.194:3306
+Tue, 04 Jul 2023 19:21:50 mysql_utils.py[line:31] INFO sql: show variables like 'super_read_only';
+Tue, 04 Jul 2023 19:21:50 mysql_utils.py[line:30] INFO Now execute sql on : 172.29.28.194:3306
+Tue, 04 Jul 2023 19:21:50 mysql_utils.py[line:31] INFO sql: show variables like 'read_only';
+Tue, 04 Jul 2023 19:22:08 orchestrator_graceful_switch.py[line:228] INFO Graceful switch cluster , demote instance is:172.29.28.194:3306
+Tue, 04 Jul 2023 19:23:14 ProxySql_utils.py[line:7] INFO Now we set the demote master proxysql status to offline soft
+Tue, 04 Jul 2023 19:24:36 mysql_utils.py[line:30] INFO Now execute sql on : 172.29.28.195:6032
+Tue, 04 Jul 2023 19:24:36 mysql_utils.py[line:31] INFO sql: update mysql_servers set status = 'OFFLINE_SOFT' where hostname='172.29.28.194' and port = '3306' and status = 'ONLINE'
+Tue, 04 Jul 2023 19:24:46 mysql_utils.py[line:30] INFO Now execute sql on : 172.29.28.195:6032
+Tue, 04 Jul 2023 19:24:46 mysql_utils.py[line:31] INFO sql: LOAD MYSQL SERVERS TO RUNTIME;
+Tue, 04 Jul 2023 19:24:49 mysql_utils.py[line:30] INFO Now execute sql on : 172.29.28.195:6032
+Tue, 04 Jul 2023 19:24:49 mysql_utils.py[line:31] INFO sql: SAVE MYSQL SERVERS TO DISK;
+Tue, 04 Jul 2023 19:24:55 mysql_get_set_info.py[line:35] INFO Now we get the trancation
+Tue, 04 Jul 2023 19:24:55 mysql_utils.py[line:30] INFO Now execute sql on : 172.29.28.194:3306
+Tue, 04 Jul 2023 19:24:55 mysql_utils.py[line:31] INFO sql: SELECT p.id ,p.User ,p.db , p.Host , p.time ,  p.state , p.info, trx_state ,trx_started   
+    from information_schema.INNODB_TRX it, information_schema.PROCESSLIST p 
+    where it.trx_mysql_thread_id = p.ID ; 
+Tue, 04 Jul 2023 19:26:01 mysql_get_set_info.py[line:8] INFO Now we set the demote master read_only to 1 , which to make sure the demote master can't write anything to maintain 
+Tue, 04 Jul 2023 19:26:01 mysql_utils.py[line:30] INFO Now execute sql on : 172.29.28.194:3306
+Tue, 04 Jul 2023 19:26:01 mysql_utils.py[line:31] INFO sql: set global read_only = 1 ; 
+Tue, 04 Jul 2023 19:26:01 mysql_utils.py[line:30] INFO Now execute sql on : 172.29.28.194:3306
+Tue, 04 Jul 2023 19:26:01 mysql_utils.py[line:31] INFO sql: set global super_read_only = 1 ;
+Tue, 04 Jul 2023 19:26:56 mysql_get_set_info.py[line:35] INFO Now we get the trancation
+Tue, 04 Jul 2023 19:26:56 mysql_utils.py[line:30] INFO Now execute sql on : 172.29.28.194:3306
+Tue, 04 Jul 2023 19:26:56 mysql_utils.py[line:31] INFO sql: SELECT p.id ,p.User ,p.db , p.Host , p.time ,  p.state , p.info, trx_state ,trx_started   
+    from information_schema.INNODB_TRX it, information_schema.PROCESSLIST p 
+    where it.trx_mysql_thread_id = p.ID ; 
+Tue, 04 Jul 2023 19:29:48 mysql_utils.py[line:30] INFO Now execute sql on : 172.29.28.194:3306
+Tue, 04 Jul 2023 19:29:48 mysql_utils.py[line:31] INFO sql: show master status ; 

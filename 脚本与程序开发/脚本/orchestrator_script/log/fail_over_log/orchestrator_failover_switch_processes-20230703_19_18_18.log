@@ -1,0 +1,4 @@
+Mon, 03 Jul 2023 19:18:19 orchestrator_switch.py[line:179] INFO command is None
+Mon, 03 Jul 2023 19:18:19 orchestrator_switch.py[line:180] INFO Fail instance info :172.29.28.195:3309
+Mon, 03 Jul 2023 19:18:19 get_config_info.py[line:80] INFO Now get the proxysql instance info.
+Mon, 03 Jul 2023 19:18:21 get_config_info.py[line:50] WARNING 1:6032  ¶Ë¿ÚÎ´¿ª·Å

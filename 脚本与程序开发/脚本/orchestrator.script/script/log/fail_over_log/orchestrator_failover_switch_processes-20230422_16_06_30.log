@@ -1,0 +1,3 @@
+Sat, 22 Apr 2023 16:06:30 orchestrator_switch.py[line:182] INFO command is None
+Sat, 22 Apr 2023 16:06:55 orchestrator_switch.py[line:183] INFO Fail instance info :172.29.28.193:3308
+Sat, 22 Apr 2023 16:07:35 get_config_info.py[line:79] INFO Now get the proxysql instance info.

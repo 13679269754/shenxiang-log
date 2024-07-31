@@ -1,0 +1,17 @@
+Tue, 04 Jul 2023 14:36:55 orchestrator_switch.py[line:179] INFO command is None
+Tue, 04 Jul 2023 14:36:55 orchestrator_switch.py[line:180] INFO Fail instance info :172.29.28.195:3309
+Tue, 04 Jul 2023 14:36:55 get_config_info.py[line:80] INFO Now get the proxysql instance info.
+Tue, 04 Jul 2023 14:36:58 get_config_info.py[line:50] WARNING 1:6032  端口未开放
+Tue, 04 Jul 2023 14:37:00 get_config_info.py[line:50] WARNING 7:6032  端口未开放
+Tue, 04 Jul 2023 14:37:02 get_config_info.py[line:50] WARNING 2:6032  端口未开放
+Tue, 04 Jul 2023 14:37:02 get_config_info.py[line:50] WARNING .:6032  端口未开放
+Tue, 04 Jul 2023 14:37:04 get_config_info.py[line:50] WARNING 2:6032  端口未开放
+Tue, 04 Jul 2023 14:37:07 get_config_info.py[line:50] WARNING 9:6032  端口未开放
+Tue, 04 Jul 2023 14:37:07 get_config_info.py[line:50] WARNING .:6032  端口未开放
+Tue, 04 Jul 2023 14:37:09 get_config_info.py[line:50] WARNING 2:6032  端口未开放
+Tue, 04 Jul 2023 14:37:11 get_config_info.py[line:50] WARNING 8:6032  端口未开放
+Tue, 04 Jul 2023 14:37:11 get_config_info.py[line:50] WARNING .:6032  端口未开放
+Tue, 04 Jul 2023 14:37:14 get_config_info.py[line:50] WARNING 1:6032  端口未开放
+Tue, 04 Jul 2023 14:37:16 get_config_info.py[line:50] WARNING 9:6032  端口未开放
+Tue, 04 Jul 2023 14:37:18 get_config_info.py[line:50] WARNING 5:6032  端口未开放
+Tue, 04 Jul 2023 14:37:18 get_config_info.py[line:83] ERROR Can't not find proxysql information of instance: 172.29.28.195:3309

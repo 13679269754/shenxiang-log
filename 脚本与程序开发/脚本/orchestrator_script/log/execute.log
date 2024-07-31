@@ -1,0 +1,62 @@
+Wed, 15 Mar 2023 00:49:27 orchestrator_prepare.py[line:92] INFO Now OnFailureDetectionProcesses Discover Orchestrator Failover : 172.30.2.211:3106  ===>  None:None
+Mon, 05 Jun 2023 14:09:42 orchestrator_prepare.py[line:92] INFO Now PreGracefulTakeoverProcesses Start Orchestrator Prepare Grace Full Takeover : 172.30.2.211:3106  ===>  172.30.2.212:3106
+Mon, 05 Jun 2023 14:09:42 orchestrator_prepare.py[line:105] INFO Now PreGracefulTakeoverProcesses execute script: /usr/bin/python3 /usr/local/data/orchestrator/script/orchestrator_graceful_switch.py
+Mon, 05 Jun 2023 14:09:46 orchestrator_prepare.py[line:111] INFO Now PreGracefulTakeoverProcesses execute script successed
+Mon, 05 Jun 2023 14:09:47 orchestrator_prepare.py[line:92] INFO Now OnFailureDetectionProcesses Discover Orchestrator Failover : 172.30.2.211:3106  ===>  None:None
+Mon, 05 Jun 2023 14:09:47 orchestrator_prepare.py[line:92] INFO Now PreFailoverProcesses Start Orchestrator Failover : 172.30.2.211:3106  ===>  None:None
+Mon, 05 Jun 2023 14:09:48 orchestrator_prepare.py[line:92] INFO Now PostMasterFailoverProcesses Orchestrator Master Failover Success : 172.30.2.211:3106  ===>  172.30.2.212:3106
+Mon, 05 Jun 2023 14:09:48 orchestrator_prepare.py[line:105] INFO Now PostMasterFailoverProcesses execute script: /usr/bin/python3 /usr/local/data/orchestrator/script/orchestrator_switch.py
+Mon, 05 Jun 2023 14:09:55 orchestrator_prepare.py[line:111] INFO Now PostMasterFailoverProcesses execute script successed
+Mon, 05 Jun 2023 14:09:56 orchestrator_prepare.py[line:92] INFO Now PostFailoverProcesses Orchestrator Failover Success : 172.30.2.211:3106  ===>  172.30.2.212:3106
+Mon, 05 Jun 2023 14:09:56 orchestrator_prepare.py[line:105] INFO Now PostFailoverProcesses execute script: /usr/bin/python3 /usr/local/data/orchestrator/script/orchestrator_check.py -ss 0
+Mon, 05 Jun 2023 14:09:56 orchestrator_prepare.py[line:111] INFO Now PostFailoverProcesses execute script successed
+Mon, 05 Jun 2023 14:09:56 orchestrator_prepare.py[line:92] INFO Now PostGracefulTakeoverProcesses Orchestrator Grace Full Takeover Success : 172.30.2.211:3106  ===>  172.30.2.212:3106
+Mon, 05 Jun 2023 14:09:57 orchestrator_prepare.py[line:105] INFO Now PostGracefulTakeoverProcesses execute script: /usr/bin/python3 /usr/local/data/orchestrator/script/orchestrator_check.py -ss 1
+Mon, 05 Jun 2023 14:10:08 orchestrator_prepare.py[line:111] INFO Now PostGracefulTakeoverProcesses execute script successed
+Mon, 05 Jun 2023 14:36:36 orchestrator_prepare.py[line:92] INFO Now PreGracefulTakeoverProcesses Start Orchestrator Prepare Grace Full Takeover : 172.30.2.212:3106  ===>  172.30.2.211:3106
+Mon, 05 Jun 2023 14:36:37 orchestrator_prepare.py[line:105] INFO Now PreGracefulTakeoverProcesses execute script: /usr/bin/python3 /usr/local/data/orchestrator/script/orchestrator_graceful_switch.py
+Mon, 05 Jun 2023 14:36:40 orchestrator_prepare.py[line:111] INFO Now PreGracefulTakeoverProcesses execute script successed
+Mon, 05 Jun 2023 14:36:41 orchestrator_prepare.py[line:92] INFO Now OnFailureDetectionProcesses Discover Orchestrator Failover : 172.30.2.212:3106  ===>  None:None
+Mon, 05 Jun 2023 14:36:41 orchestrator_prepare.py[line:92] INFO Now PreFailoverProcesses Start Orchestrator Failover : 172.30.2.212:3106  ===>  None:None
+Mon, 05 Jun 2023 14:36:43 orchestrator_prepare.py[line:92] INFO Now PostMasterFailoverProcesses Orchestrator Master Failover Success : 172.30.2.212:3106  ===>  172.30.2.211:3106
+Mon, 05 Jun 2023 14:36:43 orchestrator_prepare.py[line:105] INFO Now PostMasterFailoverProcesses execute script: /usr/bin/python3 /usr/local/data/orchestrator/script/orchestrator_switch.py
+Mon, 05 Jun 2023 14:36:49 orchestrator_prepare.py[line:111] INFO Now PostMasterFailoverProcesses execute script successed
+Mon, 05 Jun 2023 14:36:50 orchestrator_prepare.py[line:92] INFO Now PostFailoverProcesses Orchestrator Failover Success : 172.30.2.212:3106  ===>  172.30.2.211:3106
+Mon, 05 Jun 2023 14:36:50 orchestrator_prepare.py[line:105] INFO Now PostFailoverProcesses execute script: /usr/bin/python3 /usr/local/data/orchestrator/script/orchestrator_check.py -ss 0
+Mon, 05 Jun 2023 14:36:50 orchestrator_prepare.py[line:111] INFO Now PostFailoverProcesses execute script successed
+Mon, 05 Jun 2023 14:36:50 orchestrator_prepare.py[line:92] INFO Now PostGracefulTakeoverProcesses Orchestrator Grace Full Takeover Success : 172.30.2.212:3106  ===>  172.30.2.211:3106
+Mon, 05 Jun 2023 14:36:51 orchestrator_prepare.py[line:105] INFO Now PostGracefulTakeoverProcesses execute script: /usr/bin/python3 /usr/local/data/orchestrator/script/orchestrator_check.py -ss 1
+Mon, 05 Jun 2023 14:37:02 orchestrator_prepare.py[line:111] INFO Now PostGracefulTakeoverProcesses execute script successed
+Mon, 05 Jun 2023 14:38:34 orchestrator_prepare.py[line:92] INFO Now PreGracefulTakeoverProcesses Start Orchestrator Prepare Grace Full Takeover : 172.30.2.211:3106  ===>  172.30.2.212:3106
+Mon, 05 Jun 2023 14:38:35 orchestrator_prepare.py[line:105] INFO Now PreGracefulTakeoverProcesses execute script: /usr/bin/python3 /usr/local/data/orchestrator/script/orchestrator_graceful_switch.py
+Mon, 05 Jun 2023 14:38:38 orchestrator_prepare.py[line:111] INFO Now PreGracefulTakeoverProcesses execute script successed
+Mon, 05 Jun 2023 14:38:39 orchestrator_prepare.py[line:92] INFO Now OnFailureDetectionProcesses Discover Orchestrator Failover : 172.30.2.211:3106  ===>  None:None
+Mon, 05 Jun 2023 14:38:39 orchestrator_prepare.py[line:92] INFO Now PreFailoverProcesses Start Orchestrator Failover : 172.30.2.211:3106  ===>  None:None
+Mon, 05 Jun 2023 14:38:41 orchestrator_prepare.py[line:92] INFO Now PostMasterFailoverProcesses Orchestrator Master Failover Success : 172.30.2.211:3106  ===>  172.30.2.212:3106
+Mon, 05 Jun 2023 14:38:41 orchestrator_prepare.py[line:105] INFO Now PostMasterFailoverProcesses execute script: /usr/bin/python3 /usr/local/data/orchestrator/script/orchestrator_switch.py
+Mon, 05 Jun 2023 14:38:47 orchestrator_prepare.py[line:111] INFO Now PostMasterFailoverProcesses execute script successed
+Mon, 05 Jun 2023 14:38:48 orchestrator_prepare.py[line:92] INFO Now PostFailoverProcesses Orchestrator Failover Success : 172.30.2.211:3106  ===>  172.30.2.212:3106
+Mon, 05 Jun 2023 14:38:48 orchestrator_prepare.py[line:105] INFO Now PostFailoverProcesses execute script: /usr/bin/python3 /usr/local/data/orchestrator/script/orchestrator_check.py -ss 0
+Mon, 05 Jun 2023 14:38:48 orchestrator_prepare.py[line:111] INFO Now PostFailoverProcesses execute script successed
+Mon, 05 Jun 2023 14:38:48 orchestrator_prepare.py[line:92] INFO Now PostGracefulTakeoverProcesses Orchestrator Grace Full Takeover Success : 172.30.2.211:3106  ===>  172.30.2.212:3106
+Mon, 05 Jun 2023 14:38:49 orchestrator_prepare.py[line:105] INFO Now PostGracefulTakeoverProcesses execute script: /usr/bin/python3 /usr/local/data/orchestrator/script/orchestrator_check.py -ss 1
+Mon, 05 Jun 2023 14:39:00 orchestrator_prepare.py[line:111] INFO Now PostGracefulTakeoverProcesses execute script successed
+Mon, 05 Jun 2023 14:40:58 orchestrator_prepare.py[line:92] INFO Now PreGracefulTakeoverProcesses Start Orchestrator Prepare Grace Full Takeover : 172.30.2.212:3106  ===>  172.30.2.211:3106
+Mon, 05 Jun 2023 14:40:58 orchestrator_prepare.py[line:105] INFO Now PreGracefulTakeoverProcesses execute script: /usr/bin/python3 /usr/local/data/orchestrator/script/orchestrator_graceful_switch.py
+Mon, 05 Jun 2023 14:41:02 orchestrator_prepare.py[line:111] INFO Now PreGracefulTakeoverProcesses execute script successed
+Mon, 05 Jun 2023 14:41:03 orchestrator_prepare.py[line:92] INFO Now OnFailureDetectionProcesses Discover Orchestrator Failover : 172.30.2.212:3106  ===>  None:None
+Mon, 05 Jun 2023 14:41:03 orchestrator_prepare.py[line:92] INFO Now PreFailoverProcesses Start Orchestrator Failover : 172.30.2.212:3106  ===>  None:None
+Mon, 05 Jun 2023 14:41:04 orchestrator_prepare.py[line:92] INFO Now PostMasterFailoverProcesses Orchestrator Master Failover Success : 172.30.2.212:3106  ===>  172.30.2.211:3106
+Mon, 05 Jun 2023 14:41:04 orchestrator_prepare.py[line:105] INFO Now PostMasterFailoverProcesses execute script: /usr/bin/python3 /usr/local/data/orchestrator/script/orchestrator_switch.py
+Mon, 05 Jun 2023 14:41:11 orchestrator_prepare.py[line:111] INFO Now PostMasterFailoverProcesses execute script successed
+Mon, 05 Jun 2023 14:41:11 orchestrator_prepare.py[line:92] INFO Now PostFailoverProcesses Orchestrator Failover Success : 172.30.2.212:3106  ===>  172.30.2.211:3106
+Mon, 05 Jun 2023 14:41:11 orchestrator_prepare.py[line:105] INFO Now PostFailoverProcesses execute script: /usr/bin/python3 /usr/local/data/orchestrator/script/orchestrator_check.py -ss 0
+Mon, 05 Jun 2023 14:41:12 orchestrator_prepare.py[line:111] INFO Now PostFailoverProcesses execute script successed
+Mon, 05 Jun 2023 14:41:12 orchestrator_prepare.py[line:92] INFO Now PostGracefulTakeoverProcesses Orchestrator Grace Full Takeover Success : 172.30.2.212:3106  ===>  172.30.2.211:3106
+Mon, 05 Jun 2023 14:41:13 orchestrator_prepare.py[line:105] INFO Now PostGracefulTakeoverProcesses execute script: /usr/bin/python3 /usr/local/data/orchestrator/script/orchestrator_check.py -ss 1
+Mon, 05 Jun 2023 14:41:24 orchestrator_prepare.py[line:111] INFO Now PostGracefulTakeoverProcesses execute script successed
+Fri, 09 Jun 2023 16:47:19 orchestrator_prepare.py[line:92] INFO Now OnFailureDetectionProcesses Discover Orchestrator Failover : 172.30.2.211:3106  ===>  None:None
+Fri, 09 Jun 2023 16:47:20 orchestrator_prepare.py[line:92] INFO Now PreFailoverProcesses Start Orchestrator Failover : 172.30.2.211:3106  ===>  None:None
+Thu, 29 Jun 2023 02:05:00 orchestrator_prepare.py[line:92] INFO Now OnFailureDetectionProcesses Discover Orchestrator Failover : 172.30.70.41:3106  ===>  None:None
+Thu, 29 Jun 2023 06:39:24 orchestrator_prepare.py[line:92] INFO Now OnFailureDetectionProcesses Discover Orchestrator Failover : 172.30.70.41:3106  ===>  None:None
+Thu, 29 Jun 2023 10:32:59 orchestrator_prepare.py[line:92] INFO Now OnFailureDetectionProcesses Discover Orchestrator Failover : 172.30.70.41:3106  ===>  None:None

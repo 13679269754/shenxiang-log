@@ -1,0 +1,35 @@
+Fri, 30 Jun 2023 19:12:09 get_config_info.py[line:80] INFO Now get the proxysql instance info.
+Fri, 30 Jun 2023 19:14:48 get_config_info.py[line:86] INFO Instance of proxysql :172.29.28.195:6032
+Fri, 30 Jun 2023 19:15:42 mysql_utils.py[line:30] INFO Now execute sql on : 172.29.28.194:3306
+Fri, 30 Jun 2023 19:15:42 mysql_utils.py[line:31] INFO sql: show variables like 'super_read_only';
+Fri, 30 Jun 2023 19:15:42 mysql_utils.py[line:30] INFO Now execute sql on : 172.29.28.194:3306
+Fri, 30 Jun 2023 19:15:42 mysql_utils.py[line:31] INFO sql: show variables like 'read_only';
+Fri, 30 Jun 2023 19:15:42 orchestrator_graceful_switch.py[line:224] INFO Graceful switch cluster , demote instance is:172.29.28.194:3306
+Fri, 30 Jun 2023 19:15:42 ProxySql_utils.py[line:7] INFO Now we set the demote master proxysql status to offline soft
+Fri, 30 Jun 2023 19:15:42 mysql_utils.py[line:30] INFO Now execute sql on : 172.29.28.195:6032
+Fri, 30 Jun 2023 19:15:42 mysql_utils.py[line:31] INFO sql: update mysql_servers set status = 'OFFLINE_SOFT' where hostname='172.29.28.194' and port = '3306' and status = 'ONLINE'
+Fri, 30 Jun 2023 19:15:42 mysql_utils.py[line:30] INFO Now execute sql on : 172.29.28.195:6032
+Fri, 30 Jun 2023 19:15:42 mysql_utils.py[line:31] INFO sql: LOAD MYSQL SERVERS TO RUNTIME;
+Fri, 30 Jun 2023 19:15:43 mysql_utils.py[line:30] INFO Now execute sql on : 172.29.28.195:6032
+Fri, 30 Jun 2023 19:15:43 mysql_utils.py[line:31] INFO sql: SAVE MYSQL SERVERS TO DISK;
+Fri, 30 Jun 2023 19:15:43 mysql_get_set_info.py[line:35] INFO Now we get the trancation
+Fri, 30 Jun 2023 19:15:43 mysql_utils.py[line:30] INFO Now execute sql on : 172.29.28.194:3306
+Fri, 30 Jun 2023 19:15:43 mysql_utils.py[line:31] INFO sql: SELECT p.id ,p.User ,p.db , p.Host , p.time ,  p.state , p.info, trx_state ,trx_started   
+    from information_schema.INNODB_TRX it, information_schema.PROCESSLIST p 
+    where it.trx_mysql_thread_id = p.ID ; 
+Fri, 30 Jun 2023 19:15:46 mysql_get_set_info.py[line:8] INFO Now we set the demote master read_only to 1 , which to make sure the demote master can't write anything to maintain 
+Fri, 30 Jun 2023 19:15:46 mysql_utils.py[line:30] INFO Now execute sql on : 172.29.28.194:3306
+Fri, 30 Jun 2023 19:15:46 mysql_utils.py[line:31] INFO sql: set global read_only = 1 ; 
+Fri, 30 Jun 2023 19:15:46 mysql_utils.py[line:30] INFO Now execute sql on : 172.29.28.194:3306
+Fri, 30 Jun 2023 19:15:46 mysql_utils.py[line:31] INFO sql: set global super_read_only = 1 ;
+Fri, 30 Jun 2023 19:15:46 mysql_get_set_info.py[line:35] INFO Now we get the trancation
+Fri, 30 Jun 2023 19:15:46 mysql_utils.py[line:30] INFO Now execute sql on : 172.29.28.194:3306
+Fri, 30 Jun 2023 19:15:46 mysql_utils.py[line:31] INFO sql: SELECT p.id ,p.User ,p.db , p.Host , p.time ,  p.state , p.info, trx_state ,trx_started   
+    from information_schema.INNODB_TRX it, information_schema.PROCESSLIST p 
+    where it.trx_mysql_thread_id = p.ID ; 
+Fri, 30 Jun 2023 19:15:46 mysql_utils.py[line:30] INFO Now execute sql on : 172.29.28.194:3306
+Fri, 30 Jun 2023 19:15:46 mysql_utils.py[line:31] INFO sql: show master status ; 
+Fri, 30 Jun 2023 19:15:46 mysql_utils.py[line:30] INFO Now execute sql on : 172.29.28.195:3309
+Fri, 30 Jun 2023 19:15:46 mysql_utils.py[line:31] INFO sql: show master status ; 
+Fri, 30 Jun 2023 19:15:46 orchestrator_graceful_switch.py[line:164] INFO The instance(172.29.28.195:3309) gtid is the same from the master gtid. 
+Fri, 30 Jun 2023 19:15:46 orchestrator_graceful_switch.py[line:247] INFO Orchestrator grace full takeover ¼ì²é³É¹¦

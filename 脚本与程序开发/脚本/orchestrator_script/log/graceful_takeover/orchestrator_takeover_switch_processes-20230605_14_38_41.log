@@ -1,0 +1,59 @@
+Mon, 05 Jun 2023 14:38:41 orchestrator_switch.py[line:179] INFO command is graceful-master-takeover
+Mon, 05 Jun 2023 14:38:41 orchestrator_switch.py[line:180] INFO Fail instance info :172.30.2.211:3106
+Mon, 05 Jun 2023 14:38:41 get_config_info.py[line:79] INFO Now get the proxysql instance info.
+Mon, 05 Jun 2023 14:38:41 get_config_info.py[line:85] INFO Instance of proxysql :172.30.2.216:6032
+Mon, 05 Jun 2023 14:38:41 mysql_utils.py[line:30] INFO Now execute sql on : 172.30.2.216:6032
+Mon, 05 Jun 2023 14:38:41 mysql_utils.py[line:31] INFO sql: select * from mysql_servers where hostname = '172.30.2.211' and port=3106 order by 1,2; 
+Mon, 05 Jun 2023 14:38:41 mysql_utils.py[line:30] INFO Now execute sql on : 172.30.2.216:6032
+Mon, 05 Jun 2023 14:38:41 mysql_utils.py[line:31] INFO sql: select * from mysql_servers order by 1,2;
+Mon, 05 Jun 2023 14:38:41 orchestrator_switch.py[line:82] INFO Table mysql_servers backup info: 
+10                  172.30.2.211        3106                0                   OFFLINE_SOFT        1                   0                   4000                10                  0                   0                                       
+30                  172.30.2.212        3106                0                   ONLINE              1                   0                   4000                10                  0                   0                                       
+30                  172.30.2.213        3106                0                   ONLINE              1                   0                   4000                10                  0                   0                                       
+30                  172.30.2.214        3106                0                   ONLINE              1                   0                   4000                10                  0                   0                                       
+
+Mon, 05 Jun 2023 14:38:41 mysql_utils.py[line:30] INFO Now execute sql on : 172.30.2.216:6032
+Mon, 05 Jun 2023 14:38:41 mysql_utils.py[line:31] INFO sql: select * from runtime_mysql_servers order by 1,2;
+Mon, 05 Jun 2023 14:38:41 orchestrator_switch.py[line:86] INFO Table runtime_mysql_servers_backup_info backup info: 
+10                  172.30.2.211        3106                0                   OFFLINE_SOFT        1                   0                   4000                10                  0                   0                                       
+30                  172.30.2.212        3106                0                   ONLINE              1                   0                   4000                10                  0                   0                                       
+30                  172.30.2.213        3106                0                   ONLINE              1                   0                   4000                10                  0                   0                                       
+30                  172.30.2.214        3106                0                   ONLINE              1                   0                   4000                10                  0                   0                                       
+
+Mon, 05 Jun 2023 14:38:41 ProxySql_utils.py[line:31] INFO Now we get runtime_mysql_replication_hostgroups
+Mon, 05 Jun 2023 14:38:41 mysql_utils.py[line:30] INFO Now execute sql on : 172.30.2.216:6032
+Mon, 05 Jun 2023 14:38:41 mysql_utils.py[line:31] INFO sql: select * from runtime_mysql_replication_hostgroups where writer_hostgroup = 30 and reader_hostgroup = 10;
+Mon, 05 Jun 2023 14:38:41 ProxySql_utils.py[line:38] INFO ProxySql will not auto get read group
+Mon, 05 Jun 2023 14:38:41 mysql_utils.py[line:30] INFO Now execute sql on : 172.30.2.216:6032
+Mon, 05 Jun 2023 14:38:41 mysql_utils.py[line:31] INFO sql: insert into mysql_servers(hostgroup_id,hostname,port,max_replication_lag,max_connections,status) values(10,'172.30.2.212',3106,10,4000,'ONLINE')
+Mon, 05 Jun 2023 14:38:41 mysql_utils.py[line:30] INFO Now execute sql on : 172.30.2.216:6032
+Mon, 05 Jun 2023 14:38:41 mysql_utils.py[line:31] INFO sql: delete from mysql_servers where hostname = '172.30.2.211' and port = 3106 and hostgroup_id in (10) and status = 'OFFLINE_SOFT'; 
+Mon, 05 Jun 2023 14:38:41 mysql_utils.py[line:30] INFO Now execute sql on : 172.30.2.216:6032
+Mon, 05 Jun 2023 14:38:41 mysql_utils.py[line:31] INFO sql: replace into mysql_servers(hostgroup_id,hostname,port,max_replication_lag,max_connections,status) values(30,'172.30.2.211',3106,10,4000,'ONLINE')
+Mon, 05 Jun 2023 14:38:41 mysql_utils.py[line:30] INFO Now execute sql on : 172.30.2.216:6032
+Mon, 05 Jun 2023 14:38:41 mysql_utils.py[line:31] INFO sql: delete from mysql_servers where hostname = '172.30.2.212' and port = 3106 and hostgroup_id in (30); 
+Mon, 05 Jun 2023 14:38:41 mysql_utils.py[line:30] INFO Now execute sql on : 172.30.2.216:6032
+Mon, 05 Jun 2023 14:38:41 mysql_utils.py[line:31] INFO sql: LOAD MYSQL SERVERS TO RUNTIME;
+Mon, 05 Jun 2023 14:38:41 mysql_utils.py[line:30] INFO Now execute sql on : 172.30.2.216:6032
+Mon, 05 Jun 2023 14:38:41 mysql_utils.py[line:31] INFO sql: SAVE MYSQL SERVERS TO DISK;
+Mon, 05 Jun 2023 14:38:47 mysql_utils.py[line:30] INFO Now execute sql on : 172.30.2.216:6032
+Mon, 05 Jun 2023 14:38:47 mysql_utils.py[line:31] INFO sql: select * from mysql_servers order by 1,2;
+Mon, 05 Jun 2023 14:38:47 orchestrator_switch.py[line:82] INFO Table mysql_servers backup info: 
+10                  172.30.2.212        3106                0                   ONLINE              1                   0                   4000                10                  0                   0                                       
+30                  172.30.2.211        3106                0                   ONLINE              1                   0                   4000                10                  0                   0                                       
+30                  172.30.2.213        3106                0                   ONLINE              1                   0                   4000                10                  0                   0                                       
+30                  172.30.2.214        3106                0                   ONLINE              1                   0                   4000                10                  0                   0                                       
+
+Mon, 05 Jun 2023 14:38:47 mysql_utils.py[line:30] INFO Now execute sql on : 172.30.2.216:6032
+Mon, 05 Jun 2023 14:38:47 mysql_utils.py[line:31] INFO sql: select * from runtime_mysql_servers order by 1,2;
+Mon, 05 Jun 2023 14:38:47 orchestrator_switch.py[line:86] INFO Table runtime_mysql_servers_backup_info backup info: 
+10                  172.30.2.212        3106                0                   ONLINE              1                   0                   4000                10                  0                   0                                       
+30                  172.30.2.211        3106                0                   ONLINE              1                   0                   4000                10                  0                   0                                       
+30                  172.30.2.213        3106                0                   ONLINE              1                   0                   4000                10                  0                   0                                       
+30                  172.30.2.214        3106                0                   ONLINE              1                   0                   4000                10                  0                   0                                       
+
+Mon, 05 Jun 2023 14:38:47 mysql_utils.py[line:30] INFO Now execute sql on : 172.30.2.216:6032
+Mon, 05 Jun 2023 14:38:47 mysql_utils.py[line:31] INFO sql: select * from stats_proxysql_servers_checksums where diff_check > 0 order by 1,2;
+Mon, 05 Jun 2023 14:38:47 orchestrator_switch.py[line:113] INFO Table stats_proxysql_servers_checksums info: 
+
+Mon, 05 Jun 2023 14:38:47 orchestrator_switch.py[line:202] INFO Orchestrator 更新ProxySql成功

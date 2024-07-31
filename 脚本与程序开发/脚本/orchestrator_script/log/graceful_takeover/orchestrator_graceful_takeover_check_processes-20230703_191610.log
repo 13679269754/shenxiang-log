@@ -1,0 +1,15 @@
+Mon, 03 Jul 2023 19:16:10 get_config_info.py[line:80] INFO Now get the proxysql instance info.
+Mon, 03 Jul 2023 19:16:12 get_config_info.py[line:50] WARNING 1:6032  端口未开放
+Mon, 03 Jul 2023 19:16:14 get_config_info.py[line:50] WARNING 7:6032  端口未开放
+Mon, 03 Jul 2023 19:16:17 get_config_info.py[line:50] WARNING 2:6032  端口未开放
+Mon, 03 Jul 2023 19:16:17 get_config_info.py[line:50] WARNING .:6032  端口未开放
+Mon, 03 Jul 2023 19:16:19 get_config_info.py[line:50] WARNING 2:6032  端口未开放
+Mon, 03 Jul 2023 19:16:21 get_config_info.py[line:50] WARNING 9:6032  端口未开放
+Mon, 03 Jul 2023 19:16:21 get_config_info.py[line:50] WARNING .:6032  端口未开放
+Mon, 03 Jul 2023 19:16:24 get_config_info.py[line:50] WARNING 2:6032  端口未开放
+Mon, 03 Jul 2023 19:16:26 get_config_info.py[line:50] WARNING 8:6032  端口未开放
+Mon, 03 Jul 2023 19:16:26 get_config_info.py[line:50] WARNING .:6032  端口未开放
+Mon, 03 Jul 2023 19:16:28 get_config_info.py[line:50] WARNING 1:6032  端口未开放
+Mon, 03 Jul 2023 19:16:30 get_config_info.py[line:50] WARNING 9:6032  端口未开放
+Mon, 03 Jul 2023 19:16:33 get_config_info.py[line:50] WARNING 5:6032  端口未开放
+Mon, 03 Jul 2023 19:16:33 get_config_info.py[line:83] ERROR Can't not find proxysql information of instance: 172.29.28.194:3306

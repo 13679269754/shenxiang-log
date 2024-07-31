@@ -1,0 +1,11 @@
+Fri, 30 Jun 2023 21:24:37 get_config_info.py[line:80] INFO Now get the proxysql instance info.
+Fri, 30 Jun 2023 21:24:39 get_config_info.py[line:50] WARNING 1:6032  端口未开放
+Fri, 30 Jun 2023 21:24:41 get_config_info.py[line:50] WARNING 7:6032  端口未开放
+Fri, 30 Jun 2023 21:24:44 get_config_info.py[line:50] WARNING 2:6032  端口未开放
+Fri, 30 Jun 2023 21:24:44 get_config_info.py[line:50] WARNING .:6032  端口未开放
+Fri, 30 Jun 2023 21:24:46 get_config_info.py[line:50] WARNING 2:6032  端口未开放
+Fri, 30 Jun 2023 21:24:48 get_config_info.py[line:50] WARNING 9:6032  端口未开放
+Fri, 30 Jun 2023 21:24:48 get_config_info.py[line:50] WARNING .:6032  端口未开放
+Fri, 30 Jun 2023 21:24:51 get_config_info.py[line:50] WARNING 2:6032  端口未开放
+Fri, 30 Jun 2023 21:24:53 get_config_info.py[line:50] WARNING 8:6032  端口未开放
+Fri, 30 Jun 2023 21:24:53 get_config_info.py[line:50] WARNING .:6032  端口未开放

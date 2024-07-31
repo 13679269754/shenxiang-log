@@ -1,0 +1,3 @@
+Fri, 30 Jun 2023 21:20:37 get_config_info.py[line:80] INFO Now get the proxysql instance info.
+Fri, 30 Jun 2023 21:24:22 get_config_info.py[line:50] WARNING 172.29.28.195:6032  ¶Ë¿ÚÎ´¿ª·Å
+Fri, 30 Jun 2023 21:24:22 get_config_info.py[line:81] ERROR Can't not find proxysql information of instance: 172.29.28.194:3306
