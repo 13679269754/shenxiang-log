@@ -41,7 +41,7 @@
 
 在你的 GitHub 仓库页面，你会找到用来关联本地仓库的 URL。复制它，然后在 VS Code 的终端中执行以下命令（请替换 \<your-repository-url\> 为你的实际仓库 URL）：
 ```bash
-    git remote add origin <your-repository-url>（https://github.com/13679269754/sx-log.git）
+    git remote add origin <your-repository-url>（https://github.com/13679269754/shenxiang-log.git）
     git branch -M main
     git push -u origin main
 ```
