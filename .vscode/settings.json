@@ -1,6 +1,10 @@
 {
     "python.analysis.typeCheckingMode": "basic",
+    "markdown.editor.drop.enabled": "always",
     "[markdown]":  {
+        "editor.unicodeHighlight.ambiguouscharacters": false,
+        "editor.unicodeHighlight.invisiblecharacters": false,
+        "editor.wordWrap":"on",
         "editor.quickSuggestions": {
             "comments": "on",
             "strings": "on",
@@ -8,3 +12,4 @@
         }
     }
 }
+
