@@ -16,7 +16,7 @@ curl -O https://dl.influxdata.com/influxdb/releases/influxdb2-2.7.4_linux_amd64.
 
 ## 解压到指定路径
 ```bash
-tar xvzf ./influxdb2-2.7.4_linux_amd64.tar.gz
+tar -xvzf ./influxdb2-2.7.4_linux_amd64.tar.gz -C /usr/local/data/influxdb2-server
 ```
 
 ## 配置环境变量

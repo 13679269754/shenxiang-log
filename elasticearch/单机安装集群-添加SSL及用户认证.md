@@ -38,3 +38,5 @@ export ES_PATH_CONF=/usr/local/data/elasticsearch-server/config/ && elasticsearc
 >node.max_local_storage_nodes: 3
 
 其余配置与搭建多机ES集群保持一致即可
+
+

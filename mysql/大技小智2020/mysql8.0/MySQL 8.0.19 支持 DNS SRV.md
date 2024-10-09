@@ -140,3 +140,4 @@ mysql.connector.errors.InterfaceError: Unable to locate any hosts for 'router.se
 
 ### 从 MySQL Router 日志中可以看到请求以负载均衡方式发送到两边
 
+

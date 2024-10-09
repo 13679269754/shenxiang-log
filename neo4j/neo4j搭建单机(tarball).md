@@ -40,7 +40,7 @@ dbms.connector.http.advertised_address=:7674
 ```
 
 ## 用户创建
-默认用户neo4j:neo4j
+默认用户neo4j:neo4j  
 Connect using the username neo4j with the default password neo4j. You will then be prompted to change the password.
 
 访问 `http://ip:port` 登录用户以后会提示修改密码
