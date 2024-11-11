@@ -108,9 +108,9 @@ WAL（Write-Ahead-Logging）是实现事务持久性的一个常用技术，基�
 
 **redo log组提交优化**
 
-我们知道，在开启binlog的情况下，prepare阶段，会对redo log进行一次刷盘操作（innodb_flush_log_at_trx_commit=1），确保对data页和undo页的更新已经刷新到磁盘；commit阶段，会进行刷binlog操作（sync_binlog=1），并且会对事务的undo log从prepare状态设置为提交状态（可清理状态）。通过两阶段提交方式（innodb_support_xa=1），可以保证事务的binlog和redo log顺序一致。二阶段提交过程中，mysql_binlog作为协调者，各个存储引擎和mysql_binlog作为参与者。故障恢复时，扫描最后一个binlog文件（进行rotate binlog文件时，确保老的binlog文件对应的事务已经提交），提取其中的xid；重做检查点以后的redo日志，读取事务的undo段信息，搜集处于prepare阶段的事务链表，将事务的xid与binlog中的xid对比，若存在，则提交，否则就回滚。
+我们知道，在开启binlog的情况下，prepare阶段，会对redo log进行一次刷盘操作（innodb_flush_log_at_trx_commit=1），确保对data页和undo页的更新已经刷新到磁盘；commit阶段，会进行刷binlog操作（sync_binlog=1），并且会对事务的undo log从prepare状态设置为提交状态（可清理状态）。通过两阶段提交方式（innodb_support_xa=1），可以保证事务的binlog和redo log顺序一致(**这里有两种保证顺序一致的方式，一种是事务开始会获取prepare_commit_mutex，在redo log 提交的层面上是串行的。只有当上一个事务commit后释放锁；现在通过组提交的方式来实现，即多个事务有一个组，一个组共同提交**)。二阶段提交过程中，mysql_binlog作为协调者，各个存储引擎和mysql_binlog作为参与者。故障恢复时，扫描最后一个binlog文件（进行rotate binlog文件时，确保老的binlog文件对应的事务已经提交），提取其中的xid；重做检查点以后的redo日志，读取事务的undo段信息，搜集处于prepare阶段的事务链表，将事务的xid与binlog中的xid对比，若存在，则提交，否则就回滚。
 
-通过上述的描述可知，每个事务提交时，都会触发一次redo flush动作，由于磁盘读写比较慢，因此很影响系统的吞吐量。淘宝童鞋做了一个优化，将prepare阶段的刷redo动作移到了commit（flush-sync-commit）的flush阶段之前，保证刷binlog之前，一定会刷redo。这样就不会违背原有的故障恢复逻辑。移到commit阶段的好处是，可以不用每个事务都刷盘，而是leader线程帮助刷一批redo，这也是redo组提交的实现。如何实现，很简单，因为log_sys->lsn始终保持了当前最大的lsn，只要我们刷redo刷到当前的log_sys->lsn，就一定能保证，将要刷binlog的事务redo日志一定已经落盘。通过延迟刷新redo的方式，实现了redo log组提交的目的，而且减少了log_sys->mutex的竞争。目前这种策略已经被官方MySQL 5.7.6引入。
+通过上述的描述可知，每个事务提交时，都会触发一次redo flush动作，由于磁盘读写比较慢，因此很影响系统的吞吐量。淘宝童鞋做了一个优化，将prepare阶段的刷redo动作移到了commit（flush-sync-commit）的flush阶段之前，保证刷binlog之前，一定会刷redo。这样就不会违背原有的故障恢复逻辑。移到commit阶段的好处是，可以不用每个事务都刷盘，而是leader线程帮助刷一批redo，这也是redo组提交的实现。如何实现，很简单，因为log_sys->lsn始终保持了当前最大的lsn，只要我们刷redo刷到当前的log_sys->lsn，就一定能保证，将要刷binlog的事务redo日志一定已经落盘。**通过延迟刷新redo的方式，实现了redo log组提交的目的，而且减少了log_sys->mutex的竞争。目前这种策略已经被官方MySQL 5.7.6引入**。
 
 **开启Binary log的情况下？**
 
@@ -122,7 +122,7 @@ WAL（Write-Ahead-Logging）是实现事务持久性的一个常用技术，基�
 
 **四、Binary Log Group Commit**
 
-MySQL 5.6 BLGC技术出现后，在这种情况下，不但MySQL数据库上层二进制日志写入是group commit的，InnoDB存储引擎层也是group commit的。此外还移除了原先的锁prepare_commit_mutex，从而大大提高了数据库的整体性。binlog组提交的基本思想是，引入队列机制保证innodb commit顺序与binlog落盘顺序一致，并将事务分组，组内的binlog刷盘动作交给一个事务进行，实现组提交目的。其事务的提交（commit）过程分成三个阶段：Flush stage、Sync stage、Commit stage。这些阶段完全是二进制日志内部提交过程，不会影响其他任何内容。每个阶段都有一个队列，每个队列有一个mutex保护，约定进入队列第一个线程为leader，其他线程为follower，所有事情交由leader去做，leader做完所有动作后，通知follower我已经刷盘结束，然后follower去做自己剩下的事情。
+MySQL 5.6 BLGC技术出现后，在这种情况下，不但MySQL数据库上层二进制日志写入是group commit的，InnoDB存储引擎层也是group commit的。此外还移除了原先的锁prepare_commit_mutex，从而大大提高了数据库的整体性。**binlog组提交的基本思想是，引入队列机制保证innodb commit顺序与binlog落盘顺序一致，并将事务分组，组内的binlog刷盘动作交给一个事务进行，实现组提交目的。**其事务的提交（commit）过程分成三个阶段：Flush stage、Sync stage、Commit stage。这些阶段完全是二进制日志内部提交过程，不会影响其他任何内容。每个阶段都有一个队列，每个队列有一个mutex保护，约定进入队列第一个线程为leader，其他线程为follower，所有事情交由leader去做，leader做完所有动作后，通知follower我已经刷盘结束，然后follower去做自己剩下的事情。
 
 binlog组提交基本流程如下：
 
@@ -160,11 +160,11 @@ leader根据顺序调用存储引擎层事务的提交，Innodb本身就支持gr
 
 4) 唤醒队列中等待的线程。
 
-由于每个阶段有一个队列，每个队列各自有mutex保护，队列之间是顺序的，约定进入队列的一个线程为leader，因此FLUSH阶段的leader可能是SYNC阶段的follower，但是follower永远是follower。也就是，第一个进入队列的事务（即队列为空时）会作为当前阶段的leader，其他的作为follower，leader确认自己身份后把当前队列中的followers摘出来，并代表他们和自己做当前阶段需要做的工作，再进入到下一个阶段的队列中，如果下一个队列为空，它会继续作为leader，如果不为空，则它和它的followers会变为新阶段的follower，一旦成为follower，就只需要等待别的线程通知事务提交完成，否则做当前阶段工作。顺序的一致通过队列顺序得到保证。
+由于每个阶段有一个队列，每个队列各自有mutex保护，**队列之间是顺序的，约定进入队列的一个线程为leader，因此FLUSH阶段的leader可能是SYNC阶段的follower，但是follower永远是follower**。也就是，第一个进入队列的事务（即队列为空时）会作为当前阶段的leader，其他的作为follower，leader确认自己身份后把当前队列中的followers摘出来，并代表他们和自己做当前阶段需要做的工作，再进入到下一个阶段的队列中，如果下一个队列为空，它会继续作为leader，如果不为空，则它和它的followers会变为新阶段的follower，一旦成为follower，就只需要等待别的线程通知事务提交完成，否则做当前阶段工作。顺序的一致通过队列顺序得到保证。
 
-通过上文分析，我们知道MySQL目前的基于binlog组提交方式解决了一致性和性能的问题。通过二阶段提交解决一致性，通过redo log和binlog的组提交解决磁盘IO的性能。当有一组事务在进行commit阶段时，其他新事务可以进行Flush阶段，从而使group commit不断生效。当然group commit的效果由队列中事务的数量决定，若每次队列中仅有一个事务，那么可能效果和之前差不多，甚至会更差。但当提交的事务越多时，group commit的效果越明显，数据库性能的提升也就越大。
+通过上文分析，**我们知道MySQL目前的基于binlog组提交方式解决了一致性和性能的问题。通过二阶段提交解决一致性，通过redo log和binlog的组提交解决磁盘IO的性能**。当有一组事务在进行commit阶段时，其他新事务可以进行Flush阶段，从而使group commit不断生效。当然group commit的效果由队列中事务的数量决定，若每次队列中仅有一个事务，那么可能效果和之前差不多，甚至会更差。但当提交的事务越多时，group commit的效果越明显，数据库性能的提升也就越大。
 
-MySQL提供了一个参数binlog_max_flush_queue_time（MySQL 5.7.9版本失效），默认值为0，用来控制MySQL 5.6新增的BLGC（binary log group commit），就是二进制日志组提交中Flush阶段中等待的时间，即使之前的一组事务完成提交，当前一组的事务也不马上进入Sync阶段，而是至少需要等待一段时间，这样做的好处是group commit的事务数量更多，然而这也可能会导致事务的响应时间变慢。该参数默认为0表示不等待，且推荐设置依然为0。除非用户的MySQL数据库系统中有大量的连接（如100个连接），并且不断地在进行事务的写入或更新操作。
+MySQL提供了一个参数**binlog_max_flush_queue_time**（MySQL 5.7.9版本失效），默认值为0，用来控制MySQL 5.6新增的BLGC（binary log group commit），就是二进制日志组提交中Flush阶段中等待的时间，即使之前的一组事务完成提交，当前一组的事务也不马上进入Sync阶段，而是至少需要等待一段时间，这样做的好处是group commit的事务数量更多，然而这也可能会导致事务的响应时间变慢。该参数默认为0表示不等待，且推荐设置依然为0。除非用户的MySQL数据库系统中有大量的连接（如100个连接），并且不断地在进行事务的写入或更新操作。
 
 MySQL 5.7 Parallel replication实现主备多线程复制基于主库BLGC（Binary Log Group Commit）机制，并在Binary log日志中标识同一组事务的last_commited=N和该组事务内所有的事务提交顺序。为了增加一组事务内的事务数量提高备库组提交时的并发量引入了binlog_group_commit_sync_delay=N和binlog_group_commit_sync_no_delay_count=N
 
@@ -259,6 +259,6 @@ MYSQL_BIN_LOG::ordered_commit() ←  执行事务顺序提交，binlog group com
 
 在 enroll_for() 函数中，刚添加的线程如果是队列的第一个线程，就将其设置为 leader 线程；否则就是 follower 线程，此时线程会睡眠，直到被 leader 唤醒 (m_cond_done) 。
 
-如上所述，commit 阶段会受到参数 binlog_order_commits 的影响，当该参数关闭时，会直接释放 LOCK_sync ，各个 session 自行进入 InnoDB commit 阶段，这样不会保证 binlog 和事务 commit 的顺序一致。
+如上所述，commit 阶段会受到参数 binlog_order_commits 的影响，当该参数关闭时，会直接释放 LOCK_sync ，各个 session 自行进入 InnoDB commit 阶段，这样不会保证 binlog 和事务 commit 的顺序一致。 
 
 当然，如果你不关注两者的一致性，那么可以关闭这个选项来稍微提高点性能；当打开了上述的参数，才会进入 commit stage。

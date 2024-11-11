@@ -1,8 +1,13 @@
  # MDL 锁的 研究
 
  [toc]
-  
- ## MDL 锁的典型场景 
+
+## 原文
+
+[mysql metadata lock(一)](https://www.cnblogs.com/cchust/p/3826398.html)  
+[mysql metadata lock(二)](https://www.cnblogs.com/cchust/p/4303929.html)
+
+## MDL 锁的典型场景 
     想必玩过mysql的人对Waiting for table metadata lock肯定不会陌生，一般都是进行alter操作时被堵住了，导致了我们在show processlist 时，看到线程的状态是在等metadata lock。本文会对mysql 的metadata lock做一个小小的总结，希望对大家有所帮助。
 
     MDL是在5.5才引入到mysql，之前也有类似保护元数据的机制，只是没有明确提出MDL概念而已。但是5.5之前版本(比如5.1)与5.5之后版本在保护元数据这块有一个显著的不同点是，5.1对于元数据的保护是语句级别的，5.5对于metadata的保护是事务级别的。所谓语句级别，即语句执行完成后，无论事务是否提交或回滚，其表结构可以被其他会话更新；而事务级别则是在事务结束后才释放MDL。
@@ -66,19 +71,19 @@ root@chuck 11:57:41>show profile for query 4;
 
      上一篇《[mysql metadata lock(一)](http://www.cnblogs.com/cchust/p/3826398.html)》介绍了为什么引入MDL，MDL作用以及MDL锁导致阻塞的几种典型场景，文章的最后还留下了一个小小的疑问。本文将更详细的介绍MDL，主要侧重介绍MDL的原理和实现。一般而言，商业数据库系统实现锁，一般将锁划分为读锁(共享锁)和写锁(排它锁)，为了进一步提高并发性，还会加入意向共享锁和意向排它锁。但是偏偏mysql的MDL搞地比较复杂，但目的也是为了提高并发度。MDL包含有9种类型，详细参考表1。主要其实也是两大类，只是对共享锁做了进一步细分。
 
-一、MDL的锁类型
+### 一、MDL的锁类型
 
 ![alt text](matedata_lock的研究_4.png)
 
-二、MDL的兼容性矩阵(对象维度)
+### 二、MDL的兼容性矩阵(对象维度)
 
-![](https://images2015.cnblogs.com/blog/176539/201605/176539-20160511112728374-148533524.png)
+![MDL_锁矩阵](image/MDL_锁矩阵.png)
 
 说明：横向表示其它事务已经持有的锁，纵向表示事务想加的锁
 
-三、几种典型语句的加(释放)锁流程
+### 三、几种典型语句的加(释放)锁流程
 
-1.select语句操作MDL锁流程
+#### 1.select语句操作MDL锁流程
 
    1）Opening tables阶段，加共享锁
 
@@ -88,8 +93,7 @@ root@chuck 11:57:41>show profile for query 4;
 
        a)   释放MDL_SHARED_READ锁
 
-1. DML语句操作MDL锁流程
-
+#### 2. DML语句操作MDL锁流程
   1）Opening tables阶段，加共享锁
 
      a)   加global类型的MDL_INTENTION_EXCLUSIVE锁
@@ -102,8 +106,7 @@ root@chuck 11:57:41>show profile for query 4;
 
     b)   释放MDL_SHARED_WRITE锁
 
-3. alter操作MDL锁流程
-
+#### 3. alter操作MDL锁流程
   1）Opening tables阶段，加共享锁
 
     a)   加global类型的MDL_INTENTION_EXCLUSIVE锁
@@ -126,11 +129,11 @@ root@chuck 11:57:41>show profile for query 4;
 
    b)   释放MDL_EXCLUSIVE锁
 
-四、典型问题分析。
+### 四、典型问题分析。
 
 一般而言，我们关注MDL锁，大部分情况都是线上出现异常了。那么出现异常后，我们如何去判断是MDL锁导致的呢。监视MDL锁主要有两种方法，一种是通过show  processlist命令，判断是否有事务处于“Waiting for table metadata lock”状态，另外就是通过mysql的profile，分析特定语句在每个阶段的耗时时间。
 
-抛出几个问题：
+**抛出几个问题：**
 
 1.  select 与alter是否会相互阻塞
 2.  dml与alter是否会相互阻塞
@@ -140,10 +143,31 @@ root@chuck 11:57:41>show profile for query 4;
 
 **第一个问题**: 当执行select语句时，只要select语句在获取MDL_SHARED_READ锁之前，alter没有执行到rename阶段，那么select获取MDL_SHARED_READ锁成功，后续有alter执行到rename阶段，请求MDL_EXCLUSIVE锁时，就会被阻塞。rename阶段会持有MDL_EXCLUSIVE锁，但由于这个过程时间非常短(大头都在copy数据阶段)，并且是alter的最后一个阶段，所以基本感觉不到alter会阻塞select语句。由于MDL锁在事务提交后才释放，若线上存在大查询，或者存在未提交的事务，则会出现ddl卡住的现象。这里要注意的是，ddl卡住后，若再有select查询或DML进来，都会被堵住，就会出现threadrunning飙高的情况。
 
+>笔记：
+通过MDL锁的互斥关系，可以看到alter table 第一阶段添加MDL_SHARED_NO_WRITE 锁，与MDL_SHARED_WRITE 语句的锁不兼容。  
+**alter table 语句会在第一阶段被MDL 阻塞**，此时不影响select，但是会影响DML。  
+**alter table的第三阶段**，需要获取MDL_EXCLUSIVE 锁，与MDL_SHREAD 锁互斥，但ddl语句在此时被前面为提交的select 语句阻塞时，会导致该DDL 语句会阻塞后续的进来的select语句。
+
+
 **第二个问题**: alter在opening阶段会将锁升级到MDL_SHARED_NO_WRITE，rename阶段再将升级为MDL_EXCLUSIVE，由于MDL_SHARED_NO_WRITE与MDL_SHARED_WRITE互斥，所以先执行alter或先执行DML语句，都会导致语句阻塞在opening tables阶段。结合第一个和第二个问题，就可以回答《mysql metadata lock(一)》的疑问了。
 
 **第三个问题**:显然，由于MDL_SHARED_WRITE与MDL_SHARED_READ兼容，所以它们不会因为MDL而导致等待的情况。具体例子和profile分析可以参考《[mysql metadata lock(一)](http://www.cnblogs.com/cchust/p/3826398.html)》。这里我们要考虑一个问题，LOCK TABLE ... READ上的MDL锁是MDL_SHARED_READ，而DML操作上的是MDL_SHARED_WRITE，那么前者和后者如何互斥？其实这个MDL是无能为力的，需要通过SERVER层的table lock来解，可以简单做一个实验，一个会话执行LOCK TABLE test READ，另外一个会话执行update test set xxx where id=xxx，会发现update语句堵塞，通过show processlist查看，状态为:"Waiting for table level lock"。但是如果使用LOCK TABLE test WRITE，则状态变为"Waiting for table metadata lock"，其实此时table lock也是堵住的，只不过MDL在之前挡住了，这说明SERVER层的table lock和MDL在同时起作用。
 
+## olddl 的影响
+
+一点自己的看法，为经过验证：
+1. 对于必须要使用 Rebuilds Table(copy) ,	InPlace(rebuild 有innodb 完成对于mysql server 层是透明的 所以被称为intant ) 的DDL，可以参照上面的讨论，因为有copy() 和 rename 的问题。
+2. 对于intant 由于不需要copy ,仅修改表结构，不会阻塞读写。
+
+### inplace（ALGORITHM=InPlace，ALGORITHM=intant）
+
+1. 在 copy 数据到新表期间，在原表上是加的 MDL 读锁（允许 DML，禁止 DDL）
+2. 在应用增量期间对原表加 MDL 写锁（禁止 DML 和 DDL）
+3. 根据表A重建出来的数据是放在 tmp_file 里的，这个临时文件是 InnoDB 在内部创建出来的，整个 DDL 过程都在 InnoDB 内部完成。对于 server 层来说，没有把数据挪动到临时表，是一个原地操作，这就是“inplace”名称的来源。
+
+### 参考资料
+
+[详解mysql原生online DDL 从历史演进到原理及使用](<../mysql_online ddl/详解mysql原生online DDL 从历史演进到原理及使用.md>)  
 
 参考：
 
