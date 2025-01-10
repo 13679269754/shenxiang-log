@@ -112,6 +112,8 @@ fi
 
 ## docker安装
 
+centos建议参考[docker 环境](<各种环境/docker 环境.md>)
+
 ```bash 
 
 # 准备条件

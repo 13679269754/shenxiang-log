@@ -22,11 +22,11 @@
 ### ssh免密配置
 
 > 需要配置hadoop 用户的免密，不要使用root用户安装hadoop，会导致报错
-
-su hadoop
-ssh-keygen
-ssh-copy-id hostname
-
+```bash
+su hadoop  
+ssh-keygen  
+ssh-copy-id hostname  
+```
 ### hostname别名添加
 
 haddoop 默认使用host解析，不使用hostname会报错

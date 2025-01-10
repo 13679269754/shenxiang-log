@@ -6,10 +6,10 @@
 环境管理工具
 ```bash
 pip install virtualenvwrapper
-export WORKON_HOME=/root/python3_env 
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3  
-export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/python3.8/bin/virtualenv 
-source /usr/local/python3/bin/virtualenvwrapper.sh  # 不一定是该路径 可以找一下pip 安装在哪里
+export WORKON_HOME=/root/python3_env 
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3  
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/python3.8/bin/virtualenv 
+source /usr/local/python3/bin/virtualenvwrapper.sh  # 不一定是该路径 可以找一下pip 安装在哪里
 pip不存在时：
 wget https://bootstrap.pypa.io/get-pip.py 
 wget https://bootstrap.pypa.io/pip/2.7/get-pip.py
@@ -35,6 +35,7 @@ yum install python3-pip -y
 管理虚拟环境
 虚拟环境可以通过一些工具来管理，这里使用virtualenvwrapper，输入下面命令下载virtualenvwrapper
 `pip install virtualenvwrapper-win(windows版) `
+
 创建虚拟环境
 输入命令
 `mkvirtualenv 环境名` 
@@ -62,6 +63,7 @@ ln /usr/local/python3/bin/virtualenv /usr/bin/virtualenv
 **输入命令**：`deactivate`
 删除虚拟环境
 **输入命令**：`rmvirtualenv 环境名`
+
 列出虚拟环境
 **输入命令**：：`lsvirtualenv`
 进入虚拟环境目录
