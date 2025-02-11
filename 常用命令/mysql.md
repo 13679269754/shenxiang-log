@@ -204,3 +204,53 @@ select @a2 := variable_value as a2 from information_schema.global_status where v
 -- 把后边一次结果减去前边一次结果并进行即算，得出的结果就是每分钟的日志量：
 select round((@a2-@a1) /1024/1024/@@innodb_log_files_in_group) as MB;
 ```
+
+----------------------
+
+## 用户及权限导出
+
+```sql
+SELECT CONCAT('CREATE USER \'',  user,  '\'@\'', host,  '\' IDENTIFIED BY \'your_password\';')  FROM mysql.user  INTO  OUTFILE  '/path/to/users.sql'; 
+
+SELECT CONCAT('GRANT ',  PRIVILEGE_TYPE, ' ON ', TABLE_SCHEMA, '.', TABLE_NAME, ' TO \'', GRANTEE ,'\';') AS stmt FROM information_schema.TABLE_PRIVILEGES  INTO  OUTFILE  '/path/to/privileges.sql'; 
+```
+
+
+---------------------
+
+```bash
+/usr/local/data/mysql/bin/mysqldump  -S /usr/local/data/mysql_data/ 2025-02-10_0010_2025-02-09/dbmysql/run/mysql3406.sock  
+--set-gtid-purged=OFF 
+--single-transaction  
+--routines 
+--triggers 
+--events 
+--databases algorithm 
+--table tcm_rag wm_embedding_data 
+--net_buffer_length=16777216 
+--max_allowed_packet=134217728 
+--master-data=1 
+--extended-insert > algorithm_2_table.sql
+```
+
+导出指定库
+```sql
+   SELECT GROUP_CONCAT(schema_name) FROM information_schema.`SCHEMATA` WHERE schema_name NOT IN ('mysql','information_schema','sys','performance_schema')  AND   schema_name NOT LIKE '%old_%' 
+
+```
+```bash
+/usr/local/data/mysql/bin/mysqldump  -S /usr/local/data/mysql_data/2025-02-10_0010_2025-02-09/dbmysql/run/mysql3406.sock  
+--set-gtid-purged=OFF 
+--single-transaction  
+--routines 
+--triggers 
+--events 
+--databases user_data table_backup storage shop settlement sensitive_data search research recommend questionnaire pv product_data product_application_data payment org_data open_gpt_data oa meta_data meta message_data live_video inquiry influence ims import hosec hers_data health_action_data export equity dzjetl disease_data digitalize_exam cuss credit content_data content confs_data conference city_health_data_docking case_data basic_data auth algorithm acts  
+-d 
+--net_buffer_length=16777216 
+--max_allowed_packet=134217728 
+--master-data=1 
+--extended-insert > table_schema.sql
+```
+
+

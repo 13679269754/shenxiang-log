@@ -45,21 +45,21 @@ tar -zxvf dbdeployer-1.54.0.linux.tar.gz
 
 #### 2.3 赋予可执行权限
 
-```null
+```bash
 chmod +x dbdeployer-1.54.0.linux
 
 ```
 
 #### 2.4 移动到系统可执行目录下方便使用
 
-```null
+```bash
 mv dbdeployer-1.54.0.linux /usr/local/bin/dbdeployer
 
 ```
 
 #### 2.5 验证是否可以使用
 
-```null
+```bash
 [root@db01 tmp]
 dbdeployer version 1.54.0
 [root@db01 tmp]
@@ -120,7 +120,7 @@ dbdeployer init
 
 访问 [https://downloads.mysql.com/archives/community/](https://downloads.mysql.com/archives/community/) 可下载各不同的MySQL
 
-```null
+```bash
 dbdeployer unpack /tmp/mysql-8.0.20-linux-glibc2.12-x86_64.tar.xz
 
 ```
@@ -129,7 +129,7 @@ dbdeployer unpack /tmp/mysql-8.0.20-linux-glibc2.12-x86_64.tar.xz
 
 ##### 3.2.1 查看dbdeployer工具支持下载的软件包
 
-```null
+```bash
 [root@mysql8 ~]
 Available tarballs  ()
                               name                                 OS     version     flavor        size   minimal 
@@ -184,7 +184,7 @@ Available tarballs  ()
 
 使用`dbdeployer downloads get file_name`，从上面的列表中复制需要下载的版本并粘贴文件名。例如：
 
-```null
+```bash
 [root@mysql8 ~]
 Downloading mysql-5.7.31-linux-glibc2.12-x86_64.tar.gz
 .........105 MB.........210 MB.........315 MB.....  376 MB
@@ -205,7 +205,7 @@ Basedir: /root/opt/mysql
 
 ```
 
-```null
+```bash
 [root@mysql8 ~]
 /root/opt
 └── mysql
@@ -219,7 +219,7 @@ Basedir: /root/opt/mysql
 
 ##### 3.4.1 该命令可以部署单个，多个或复制的MySQL沙箱实例
 
-```null
+```bash
 multiple    创建多个独立的mysql
 replication 创建复制环境的mysql
 single      创建单节点的mysql
@@ -344,7 +344,7 @@ executing "start" on node 3
 
 ##### 4.4 单独操作某一节点，需进入对应节点数据目录
 
-```null
+```bash
 [root@mysql8 group_msb_8_0_20]
 [root@mysql8 node1]
 add_option            clone_from       data          metadata        replicate_from      send_kill      start      test_sb
@@ -356,7 +356,7 @@ clone_connection.sql  connection.sql   load_grants   mysqlsh         sb_include 
 
 ##### 4.5 登陆指定实例
 
-```null
+```bash
 [root@mysql8 node1]
 Welcome to the MySQL monitor.  Commands end with ; or \g.
 Your MySQL connection id is 8
@@ -378,7 +378,7 @@ node1 [localhost:22021] {msandbox} ((none)) >
 
 每个实例下有便捷日志脚本
 
-```null
+```bash
 show_log    
 show_binlog
 show_relaylog
