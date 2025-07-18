@@ -91,6 +91,7 @@ Docker Hub是 Docker 提供的一项服务，用于与您的团队查找和共�
 sudo mkdir -p /etc/docker
 sudo tee /etc/docker/daemon.json <<EOF
 {
+  "data-root": "/usr/local/data/docker",
   "registry-mirrors": [
     "https://dockerpull.org",
     "https://docker.1panel.dev",

@@ -7,6 +7,8 @@
 
 [toc]
 
+## crud
+
 
 
 ## curl es命令
@@ -106,20 +108,20 @@ GET inte-aliyun:inte-egw-audit-2021.07.11/_search
 ---
 
 ## 查看API
-查看别名接口(_cat/aliases): 查看索引别名
-查看分配资源接口(_cat/allocation)
-查看文档个数接口(_cat/count)
-查看字段分配情况接口(_cat/fielddata)
-查看健康状态接口(_cat/health)
-查看索引信息接口(_cat/indices)
-查看master信息接口(_cat/master)
-查看nodes信息接口(_cat/nodes)
-查看正在挂起的任务接口(_cat/pending_tasks)
-查看插件接口(_cat/plugins)
-查看修复状态接口(_cat/recovery)
-查看线城池接口(_cat/thread_pool)
-查看分片信息接口(_cat/shards)
-查看lucence的段信息接口(_cat/segments)
+查看别名接口(_cat/aliases): 查看索引别名  
+查看分配资源接口(_cat/allocation)  
+查看文档个数接口(_cat/count)  
+查看字段分配情况接口(_cat/fielddata)  
+查看健康状态接口(_cat/health)  
+查看索引信息接口(_cat/indices)  
+查看master信息接口(_cat/master)  
+查看nodes信息接口(_cat/nodes)  
+查看正在挂起的任务接口(_cat/pending_tasks)  
+查看插件接口(_cat/plugins)  
+查看修复状态接口(_cat/recovery)  
+查看线城池接口(_cat/thread_pool)  
+查看分片信息接口(_cat/shards)  
+查看lucence的段信息接口(_cat/segments)  
 
 --- 
 
@@ -230,4 +232,49 @@ PUT _template/leefs_ilm_template
     "index.lifecycle.rollover_alias": "leefs_logs"
   }
 }
+```
+
+
+## 别名alias
+为索引secisland添加别名secisland_alias：
+POST _aliases
+{
+  "actions": [
+    {
+      "add": {
+        "index": "secisland",
+        "alias": "secisland_alias"
+      }
+    }
+  ]
+}
+
+删除别名：
+
+POST _aliases
+{
+  "actions": [
+    {
+      "remove": {
+        "index": "secisland",
+        "alias": "secisland_alias"
+      }
+    }
+  ]
+}
+
+
+
+------------------------------------
+
+## elasticsearchdump
+
+带有用户验证和ssl的elasticsearch 实例
+```bash
+ NODE_TLS_REJECT_UNAUTHORIZED=0 elasticdump   
+ --input=https://dba_user:Aa123456@172.29.105.53:9200/knowledge_library_index-20250515160138   
+ --output=https://elastic:123456@172.29.29.105:9200/knowledge_library_index-20250515160138   
+ --output-ssl-verify=false  
+ --input-ssl-verify=false  
+ --type=data
 ```

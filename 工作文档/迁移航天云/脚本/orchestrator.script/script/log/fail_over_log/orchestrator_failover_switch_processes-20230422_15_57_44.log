@@ -1,0 +1,6 @@
+Sat, 22 Apr 2023 15:57:44 orchestrator_switch.py[line:182] INFO command is None
+Sat, 22 Apr 2023 15:57:44 orchestrator_switch.py[line:183] INFO Fail instance info :172.29.28.193:3308
+Sat, 22 Apr 2023 15:57:44 get_config_info.py[line:79] INFO Now get the proxysql instance info.
+Sat, 22 Apr 2023 15:57:46 get_config_info.py[line:49] WARNING 171.29.28.193:6032  ¶Ë¿ÚÎ´¿ª·Å
+Sat, 22 Apr 2023 15:57:46 get_config_info.py[line:85] INFO Instance of proxysql :172.29.28.194:6032
+Sat, 22 Apr 2023 15:57:46 orchestrator_switch.py[line:105] ERROR Can't not backup proxysql information of instance: 172.29.28.193:3308

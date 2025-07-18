@@ -1,0 +1,112 @@
+set @@sql_log_bin=0;
+
+alter user root@'localhost' identified by '{{initpwd}}';
+create user root@'127.0.0.1' identified by '{{initpwd}}';
+grant all on *.* to root@'127.0.0.1' with grant option;
+
+create user dbma@'127.0.0.1' identified by '{{initpwd}}';
+grant all on *.* to dbma@'127.0.0.1' with grant option;
+
+-- clone
+create user 'cloneuser'@'127.0.0.1' identified by '{{initpwd}}';
+grant clone_admin,system_variables_admin,backup_admin on *.* to 'cloneuser'@'127.0.0.1';
+create user 'cloneuser'@'localhost' identified by '{{initpwd}}';
+grant clone_admin,system_variables_admin,backup_admin on *.* to 'cloneuser'@'localhost';
+create user 'cloneuser'@'%' identified by '{{initpwd}}';
+grant backup_admin on *.* to 'cloneuser'@'%';
+
+-- replication
+create user 'repluser'@'%' identified by '{{initpwd}}';
+grant replication slave,replication client,backup_admin,replication_slave_admin,group_replication_admin on *.* to 'repluser'@'%';
+
+-- monitor
+create user monitor@'127.0.0.1' identified by '{{initpwd}}';
+grant replication client,process on *.* to monitor@'127.0.0.1';
+grant select on performance_schema.* to monitor@'127.0.0.1';
+
+-- innodb cluster admin user
+create user innodbclusteradmin@'%' identified by '{{initpwd}}';
+grant reload, shutdown, process, file, select, super, replication slave, replication client, create user on *.* to innodbclusteradmin@'%' with grant option;
+grant all on mysql_innodb_cluster_metadata.* to innodbclusteradmin@'%' with grant option;
+grant insert, update, delete on mysql.* to innodbclusteradmin@'%' with grant option;
+grant select on performance_schema.global_status to innodbclusteradmin@'%' with grant option;
+grant select on performance_schema.replication_applier_configuration to innodbclusteradmin@'%' with grant option;
+grant select on performance_schema.replication_applier_status to innodbclusteradmin@'%' with grant option;
+grant select on performance_schema.replication_applier_status_by_coordinator to innodbclusteradmin@'%' with grant option;
+grant select on performance_schema.replication_applier_status_by_worker to innodbclusteradmin@'%' with grant option;
+grant select on performance_schema.replication_connection_configuration to innodbclusteradmin@'%' with grant option;
+grant select on performance_schema.replication_connection_status to innodbclusteradmin@'%' with grant option;
+grant select on performance_schema.replication_group_member_stats to innodbclusteradmin@'%' with grant option;
+grant select on performance_schema.replication_group_members to innodbclusteradmin@'%' with grant option;
+grant select on performance_schema.threads to innodbclusteradmin@'%' with grant option;
+
+-- mysqldump
+create user mysqldump@'127.0.0.1' identified by '{{initpwd}}';
+grant select on *.* to mysqldump@'127.0.0.1';
+grant show view on *.* to mysqldump@'127.0.0.1';
+grant lock tables on *.* to mysqldump@'127.0.0.1';
+grant trigger on *.* to mysqldump@'127.0.0.1';
+grant super,replication client on *.* to 'mysqldump'@'127.0.0.1';
+grant reload,event on *.* to 'mysqldump'@'127.0.0.1';
+
+create user mysqldump@'localhost' identified by '{{initpwd}}';
+grant select on *.* to mysqldump@'localhost';
+grant show view on *.* to mysqldump@'localhost';
+grant lock tables on *.* to mysqldump@'localhost';
+grant trigger on *.* to mysqldump@'localhost';
+grant super,replication client on *.* to 'mysqldump'@'localhost';
+grant reload,event on *.* to 'mysqldump'@'localhost';
+
+-- for mysql-8.0.19
+grant system_variables_admin,persist_ro_variables_admin on *.* to innodbclusteradmin@'%';
+
+-- mysqlbackup
+create user mysqlbackup@'127.0.0.1' identified by '{{initpwd}}';
+grant select on *.* to 'mysqlbackup'@'127.0.0.1';
+grant backup_admin on *.* to 'mysqlbackup'@'127.0.0.1';
+grant select on performance_schema.variables_info to 'mysqlbackup'@'127.0.0.1';
+grant select on performance_schema.log_status to 'mysqlbackup'@'127.0.0.1';
+grant reload on *.* to 'mysqlbackup'@'127.0.0.1';
+grant create,alter,insert, drop, update on mysql.backup_progress to 'mysqlbackup'@'127.0.0.1';
+grant create, insert, drop, update, select, alter on mysql.backup_history TO 'mysqlbackup'@'127.0.0.1';
+grant replication client on *.* to 'mysqlbackup'@'127.0.0.1';
+grant super on *.* to 'mysqlbackup'@'127.0.0.1';
+grant process on *.* to 'mysqlbackup'@'127.0.0.1';
+grant select on performance_schema.replication_group_members to 'mysqlbackup'@'127.0.0.1';
+grant create, insert, drop on mysql.backup_progress_old to 'mysqlbackup'@'127.0.0.1';
+grant create, insert, drop, alter on mysql.backup_progress_new to 'mysqlbackup'@'127.0.0.1';
+grant create, insert, drop on mysql.backup_history_old to 'mysqlbackup'@'127.0.0.1';
+grant create, insert, drop, alter on mysql.backup_history_new to 'mysqlbackup'@'127.0.0.1';
+grant lock tables, select, create, drop, file on *.* to 'mysqlbackup'@'127.0.0.1';
+grant create, insert, drop, update on mysql.backup_sbt_history to 'mysqlbackup'@'127.0.0.1'; 
+grant encryption_key_admin on *.* to 'mysqlbackup'@'127.0.0.1';
+-- grant seelct on non-InnoDB_tbl to 'mysqlbackup'@'127.0.0.1';
+grant innodb_redo_log_archive on *.* to 'mysqlbackup'@'127.0.0.1';
+
+create user mysqlbackup@'localhost' identified by '{{initpwd}}';
+grant select on *.* to 'mysqlbackup'@'localhost';
+grant backup_admin on *.* to 'mysqlbackup'@'localhost';
+grant select on performance_schema.variables_info to 'mysqlbackup'@'localhost';
+grant select on performance_schema.log_status to 'mysqlbackup'@'localhost';
+grant reload on *.* to 'mysqlbackup'@'localhost';
+grant create, alter, insert, drop, update on mysql.backup_progress to 'mysqlbackup'@'localhost';
+grant create, insert, drop, update, select, alter on mysql.backup_history TO 'mysqlbackup'@'localhost';
+grant replication client on *.* to 'mysqlbackup'@'localhost';
+grant super on *.* to 'mysqlbackup'@'localhost';
+grant process on *.* to 'mysqlbackup'@'localhost';
+grant select on performance_schema.replication_group_members to 'mysqlbackup'@'localhost';
+grant create, insert, drop on mysql.backup_progress_old to 'mysqlbackup'@'localhost';
+grant create, insert, drop, alter on mysql.backup_progress_new to 'mysqlbackup'@'localhost';
+grant create, insert, drop on mysql.backup_history_old to 'mysqlbackup'@'localhost';
+grant create, insert, drop, alter on mysql.backup_history_new to 'mysqlbackup'@'localhost';
+grant lock tables, select, create, drop, file on *.* to 'mysqlbackup'@'localhost';
+grant create, insert, drop, update on mysql.backup_sbt_history to 'mysqlbackup'@'localhost'; 
+grant encryption_key_admin on *.* to 'mysqlbackup'@'localhost';
+-- grant seelct on non-InnoDB_tbl to 'mysqlbackup'@'localhost';
+grant innodb_redo_log_archive on *.* to 'mysqlbackup'@'localhost';
+
+-- 
+
+set @@sql_log_bin=1;
+
+

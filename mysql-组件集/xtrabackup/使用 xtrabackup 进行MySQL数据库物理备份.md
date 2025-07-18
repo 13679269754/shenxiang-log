@@ -68,12 +68,14 @@ percona5.6+支持轻量级的backup-lock替代原来重量级的FTWRL，此时�
 如果还需要对备份的过程中对锁进行一些优化，防止发生阻塞所有DML的情况，则还需要：
 
 **grant process,super on *.* to 'bkpuser'@'localhost';**
-
-(root@localhost)[(none)]mysql>show grants for 'bkpuser'@'localhost'G *************************** 1. row *************************** Grants for bkpuser@localhost: GRANT RELOAD, PROCESS, SUPER, LOCK TABLES, REPLICATION CLIENT, CREATE TABLESPACE ON *.* TO 'bkpuser'@'localhost' IDENTIFIED BY PASSWORD '*BDC62F68AF8F0B8BFAE27FF782C5D8CE9F4BAFCB'
+```sql
+(root@localhost)[(none)]mysql>show grants for 'bkpuser'@'localhost'G  *************************** 1. row *************************** 
+Grants for bkpuser@localhost: GRANT RELOAD, PROCESS, SUPER, LOCK TABLES, REPLICATION CLIENT, CREATE TABLESPACE ON *.* TO 'bkpuser'@'localhost' IDENTIFIED BY PASSWORD '*BDC62F68AF8F0B8BFAE27FF782C5D8CE9F4BAFCB'
 1 row in set (0.00 sec)
-
+```
 ## innobackupex 命令选项
 
+```bash
 [root@localhost ~]# innobackupex --help
 Open source backup tool for InnoDB and XtraDB
 [... ...]
@@ -81,7 +83,7 @@ innobackupex - Non-blocking backup tool for InnoDB, XtraDB and HailDB databases
 
 SYNOPOSIS(使用方法)
 
-```bash
+
 innobackupex [--compress] [--compress-threads=NUMBER-OF-THREADS]        [--compress-chunk-size=CHUNK-SIZE]  
              [--encrypt=ENCRYPTION-ALGORITHM]   [--encrypt-threads=NUMBER-OF-THREADS]   [--encrypt-chunk-size=CHUNK-SIZE]  
              [--encrypt-key=LITERAL-ENCRYPTION-KEY]   [--encryption-key-file=MY.KEY]  

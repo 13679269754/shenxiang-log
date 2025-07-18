@@ -64,8 +64,23 @@ chown sync_user. /data/mysql_backup -R
 
 #### 加入开机自启动
 ```bash
-[root@backup ~]# echo "/usr/bin/rsync --damon" >>/etc/rc.local
+[root@backup ~]# echo "/usr/bin/rsync --daemon" >>/etc/rc.local
 
 [root@backup ~]# tail -1 /etc/rc.local
-/usr/bin/rsync --damon
+/usr/bin/rsync --daemon
 ```
+
+
+## 严格模式strict_modes = yes
+
+报错信息
+```bash
+
+2025/03/27 16:07:22 [17381] secrets file must not be other-accessible (see strict modes option)
+2025/03/27 16:07:22 [17381] auth failed on module pmm-package from UNKNOWN (10.159.65.124) for sync_user: ignoring secrets file
+```
+
+```bash
+chmod 600 /etc/rsyncd.passwd  
+```
+**不仅仅客户端，服务端也需要,否则会报错**

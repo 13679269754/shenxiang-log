@@ -1,0 +1,202 @@
+{
+    "Debug": true,
+    "EnableSyslog": false,
+    "ListenAddress": ":3000",
+  
+    "MySQLTopologyUser": "orchestrator",
+    "MySQLTopologyPassword": "qOaC2IzifrOjItkW",
+    "MySQLTopologyCredentialsConfigFile": "",
+    "MySQLTopologySSLPrivateKeyFile": "",
+    "MySQLTopologySSLCertFile": "",
+    "MySQLTopologySSLCAFile": "",
+    "MySQLTopologySSLSkipVerify": true,
+    "MySQLTopologyUseMutualTLS": false,
+  
+  
+    "MySQLOrchestratorHost": "10.159.65.157",
+    "MySQLOrchestratorPort": 3106,
+    "MySQLOrchestratorDatabase": "orchestrator",
+    "MySQLOrchestratorUser": "orchestrator",
+    "MySQLOrchestratorPassword": "X16k3a5IgHB0ekgo",
+    "MySQLOrchestratorCredentialsConfigFile": "",
+    "MySQLOrchestratorSSLPrivateKeyFile": "",
+    "MySQLOrchestratorSSLCertFile": "",
+    "MySQLOrchestratorSSLCAFile": "",
+    "MySQLOrchestratorSSLSkipVerify": true,
+    "MySQLOrchestratorUseMutualTLS": false,
+  
+    "MySQLConnectTimeoutSeconds": 1,
+    "MySQLDiscoveryReadTimeoutSeconds": 3,
+    "MySQLTopologyReadTimeoutSeconds": 3,
+    "DefaultInstancePort": 3106,
+    "DiscoverByShowSlaveHosts": false,
+    "InstancePollSeconds": 3,
+    "SlaveStartPostWaitMilliseconds": 1000,
+  
+    "ReplicationLagQuery":"",
+    "SkipMaxScaleCheck":true,
+    "UnseenInstanceForgetHours": 240,
+    "SnapshotTopologiesIntervalHours": 0,
+    "InstanceBulkOperationsWaitTimeoutSeconds": 10,
+  
+    "DiscoveryIgnoreReplicaHostnameFilters": [],
+    "ReadLongRunningQueries": false,
+    "BinlogFileHistoryDays": 10,
+    "ActiveNodeExpireSeconds": 5,
+    "MaintenanceOwner": "orchestrator",
+    "MaintenanceExpireMinutes": 10,
+    "MaintenancePurgeDays": 365,
+    "BufferBinlogEvents": true,
+    "HostnameResolveMethod": "default",
+    "MySQLHostnameResolveMethod": "",
+    "SkipBinlogServerUnresolveCheck": true,
+    "ExpiryHostnameResolvesMinutes": 60,
+    "RejectHostnameResolvePattern": "",
+    "ReasonableReplicationLagSeconds": 10,
+    "ProblemIgnoreHostnameFilters": [],
+    "VerifyReplicationFilters": false,
+    "ReasonableMaintenanceReplicationLagSeconds": 20,
+    "CandidateInstanceExpireMinutes": 1440,
+    "RemoveTextFromHostnameDisplay": ":3106",
+    "ReadOnly": false,
+  
+    "AuthenticationMethod": "multi",
+    "HTTPAuthUser": "Orchestrator",
+    "HTTPAuthPassword": "Dzj_pwd_2022",
+    "AuthUserHeader": "",
+    "PowerAuthUsers": [
+      "*"
+    ],
+    "AuditLogFile": "",
+    "AuditToSyslog": false,
+    "AuditPageSize": 20,
+    "AuditPurgeDays": 365,
+  
+    "ClusterNameToAlias": {
+      "127.0.0.1": "test suite"
+    },
+  
+    "DetectClusterAliasQuery":  "SELECT cluster_name FROM meta.cluster WHERE anchor = 1",
+    "DetectClusterDomainQuery": "SELECT cluster_domain FROM meta.cluster WHERE anchor = 1",
+    "DetectInstanceAliasQuery": "SELECT @@hostname as instance_alias",
+    "DetectPromotionRuleQuery": "",
+    "DetectDataCenterQuery": "SELECT data_center FROM meta.cluster WHERE anchor = 1",
+    "DataCenterPattern": "",
+    "PhysicalEnvironmentPattern": "",
+    "PromotionIgnoreHostnameFilters": [],
+    "DetectSemiSyncEnforcedQuery": "SELECT 0 AS semisync FROM DUAL WHERE NOT EXISTS (SELECT 1 FROM performance_schema.global_variables WHERE VARIABLE_NAME = 'rpl_semi_sync_master_wait_no_slave' AND VARIABLE_VALUE = 'ON') UNION SELECT 1 FROM DUAL WHERE EXISTS (SELECT 1 FROM performance_schema.global_variables WHERE VARIABLE_NAME = 'rpl_semi_sync_master_wait_no_slave' AND VARIABLE_VALUE = 'ON')",
+    "DetachLostReplicasAfterMasterFailover": true,
+  
+    "ServeAgentsHttp": false,
+    "AgentsServerPort": ":3001",
+    "AgentsUseSSL": false,
+    "AgentsUseMutualTLS": false,
+    "AgentSSLSkipVerify": false,
+    "AgentSSLPrivateKeyFile": "",
+    "AgentSSLCertFile": "",
+    "AgentSSLCAFile": "",
+    "AgentSSLValidOUs": [],
+    "UseSSL": false,
+    "UseMutualTLS": false,
+    "SSLSkipVerify": false,
+    "SSLPrivateKeyFile": "",
+    "SSLCertFile": "",
+    "SSLCAFile": "",
+    "SSLValidOUs": [],
+    "URLPrefix": "",
+  
+    "StatusEndpoint": "/api/status",
+    "StatusSimpleHealth": true,
+    "StatusOUVerify": false,
+    "AgentPollMinutes": 60,
+    "UnseenAgentForgetHours": 6,
+    "StaleSeedFailMinutes": 60,
+    "SeedAcceptableBytesDiff": 8192,
+  
+    "AutoPseudoGTID": false,
+    "PseudoGTIDPattern": "drop view if exists `meta`.`_pseudo_gtid_hint__asc:",
+    "PseudoGTIDPatternIsFixedSubstring": true,
+    "PseudoGTIDMonotonicHint": "asc:",
+    "DetectPseudoGTIDQuery": "",
+  
+    "BinlogEventsChunkSize": 10000,
+    "SkipBinlogEventsContaining": [],
+    "ReduceReplicationAnalysisCount": false,
+    "FailureDetectionPeriodBlockMinutes": 60,
+    "FailMasterPromotionOnLagMinutes": 0,
+    "DelayMasterPromotionIfSQLThreadNotUpToDate": true,
+  
+    "RecoveryPeriodBlockSeconds": 600,
+    "RecoveryIgnoreHostnameFilters": [],
+    "RecoverMasterClusterFilters": ["*"],
+    "RecoverIntermediateMasterClusterFilters": ["*"],
+  
+    "ProcessesShellCommand":"bash",
+    "OnFailureDetectionProcesses": [
+      "echo '2  Detected {failureType} on {failureCluster}. Affected replicas: {countSlaves}' >> /tmp/recovery.log",
+      "echo '2  Begin start script args: {failedHost} {failedPort} {successorHost} {successorPort}' >> /tmp/recovery.log",
+      "/usr/bin/python3 /usr/local/data/orchestrator/script/orchestrator_prepare.py -hn OnFailureDetectionProcesses -fi {failedHost} -fp {failedPort} -c {command} "
+    ],
+    "PreGracefulTakeoverProcesses": [
+      "echo '1  Planned takeover about to take place on {failureCluster}. Master will switch to read_only' >> /tmp/recovery.log",
+      "echo '1  Begin start script args: {failedHost} {failedPort} {successorHost} {successorPort}' >> /tmp/recovery.log",
+      "/usr/bin/python3 /usr/local/data/orchestrator/script/orchestrator_prepare.py -hn PreGracefulTakeoverProcesses -fi {failedHost} -fp {failedPort} -si {successorHost} -sp {successorPort} -c {command} "
+    ],
+    "PreFailoverProcesses": [
+      "echo '3  Will recover from {failureType} on {failureCluster}  Promoted: {successorHost}:{successorPort}' >> /tmp/recovery.log",
+      "echo '3  Begin start script args: {failedHost} {failedPort} {successorHost} {successorPort}' >> /tmp/recovery.log",
+      "/usr/bin/python3 /usr/local/data/orchestrator/script/orchestrator_prepare.py -hn PreFailoverProcesses -fi {failedHost} -fp {failedPort} -c {command} "
+    ],
+    "PostMasterFailoverProcesses": [
+      "echo '4  Recovered from {failureType} on {failureCluster}. Failed: {failedHost}:{failedPort}; Promoted: {successorHost}:{successorPort}' >> /tmp/recovery.log",
+      "echo '4  Begin start script args: {failedHost} {failedPort} {successorHost} {successorPort}' >> /tmp/recovery.log",
+      "/usr/bin/python3 /usr/local/data/orchestrator/script/orchestrator_prepare.py -hn PostMasterFailoverProcesses -fi {failedHost} -fp {failedPort} -si {successorHost} -sp {successorPort} -c {command} "
+    ],
+    "PostFailoverProcesses": [
+      "echo '5  (for all types) Recovered from {failureType} on {failureCluster}. Failed: {failedHost}:{failedPort}; Successor: {successorHost}:{successorPort}' >> /tmp/recovery.log",
+      "echo '5  Begin start script args: {failedHost} {failedPort} {successorHost} {successorPort}' >> /tmp/recovery.log",
+      "/usr/bin/python3 /usr/local/data/orchestrator/script/orchestrator_prepare.py -hn PostFailoverProcesses -fi {failedHost} -fp {failedPort} -si {successorHost} -sp {successorPort} -c {command} "
+    ],
+    "PostUnsuccessfulFailoverProcesses": [
+      "echo '8  >> /tmp/recovery.log'",
+      "echo '8  Begin start script args: {failedHost} {failedPort} {successorHost} {successorPort}' >> /tmp/recovery.log",
+      "/usr/bin/python3 /usr/local/data/orchestrator/script/orchestrator_prepare.py -hn PostUnsuccessfulFailoverProcesses -fi {failedHost} -fp {failedPort} -si {successorHost} -sp {successorPort} -c {command} "
+    ],
+    "PostIntermediateMasterFailoverProcesses": [
+      "echo '6  Recovered from {failureType} on {failureCluster}. Failed: {failedHost}:{failedPort}; Successor: {successorHost}:{successorPort}' >> /tmp/recovery.log",
+      "echo '6  Begin start script args: {failedHost} {failedPort} {successorHost} {successorPort}' >> /tmp/recovery.log",
+      "/usr/bin/python3 /usr/local/data/orchestrator/script/orchestrator_prepare.py -hn PostIntermediateMasterFailoverProcesses -fi {failedHost} -fp {failedPort} -si {successorHost} -sp {successorPort} -c {command} "
+    ],
+    "PostGracefulTakeoverProcesses": [
+      "echo '7  Planned takeover complete' >> /tmp/recovery.log",
+      "echo '7  Begin start script args: {failedHost} {failedPort} {successorHost} {successorPort}' >> /tmp/recovery.log",
+      "/usr/bin/python3 /usr/local/data/orchestrator/script/orchestrator_prepare.py -hn PostGracefulTakeoverProcesses -fi {failedHost} -fp {failedPort} -si {successorHost} -sp {successorPort} -c {command} "
+    ],
+  
+    "CoMasterRecoveryMustPromoteOtherCoMaster": true,
+    "DetachLostSlavesAfterMasterFailover": true,
+    "ApplyMySQLPromotionAfterMasterFailover": true,
+    "PreventCrossDataCenterMasterFailover": true,
+    "PreventCrossRegionMasterFailover": true,
+    "MasterFailoverDetachReplicaMasterHost": false,
+    "MasterFailoverLostInstancesDowntimeMinutes": 0,
+    "PostponeReplicaRecoveryOnLagMinutes": 0,
+    "OSCIgnoreHostnameFilters": [],
+    "GraphiteAddr": "",
+    "GraphitePath": "",
+    "GraphiteConvertHostnameDotsToUnderscores": true,
+    "ConsulAddress": "",
+    "ConsulAclToken": "",
+    "ConsulKVStoreProvider": "consul",
+  
+    "RaftEnabled": true,
+    "BackendDB": "mysql",
+    "RaftBind": "10.159.65.159",
+    "RaftDataDir": "/usr/local/data/orchestrator",
+    "DefaultRaftPort": 10008,
+    "RaftNodes": [
+      "10.159.65.157",
+      "10.159.65.158",
+      "10.159.65.159"
+      ]
+  }

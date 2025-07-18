@@ -33,7 +33,7 @@ do
             shift 2
             ;;
         -u|--user)
-            search_user=$2
+            search_user=$2en 
             shift 2
             ;;
         -s|--service)
@@ -112,10 +112,10 @@ for n in ${port_info[@]}; do
         user=$(ps -p "$pid" -o user=)
         type=''
         if [[ $pid_name =~ 'docker' ]];then
-            pid_name=$(get_docker_port_info "$pid" $port)
+            pid_name=$(get_docker_port_info "$pid" "$port")
             type='docker'
         elif [[ $pid_name =~ 'java' ]];then
-            pid_name=$(get_java_port_info $pid)
+            pid_name=$(get_java_port_info "$pid")
             type='java'
         fi
         port_map="$port_map$port,$pid,$pid_name,$user,$type\n"

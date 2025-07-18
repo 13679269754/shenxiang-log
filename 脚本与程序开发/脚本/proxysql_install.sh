@@ -35,11 +35,11 @@ version=''
 passwd='admin'
 
 function log(){
-    if [ $1 == 'warning' ]; then 
+    if [ "$1" == 'warning' ]; then 
         echo -e "\e[033mWarning: $2\e[0m"
-    elif [ $1 == 'info' ]; then
+    elif [ "$1" == 'info' ]; then
         echo -e "\e[032mInfo:    $2\e[0m"
-    elif [ $1 == 'error' ]; then
+    elif [ "$1" == 'error' ]; then
         echo -e "\e[031mError:   $2\e[0m"
     else 
         echo "$1"
@@ -48,18 +48,18 @@ function log(){
 
 
 function uninstall(){
-    pg_count=`ps -ef |grep '/usr/bin/proxysql' |grep -v 'grep' |wc -l`
-    if [ $pg_count -gt 0 ];then
+    pg_count=$(ps -ef |grep '/usr/bin/proxysql' |grep -v 'grep' |wc -l)
+    if [ "$pg_count" -gt 0 ];then
         log 'error' 'proxysql进程依然存在'
         exit 0
     fi
-    wcount=`rpm -qa |grep proxysql |wc -l`
-    if [ $wcount -eq 1 ];then
-        rpm_package=`rpm -qa |grep proxysql`
-        rpm -e $rpm_package
+    wcount=$(rpm -qa |grep proxysql |wc -l)
+    if [ "$wcount" -eq 1 ];then
+        rpm_package=$(rpm -qa |grep proxysql)
+        rpm -e "$rpm_package"
     fi
-    num=`cat /etc/passwd | grep proxysql | wc -l`
-    if [ $num -eq 1 ];then
+    num=$(cat /etc/passwd | grep proxysql | wc -l)
+    if [ "$num" -eq 1 ];then
         userdel proxysql
     fi
     #移动数据目录
@@ -88,7 +88,7 @@ function usage(){
 }
 
 
-ARGS=`getopt --options p:h --long package_dir:,version:,port:,help:,data_path:,errorlog:,proxysql_servers:,passwd:, -n 'mysql_install.sh' -- "$@"`
+ARGS=$(getopt --options p:h --long package_dir:,version:,port:,help:,data_path:,errorlog:,proxysql_servers:,passwd:, -n 'mysql_install.sh' -- "$@")
 if [ $? != 0 ]; then
     echo "Terminating..."
     exit 1
@@ -157,7 +157,7 @@ done
 if [ ${#proxysql_servers[@]} -eq 0  ];then
     log info "proxysql_servers 没有输出，例如host1,host2,host3 请输入： "
     read cmd
-    if [ $cmd!='' ];then
+    if [ "$cmd"!='' ];then
         proxysql_servers=$cmd
         node_count=1
         IFS=,
@@ -171,20 +171,20 @@ if [ ${#proxysql_servers[@]} -eq 0  ];then
     fi
 fi
 
-count_package=`ls $package_dir |grep 'proxysql' |wc -l`
+count_package=$(ls "$package_dir" |grep 'proxysql' |wc -l)
 if [[ -d $package_dir ]];then
     if [[  $version ]];then
-        package_file=`ls $package_dir |grep 'proxysql' |grep "$version"`
+        package_file=$(ls "$package_dir" |grep 'proxysql' |grep "$version")
     elif [[ $count_package -eq 1 ]] ;then
-        package_file=`ls $package_dir |grep 'proxysql' `
+        package_file=$(ls "$package_dir" |grep 'proxysql' )
     else
         log info "安装包目录中有不止一个proxysql包 例子(默认)2.4.5 请输入需要安装的版本："
-        read $version
+        read "$version"
         if [[ ! $version ]];then
             version=2.4.5
-            package_file=`ls $package_dir |grep  'proxysql' |grep "$version"`
+            package_file=$(ls "$package_dir" |grep  'proxysql' |grep "$version")
         else
-            package_file=`ls $package_dir |grep  'proxysql' |grep "$version"`
+            package_file=$(ls "$package_dir" |grep  'proxysql' |grep "$version")
         fi
     fi
 else
@@ -198,15 +198,15 @@ fi
 
 function yum_install(){
 
-    if [[ -e $package_dir/$package_file ]] && [ $package_file ];then
+    if [[ -e $package_dir/$package_file ]] && [ "$package_file" ];then
         echo "rpm包安装$package_dir/$package_file"
         echo "------------------"
         echo "yum install -y $package_dir/$package_file"
-        yum install -y $package_dir/$package_file
+        yum install -y "$package_dir"/"$package_file"
     else
         echo "是否下载yum包,并安装y/n ,默认不下载并退出 :"
         read cmd
-        if [ $cmd = 'y' ] || [ $cmd = 'Y' ];then 
+        if [ "$cmd" = 'y' ] || [ "$cmd" = 'Y' ];then 
             cat > /etc/yum.repos.d/proxysql.repo << EOF
 [proxysql]
 name=ProxySQL YUM repository
@@ -216,20 +216,20 @@ gpgkey=https://repo.proxysql.com/ProxySQL/proxysql-2.4.x/repo_pub_key
 EOF
             echo "yum安装proxysql ......"    
             echo  "yum install -y proxysql-$version"
-            yum install -y proxysql-$version 
+            yum install -y proxysql-"$version" 
             if [ $? = 0 ];then
                 log error "yum安装proxysql 失败"
                 exit 0
             fi
         fi
     fi
-    mkdir -p $data_path/conf  
+    mkdir -p "$data_path"/conf  
 }
 
 
 function user_init(){
-    num=`cat /etc/passwd | grep proxysql | wc -l`
-    if [ $num -eq 1 ];then
+    num=$(cat /etc/passwd | grep proxysql | wc -l)
+    if [ "$num" -eq 1 ];then
         userdel proxysql
     fi
 
@@ -243,14 +243,14 @@ function user_init(){
     killall proxysql' > $PROXYSQL_HOME/proxysql_stop.sh
     echo -e "/usr/local/data/mysql/bin/mysql -uadmin -p -h127.0.0.1 -P6032 --prompt='Admin> ' --default-auth=mysql_native_password" > $PROXYSQL_HOME/proxysql_login.sh
     
-    chown -R proxysql:proxysql $data_path
+    chown -R proxysql:proxysql "$data_path"
     chmod u+x $PROXYSQL_HOME/proxysql*.sh
     chown -R proxysql:proxysql $PROXYSQL_HOME
 }
 
 
 function  conf_init(){
-    cat >  $data_path/conf/proxysql.cnf << EOF
+    cat >  "$data_path"/conf/proxysql.cnf << EOF
     datadir="${data_path}"
     errorlog="${errorlog}"
     
@@ -323,8 +323,8 @@ function node_cluster(){
         cluster_node="proxysql_server${i}"
         cluster_conf="$cluster_conf {\n    hostname=\"${!cluster_node}\"\n    port=$port\n    weight=0\n    comment=\"proxysql${i}\"\n }\n"
     cluster_conf="$cluster_conf)"
-    cluster_conf_format=`echo -e $cluster_conf`
-    echo -e "$cluster_conf" >> $data_path/conf/proxysql.cnf
+    cluster_conf_format=$(echo -e $cluster_conf)
+    echo -e "$cluster_conf" >> "$data_path"/conf/proxysql.cnf
 }
 
 function conf_bulid(){
@@ -334,9 +334,9 @@ function conf_bulid(){
 
 
 function systemd_updata(){
-   service_path=`rpm -ql proxysql-2.4.5-1.x86_64 |grep proxysql.service`
-   sed -i "s|PIDFile=/var/lib/proxysql/proxysql.pid|PIDFile=${data_path}/proxysql.pid|g" $service_path
-   sed -i "s|/etc/proxysql.cnf|$data_path/conf/proxysql.cnf|g" $service_path
+   service_path=$(rpm -ql proxysql-2.4.5-1.x86_64 |grep proxysql.service)
+   sed -i "s|PIDFile=/var/lib/proxysql/proxysql.pid|PIDFile=${data_path}/proxysql.pid|g" "$service_path"
+   sed -i "s|/etc/proxysql.cnf|$data_path/conf/proxysql.cnf|g" "$service_path"
 }
 
 uninstall

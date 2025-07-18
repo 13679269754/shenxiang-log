@@ -1,0 +1,110 @@
+## 航天云外网
+redis-后端
+        58.216.47.139        26100  
+        58.216.47.139        26101  
+        58.216.47.139        26102  
+redis-后端 哨兵主名称   
+        master-hty-6100 
+redis 后端密码  
+        bTcAsV3mTJzZGanZJaJt    
+
+
+redis 算法  
+        58.216.47.139        6000   
+redis 算法密码  
+        1hpAACExDKv5yZhN    
+
+
+mysql 后端  
+        58.216.47.139        6033   
+        用户：hty_app_dzj_rwuser    
+
+算法mysql-主库  
+        58.216.47.139        3106   
+        用户： 与原来保持一致 (不加前缀)    
+
+算法mysql-从库  
+        58.216.47.139        3107   
+        用户 ： 与原来保持一致 (不加前缀)   
+
+elasticsearch   
+        58.216.47.136        9200   
+        58.216.47.137        9200   
+        58.216.47.139        9200   
+        用户： dzj_user 
+        密码：pXyCKVyyX6V3VoA8nH    
+
+Infulxdb    
+        58.216.47.139        8086   
+        用户 : dzjuser  
+        token : bx8NQKi_DP94m8PUG_JwUxXvxHkixvd4LQMcbKktQZ9irF7B1ADiG07o53h_sFm5bqXeFlnmztNVAYtYzLMlRg==    
+
+Neo4j   
+        58.216.47.139        7474   
+        用户 : neo4j    
+        密码 : ibBJhXYunogomjP0 
+
+orientdb    
+        58.216.47.136        2424   
+        58.216.47.137        2424   
+        58.216.47.139        2424   
+        用户 : writer
+        密码 : UpZnQ5PAewwRGfeju    
+
+
+
+
+
+## 航天云内网
+
+redis-后端  
+        10.159.65.123   26100   
+        10.159.65.124   26100
+        10.159.65.125   26100   
+redis-后端 哨兵主名称   
+        master-hty-6100 
+redis 后端密码  
+        bTcAsV3mTJzZGanZJaJt    
+
+redis-算法  
+        10.159.65.123   6000    
+redis 算法密码  
+        1hpAACExDKv5yZhN    
+
+
+mysql   
+        10.159.65.160	6033    
+        用户：hty_app_dzj_rwuser    
+
+大数据mysql-主库    
+        10.159.65.126	3106    
+        用户： hty_* (加前缀)   
+
+大数据mysql-从库    
+        10.159.65.127	3106    
+        用户 ： hty_* (加前缀)  
+
+elasticsearch   
+        10.159.65.129	9200    
+        10.159.65.130	9200    
+        10.159.65.131	9200    
+        用户： dzj_user
+        密码：pXyCKVyyX6V3VoA8nH
+
+Infulxdb
+        10.159.65.132	8086	
+        用户 : dzj_health_action_user
+        token : gSGbnjV0ZulGDaqH9EQwnprUzL2P_auDeXnJVte2kGUgtEtzdh3-O_WCJAFfTH2Ez4ugg9qAGc-XQb0ZnRwL6Q==
+
+Neo4j
+        10.159.65.133	7474	
+        用户 : neo4j
+        密码 : ibBJhXYunogomjP0
+
+orientdb
+        10.159.65.134	2480	
+        10.159.65.135	2480	
+        10.159.65.136	2480	
+        用户 : writer
+        密码 : UpZnQ5PAewwRGfeju
+

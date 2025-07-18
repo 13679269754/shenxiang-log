@@ -103,7 +103,7 @@ ALTER UNDO TABLESPACE tablespace_name SET ACTIVE;
 
 ##### 3.2.1 Orphan Intermediate Tables
 
-MySQL 5.7中，如果在使用ALGORITHM=INPLACE的方式执行ALTER TABLE操作的中间过程中出现了异常，则相关的中间表文件（Orphan Intermediate Tables）可能不会被清理，遗留在系统中占用着存储空间。另外，如果空的通用表空间中遗留有类似的中间表文件，则会导致无法删除该通用表空间。**那要如何识别并删除异常情况遗留的中间表文件呢？**
+**MySQL 5.7中**，如果在使用ALGORITHM=INPLACE的方式执行ALTER TABLE操作的中间过程中出现了异常，则相关的中间表文件（Orphan Intermediate Tables）可能不会被清理，遗留在系统中占用着存储空间。另外，如果空的通用表空间中遗留有类似的中间表文件，则会导致无法删除该通用表空间。**那要如何识别并删除异常情况遗留的中间表文件呢？**
 
 ![](https://github.com/13679269754/shenxiang-log/blob/main/image-cubox/2025-1-14%2010-52-29/b07cdf98-9065-43cb-ba68-fb1adcade5f6.png?raw=true)
 
@@ -111,7 +111,7 @@ MySQL 5.7中，如果在使用ALGORITHM=INPLACE的方式执行ALTER TABLE操作�
 
 遗留的中间表名字以#sql-ib为前缀，如：#sql-ib6754-742530817.ibd，与之相关的frm文件以#sql-为前缀，如：#sql-19184-a6.frm。
 
-可以通过查询information\_schema.innodb\_sys\_tables确认是否有遗留的中间表文件：
+**可以通过查询information\_schema.innodb\_sys\_tables确认是否有遗留的中间表文件**：
 
 如果有遗留的中间表，则可以通过如下步骤进行删除：
 

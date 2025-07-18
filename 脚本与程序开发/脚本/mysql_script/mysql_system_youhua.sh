@@ -3,10 +3,10 @@
 # 修改 I/O 调度器为 deadline 或 noop
 echo "Which I/O scheduler do you want to use: deadline or noop?"
 read scheduler
-echo "$scheduler" > /sys/block/sda/queue/scheduler
+echo "$scheduler" > /sys/block/sda/queue/scheduler # 若设置为 noop（适合 SSD）或 deadline（适合 HDD）
 
 # 修改 vm.swappiness 参数
-echo "vm.swappiness = 5" >> /etc/sysctl.conf
+echo "vm.swappiness = 0" >> /etc/sysctl.conf
 
 # 修改 vm.dirty_background_ratio 和 vm.dirty_ratio 参数
 echo "vm.dirty_background_ratio = 5" >> /etc/sysctl.conf

@@ -275,3 +275,9 @@ Finally, proxysql terminates the session (`"event":"MySQL_Client_Close"`), that 
   "username":"sbtest"
 }
 ```
+
+## 实践
+
+[ProxySQL 审计](https://www.cnblogs.com/hahaha111122222/p/16394114.html)
+
+

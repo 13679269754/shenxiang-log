@@ -16,12 +16,19 @@ curl -O https://dl.influxdata.com/influxdb/releases/influxdb2-2.7.4_linux_amd64.
 
 ## 解压到指定路径
 ```bash
-tar -xvzf ./influxdb2-2.7.4_linux_amd64.tar.gz -C /usr/local/data/influxdb2-server
+
+mkdir /usr/local/data/
+
+tar -xvzf /root/soft/influxdb2-2.7.4_linux_amd64.tar.gz -C /usr/local/data/
+
+mv /usr/local/data/influxdb2-2.7.4 /usr/local/data/influxdb2
+
 ```
 
 ## 配置环境变量
-```bash （一般配置在~/.bash_profile）
-INFLUXDB_HOME=/usr/local/data/influxdb2-server
+（一般配置在~/.bash_profile）
+```bash 
+INFLUXDB_HOME=/usr/local/data/influxdb2-service
 INFLUXD_CONFIG_PATH=/usr/local/data/influxdb2/conf
 INFLUX_CONFIGS_PATH=/usr/local/data/influxdb2/conf/influx_conf
 INFLUX_HOST=http:
@@ -32,8 +39,14 @@ export INFLUXD_CONFIG_PATH
 export INFLUX_CONFIGS_PATH
 ```
 
+## 目录创建
+
+```bash
+mkdir  -p /usr/local/data/influxdb2/conf
+```
+
 ## 编写配置文件
-配置文件模板 $INFLUXD_CONFIG_PATH/config.yaml
+配置文件模板 $INFLUXD_CONFIG_PATH/influx_conf.yaml
 ```bash
 bolt-path: /usr/local/data/influxdb2/data/influxd.bolt
 engine-path: /usr/local/data/influxdb2/data/engine
@@ -106,19 +119,38 @@ store: disk
 #vault-token: ''
 ```
 >关注
-> 内存配置
-> `query-max-memory-bytes`
-> 端口配置
-> `http-bind-address`
-> tls配置(官方建议开启)
+> 内存配置  
+> `query-max-memory-bytes`  
+> 端口配置  
+> `http-bind-address`  
+> tls配置(官方建议开启)  
 > [Enable TLS encryption](https://docs.influxdata.com/influxdb/v2/admin/security/enable-tls/#configure-influxdb-to-use-tls)
+
+## 用户添加等
+
+```bash
+useradd influxdb
+
+chown -R influxdb. /usr/local/data
+
+echo "influxd 1 >> /usr/local/data/influxdb2/log/influxdb.log &"  > /home/influxdb/start.sh
+ 
+echo "pkill influxd" > /home/influxdb/stop.sh
+
+```
 
 ## 启动服务
 
-`influxd 1`
+```bash
+su - influxdb
+./start.sh
+```
 
 ## 防火墙端口放开
+
 
 ## 创建用户
 
 https://ip:port
+
+参照[Set up InfluxDB](https://docs.influxdata.com/influxdb/v2/get-started/setup/)

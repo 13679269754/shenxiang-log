@@ -8,7 +8,8 @@
 [toc]
 
 ## 一.安装elasticsearch1.1环境设置
-修改最大文件数以及线程数vim /etc/security/limits.conf
+修改最大文件数以及线程数  
+`vim /etc/security/limits.conf`
 
 ```bash
 * hard core 0
@@ -20,9 +21,11 @@
 * soft memlock unlimited
 * - as unlimited
 # 备注：* 表示对用户进行通配，nofile 最大打开文件数目，nproc 最大打开线程数目
-```
+``` 
 
-修改文件句柄附全部sysctl.conf文件
+`ulimit -a`
+
+修改文件句柄附全部sysctl.conf文件  
 `vim  /etc/sysctl.conf`
 ```bash
 fs.file-max = 4194304
@@ -83,6 +86,11 @@ net.ipv4.conf.lo.arp_announce=2
 
 为关键指标 默认值为65530会导致报错。
 
+```bash
+# 生效
+sysctl -p
+```
+
 ### 1.2开始安装ES
 
 [ElasticSearch kibana 的安装和使用方法是什么？](https://www.zhihu.com/question/485968637/answer/2933369226)
@@ -118,8 +126,18 @@ discovery.zen.ping.unicast.hosts: ip:9300
 
 #### 1.生成p12认证文件
 
-`./bin/elasticsearch-certutil ca./bin/elasticsearch-certutil cert --ca elastic-stack-ca.p12`
+```bash
+./bin/elasticsearch-certutil ca  
+./bin/elasticsearch-certutil cert --ca elastic-stack-ca.p12
+```
 
+如果`./bin/elasticsearch-certutil cert --ca elastic-stack-ca.p12`添加了密码
+需要在es keystore 中添加密码  
+```bash
+./bin/elasticsearch-keystore add xpack.security.transport.ssl.keystore.secure_password
+
+./bin/elasticsearch-keystore add xpack.security.transport.ssl.truststore.secure_password
+```
 
 #### 2.开启用户 认证
 ```bash
@@ -133,11 +151,21 @@ xpack.security.transport.ssl.truststore.path: elastic-certificates.p12
 xpack.security.transport.filter.allow: "192.168.*"
 ```
 
+
+
 #### 3.添加用户
 
-启动es  
+启动es启动  
+
+``` bash
+useradd esuser 
+su - esuser
+echo export ES_PATH_CONF=/usr/local/data/elasticsearch-server/config/ && elasticsearch -d -p /usr/local/data/elasticsearch-data/es9200.pid > start.sh
+```
+
+es 添加用戶
 ```bash
-./bin/elasticsearch-keystore create
+# ./bin/elasticsearch-keystore create
 ./bin/elasticsearch-setup-passwords interactive
 ```
 
@@ -145,8 +173,18 @@ xpack.security.transport.filter.allow: "192.168.*"
 需要使用1.3生成的p12文件  
 TLS
 ```bash
-xpack.security.http.ssl.enabled: truexpack.security.http.ssl.keystore.path: elastic-certificates.p12
+tee -a /usr/local/data/config/elasticsearch-server/elasticsearch.yml  << EOF
+xpack.security.http.ssl.enabled: true
+xpack.security.http.ssl.keystore.path: elastic-certificates.p12
 xpack.security.http.ssl.truststore.path: elastic-certificates.p12
+EOF
+```
+
+同理如果elastic-certificates.p12 是有密码的需要在es keystore 中添加密码才可以
+```bash
+./bin/elasticsearch-keystore add xpack.security.http.ssl.keystore.secure_password
+
+./bin/elasticsearch-keystore add xpack.security.http.ssl.truststore.secure_password
 ```
 
 ### 1.5 命令行创建用户和角色
@@ -192,33 +230,47 @@ kibana.index: ".kibana"
 
 #### 1.2.2 ES开启了xpack用户验证
 kibana 配置文件中添加
-`elasticsearch.username: "your_username"elasticsearch.password: "your_password"`
+```bash
+elasticsearch.username: "your_username"
+elasticsearch.password: "your_password"
+```
 
 #### 1.2.3kibana安全传输
 [Encrypting communications in Kibana](https://www.elastic.co/guide/en/kibana/7.6/configuring-tls.html#configuring-tls-kib-es)
 
 ##### 1.2.3.1ES开启了SSL\TLS,kibana后端加密
 生成pem 文件
-`openssl pkcs12 -in elastic-certificates.p12 -cacerts -nokeys -out elasticsearch-ca.pem`
+```bash
+openssl pkcs12 -in /usr/local/data/elasticsearch-server/config/cert/elastic-certificates.p12 -cacerts -nokeys -out elasticsearch-ca.pem
+```
 kibana.yml 添加如下配置
 ```bash
+tee -a /usr/local/data/kibana-server/config/kibana.yml << EOF
 elasticsearch.hosts: "https://172.29.28.195:9200" #修改为https
-elasticsearch.ssl.certificateAuthorities: "/data/kibana/kibana/config/elasticsearch-ca.pem"elasticsearch.ssl.verificationMode: certificate
+elasticsearch.ssl.certificateAuthorities: "/usr/local/data/kibana-server/config/elasticsearch-ca.pem"
+elasticsearch.ssl.verificationMode: certificate
+EOF
 ```
 
 ##### 1.2.3.2kibana 开始TLS,kibana前端(浏览器)加密传输
-<1>获取PKCS#12 文件
-`bin/elasticsearch-certutil cert -name kibana-server -dns localhost,127.0.0.1`
+<1>获取PKCS#12 文件  
+`bin/elasticsearch-certutil cert -name kibana-server -dns localhost,127.0.0.1`  
 <2>添加密码到kibana密码管理中  
-`bin/kibana-keystore createbin/kibana-keystore add server.ssl.keystore.password`  生成p12文件时没有给密码，输入空密码就可以了
+```bash
+bin/kibana-keystore create
+bin/kibana-keystore add server.ssl.keystore.password
+```    
+生成p12文件时没有给密码，输入空密码就可以了  
 
-<3>修改配置文件添加https
-`server.ssl.keystore.path: "/data/kibana/kibna/config/kibana-server.p12"`
-`server.ssl.enabled: true`
+<3>修改配置文件添加https  
+`server.ssl.keystore.path: "/data/kibana/kibna/config/kibana-server.p12"`  
+`server.ssl.enabled: true`  
 
 ### 1.3 kibana与ES双向认证TLS
-[Mutual TLS authentication between Kibana and Elasticsearch](https://www.elastic.co/guide/en/kibana/7.6/elasticsearch-mutual-tls.html)  
+[Mutual TLS authentication between Kibana and Elasticsearch](https://www.elastic.co/guide/en/kibana/7.6/elasticsearch-mutual-tls.html) 
+
 `bin/elasticsearch-certutil cert -ca elastic-stack-ca.p12 -name kibana-client -dns localhost,127.0.0.1  `
+
 注意elastic-stack-ca.p12 需要在 ES主目录   
 得到kibana-client.p12文件  
 `openssl pkcs12 -in kibana-client.p12 -cacerts -nokeys -out kibana-ca.crt ` 
@@ -232,14 +284,16 @@ xpack.security.http.ssl.client_authentication: "optional"
 ```
 
 kibana.yml添加  
-`elasticsearch.ssl.keystore.path: "/data/kibana/kibana/config/kibana-client.p12"`    
+`elasticsearch.ssl.keystore.path: "/data/kibana/kibana/config/kibana-client.p12"`     
 并添加bin/kibana-keystore add elasticsearch.ssl.keystore.password  
 
 ### 1.4 kibana 日志配置  
 配置文件中增加需要配置  
 
 ```bash
-# kibana日志文件存储路径，默认stdoutlogging.dest: stdout
+tee -a /usr/local/data/kibana-server/config/kibana.yml << EOF
+# kibana日志文件存储路径，默认stdout
+logging.dest: stdout
 
 # 此值为true时，禁止所有日志记录输出
 # 默认false
@@ -252,6 +306,7 @@ logging.quiet: false
 # 此值为true时，记录所有事件，包括系统使用信息和所有请求
 # 默认false
 logging.verbose: false
+EOF
 ```
 
 ### 1.5 kibana监控ES状态

@@ -1,0 +1,392 @@
+2023-11-09 17:39:03 ERROR [367200-Thread-1] log.log_response line 224: Internal Server Error: /execl
+Traceback (most recent call last):
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\urls\base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+KeyError: 'djdt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\debug_toolbar\middleware.py", line 74, in __call__
+    rendered = toolbar.render_toolbar()
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\debug_toolbar\toolbar.py", line 82, in render_toolbar
+    return render_to_string("debug_toolbar/base.html", context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\test\utils.py", line 100, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\defaulttags.py", line 315, in render
+    return nodelist.render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\defaulttags.py", line 449, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\urls\base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'djdt' is not a registered namespace
+2023-11-09 17:39:03 ERROR [367200-Thread-1] basehttp.log_message line 161: "GET /execl HTTP/1.1" 500 131659
+2023-11-09 17:39:12 ERROR [367200-Thread-3] log.log_response line 224: Internal Server Error: /excel/
+Traceback (most recent call last):
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\urls\base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+KeyError: 'djdt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\debug_toolbar\middleware.py", line 74, in __call__
+    rendered = toolbar.render_toolbar()
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\debug_toolbar\toolbar.py", line 82, in render_toolbar
+    return render_to_string("debug_toolbar/base.html", context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\test\utils.py", line 100, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\defaulttags.py", line 315, in render
+    return nodelist.render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\defaulttags.py", line 449, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\urls\base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'djdt' is not a registered namespace
+2023-11-09 17:39:12 ERROR [367200-Thread-3] basehttp.log_message line 161: "GET /excel/ HTTP/1.1" 500 131532
+2023-11-09 17:39:19 ERROR [367200-Thread-3] log.log_response line 224: Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\urls\base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+KeyError: 'djdt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\debug_toolbar\middleware.py", line 74, in __call__
+    rendered = toolbar.render_toolbar()
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\debug_toolbar\toolbar.py", line 82, in render_toolbar
+    return render_to_string("debug_toolbar/base.html", context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\test\utils.py", line 100, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\defaulttags.py", line 315, in render
+    return nodelist.render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\defaulttags.py", line 449, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\urls\base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'djdt' is not a registered namespace
+2023-11-09 17:39:19 ERROR [367200-Thread-3] basehttp.log_message line 161: "GET / HTTP/1.1" 500 131596
+2023-11-09 17:40:12 ERROR [368580-Thread-1] log.log_response line 224: Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\urls\base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+KeyError: 'djdt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\debug_toolbar\middleware.py", line 74, in __call__
+    rendered = toolbar.render_toolbar()
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\debug_toolbar\toolbar.py", line 82, in render_toolbar
+    return render_to_string("debug_toolbar/base.html", context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\test\utils.py", line 100, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\defaulttags.py", line 315, in render
+    return nodelist.render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\defaulttags.py", line 449, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\urls\base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'djdt' is not a registered namespace
+2023-11-09 17:40:12 ERROR [368580-Thread-1] basehttp.log_message line 161: "GET / HTTP/1.1" 500 130944
+2023-11-09 17:40:22 ERROR [368580-Thread-3] log.log_response line 224: Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\urls\base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+KeyError: 'djdt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\debug_toolbar\middleware.py", line 74, in __call__
+    rendered = toolbar.render_toolbar()
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\debug_toolbar\toolbar.py", line 82, in render_toolbar
+    return render_to_string("debug_toolbar/base.html", context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\test\utils.py", line 100, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\defaulttags.py", line 315, in render
+    return nodelist.render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\defaulttags.py", line 449, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\urls\base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'djdt' is not a registered namespace
+2023-11-09 17:40:22 ERROR [368580-Thread-3] basehttp.log_message line 161: "GET / HTTP/1.1" 500 130944
+2023-11-09 17:41:58 ERROR [368580-Thread-5] log.log_response line 224: Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\urls\base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+KeyError: 'djdt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\debug_toolbar\middleware.py", line 74, in __call__
+    rendered = toolbar.render_toolbar()
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\debug_toolbar\toolbar.py", line 82, in render_toolbar
+    return render_to_string("debug_toolbar/base.html", context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\test\utils.py", line 100, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\defaulttags.py", line 315, in render
+    return nodelist.render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\defaulttags.py", line 449, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\urls\base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'djdt' is not a registered namespace
+2023-11-09 17:41:58 ERROR [368580-Thread-5] basehttp.log_message line 161: "GET / HTTP/1.1" 500 130944
+2023-11-09 17:42:23 ERROR [368580-Thread-7] log.log_response line 224: Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\urls\base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+KeyError: 'djdt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\debug_toolbar\middleware.py", line 74, in __call__
+    rendered = toolbar.render_toolbar()
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\debug_toolbar\toolbar.py", line 82, in render_toolbar
+    return render_to_string("debug_toolbar/base.html", context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\test\utils.py", line 100, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\defaulttags.py", line 315, in render
+    return nodelist.render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\defaulttags.py", line 449, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\urls\base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'djdt' is not a registered namespace
+2023-11-09 17:42:23 ERROR [368580-Thread-7] basehttp.log_message line 161: "GET / HTTP/1.1" 500 130944
+2023-11-09 17:51:53 ERROR [368720-Thread-1] log.log_response line 224: Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\urls\base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+KeyError: 'djdt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\debug_toolbar\middleware.py", line 74, in __call__
+    rendered = toolbar.render_toolbar()
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\debug_toolbar\toolbar.py", line 82, in render_toolbar
+    return render_to_string("debug_toolbar/base.html", context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\test\utils.py", line 100, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\defaulttags.py", line 315, in render
+    return nodelist.render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\template\defaulttags.py", line 449, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\urls\base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'djdt' is not a registered namespace
+2023-11-09 17:51:53 ERROR [368720-Thread-1] basehttp.log_message line 161: "GET / HTTP/1.1" 500 130944
+2023-11-09 18:03:15 ERROR [369392-Thread-1] log.log_response line 224: Internal Server Error: /teachers/
+Traceback (most recent call last):
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\polls\views.py", line 24, in show_teachers
+    sno = int(request.GET.get('sno'))
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'NoneType'
+2023-11-09 18:03:15 ERROR [369392-Thread-1] basehttp.log_message line 161: "GET /teachers/ HTTP/1.1" 500 75753
+2023-11-09 18:03:27 ERROR [369392-Thread-3] log.log_response line 224: Internal Server Error: /teachers/
+Traceback (most recent call last):
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\vote\polls\views.py", line 24, in show_teachers
+    sno = int(request.GET.get('sno'))
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'NoneType'
+2023-11-09 18:03:27 ERROR [369392-Thread-3] basehttp.log_message line 161: "GET /teachers/ HTTP/1.1" 500 75753
+2023-11-09 18:03:33 WARNING [369392-Thread-5] basehttp.log_message line 161: "GET /static/images/hot-icon-small.png HTTP/1.1" 404 1834
+2023-11-10 11:04:28 WARNING [385620-Thread-1] log.log_response line 224: Not Found: /api/subject2/
+2023-11-10 11:04:28 WARNING [385620-Thread-1] basehttp.log_message line 161: "GET /api/subject2/ HTTP/1.1" 404 12165
+2023-11-10 11:04:30 WARNING [385620-Thread-1] log.log_response line 224: Not Found: /api/subject2/
+2023-11-10 11:04:30 WARNING [385620-Thread-1] basehttp.log_message line 161: "GET /api/subject2/ HTTP/1.1" 404 12165
+2023-11-10 11:04:31 WARNING [385620-Thread-1] log.log_response line 224: Not Found: /api/subject2/
+2023-11-10 11:04:31 WARNING [385620-Thread-1] basehttp.log_message line 161: "GET /api/subject2/ HTTP/1.1" 404 12165
+2023-11-10 11:04:31 WARNING [385620-Thread-1] log.log_response line 224: Not Found: /api/subject2/
+2023-11-10 11:04:31 WARNING [385620-Thread-1] basehttp.log_message line 161: "GET /api/subject2/ HTTP/1.1" 404 12165
+2023-11-10 11:04:32 WARNING [385620-Thread-1] log.log_response line 224: Not Found: /api/subject2/
+2023-11-10 11:04:32 WARNING [385620-Thread-1] basehttp.log_message line 161: "GET /api/subject2/ HTTP/1.1" 404 12165
+2023-11-10 11:04:34 WARNING [385620-Thread-1] log.log_response line 224: Not Found: /api/subjects
+2023-11-10 11:04:34 WARNING [385620-Thread-1] basehttp.log_message line 161: "GET /api/subjects HTTP/1.1" 404 12161
+2023-11-10 11:06:33 WARNING [384628-Thread-1] basehttp.log_message line 161: "GET /static/images/hot-icon-small.png HTTP/1.1" 404 1834
+2023-11-10 11:06:34 WARNING [384628-Thread-2] log.log_response line 224: Not Found: /api/subjects/
+2023-11-10 11:06:34 WARNING [384628-Thread-2] basehttp.log_message line 161: "GET /api/subjects/ HTTP/1.1" 404 12165
+2023-11-10 15:42:50 WARNING [386376-Thread-1] log.log_response line 224: Not Found: /subjects
+2023-11-10 15:42:50 WARNING [386376-Thread-1] basehttp.log_message line 161: "GET /subjects HTTP/1.1" 404 12154
+2023-11-10 15:43:07 WARNING [386376-Thread-5] log.log_response line 224: Not Found: /api/teachers/
+2023-11-10 15:43:07 WARNING [386376-Thread-5] basehttp.log_message line 161: "GET /api/teachers/ HTTP/1.1" 404 14243
+2023-11-10 15:43:36 WARNING [386376-Thread-12] log.log_response line 224: Not Found: /api/subject/
+2023-11-10 15:43:36 WARNING [386376-Thread-12] basehttp.log_message line 161: "GET /api/subject/ HTTP/1.1" 404 12170
+2023-11-10 15:44:27 WARNING [386376-Thread-13] log.log_response line 224: Not Found: /api/teachers/
+2023-11-10 15:44:27 WARNING [386376-Thread-13] basehttp.log_message line 161: "GET /api/teachers/ HTTP/1.1" 404 14243
+2023-11-10 15:45:41 WARNING [386376-Thread-15] log.log_response line 224: Not Found: /api/teachers/
+2023-11-10 15:45:41 WARNING [386376-Thread-15] basehttp.log_message line 161: "GET /api/teachers/ HTTP/1.1" 404 14243
+2023-11-10 15:45:43 WARNING [386376-Thread-15] log.log_response line 224: Not Found: /api/teachers/
+2023-11-10 15:45:43 WARNING [386376-Thread-15] basehttp.log_message line 161: "GET /api/teachers/ HTTP/1.1" 404 14243
+2023-11-10 15:45:44 WARNING [386376-Thread-15] log.log_response line 224: Not Found: /api/teachers/
+2023-11-10 15:45:44 WARNING [386376-Thread-15] basehttp.log_message line 161: "GET /api/teachers/ HTTP/1.1" 404 14242
+2023-11-10 15:45:44 WARNING [386376-Thread-15] log.log_response line 224: Not Found: /api/teachers/
+2023-11-10 15:45:44 WARNING [386376-Thread-15] basehttp.log_message line 161: "GET /api/teachers/ HTTP/1.1" 404 14242
+2023-11-10 15:52:55 WARNING [386376-Thread-24] log.log_response line 224: Not Found: /api/teachers/
+2023-11-10 15:52:55 WARNING [386376-Thread-24] basehttp.log_message line 161: "GET /api/teachers/ HTTP/1.1" 404 14243
+2023-11-10 15:53:33 WARNING [386376-Thread-26] log.log_response line 224: Not Found: /api/teachers/
+2023-11-10 15:53:33 WARNING [386376-Thread-26] basehttp.log_message line 161: "GET /api/teachers/ HTTP/1.1" 404 14243
+2023-11-10 15:53:34 WARNING [386376-Thread-26] log.log_response line 224: Not Found: /api/teachers/
+2023-11-10 15:53:34 WARNING [386376-Thread-26] basehttp.log_message line 161: "GET /api/teachers/ HTTP/1.1" 404 14243
+2023-11-10 15:53:35 WARNING [386376-Thread-28] log.log_response line 224: Not Found: /api/teachers/
+2023-11-10 15:53:35 WARNING [386376-Thread-28] basehttp.log_message line 161: "GET /api/teachers/ HTTP/1.1" 404 14243
+2023-11-10 15:53:35 WARNING [386376-Thread-28] log.log_response line 224: Not Found: /api/teachers/
+2023-11-10 15:53:35 WARNING [386376-Thread-28] basehttp.log_message line 161: "GET /api/teachers/ HTTP/1.1" 404 14243
+2023-11-10 15:53:46 WARNING [386376-Thread-30] log.log_response line 224: Not Found: /api/teachers/
+2023-11-10 15:53:46 WARNING [386376-Thread-30] basehttp.log_message line 161: "GET /api/teachers/?format=json HTTP/1.1" 404 0
+2023-11-10 15:53:50 WARNING [386376-Thread-30] log.log_response line 224: Not Found: /api/teachers/
+2023-11-10 15:53:50 WARNING [386376-Thread-30] basehttp.log_message line 161: "GET /api/teachers/ HTTP/1.1" 404 14242
+2023-11-10 15:53:51 WARNING [386376-Thread-30] log.log_response line 224: Not Found: /api/teachers/
+2023-11-10 15:53:51 WARNING [386376-Thread-30] basehttp.log_message line 161: "GET /api/teachers/?format=api HTTP/1.1" 404 14298
+2023-11-10 15:53:55 WARNING [386376-Thread-32] log.log_response line 224: Not Found: /api/teachers/
+2023-11-10 15:53:55 WARNING [386376-Thread-32] basehttp.log_message line 161: "GET /api/teachers/?format=json HTTP/1.1" 404 0
+2023-11-10 15:53:56 WARNING [386376-Thread-32] log.log_response line 224: Not Found: /api/teachers/
+2023-11-10 15:53:56 WARNING [386376-Thread-32] basehttp.log_message line 161: "GET /api/teachers/?format=json HTTP/1.1" 404 0
+2023-11-10 15:56:49 WARNING [386376-Thread-36] log.log_response line 224: Not Found: /api/teachers/
+2023-11-10 15:56:49 WARNING [386376-Thread-36] basehttp.log_message line 161: "GET /api/teachers/ HTTP/1.1" 404 14243
+2023-11-10 15:57:01 WARNING [386376-Thread-38] log.log_response line 224: Not Found: /api/teachers/
+2023-11-10 15:57:01 WARNING [386376-Thread-38] basehttp.log_message line 161: "GET /api/teachers/ HTTP/1.1" 404 14243
+2023-11-10 15:57:34 WARNING [368712-Thread-1] log.log_response line 224: Not Found: /api/teachers/
+2023-11-10 15:57:34 WARNING [368712-Thread-1] basehttp.log_message line 161: "GET /api/teachers/ HTTP/1.1" 404 14243
+2023-11-10 15:57:40 WARNING [368712-Thread-3] log.log_response line 224: Not Found: /api/teachers/
+2023-11-10 15:57:40 WARNING [368712-Thread-3] basehttp.log_message line 161: "GET /api/teachers/ HTTP/1.1" 404 14243

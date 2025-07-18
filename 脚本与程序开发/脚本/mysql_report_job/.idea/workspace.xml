@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2d81fffa-aae7-4b97-af2b-7896be19c678" name="更改" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2fR9SGbAspKfX7nYiRmCeERiyLh" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/shenxiang.DAZHUANJIA/PycharmProjects/mysql_report_job&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Python.mysql_reporter">
+    <configuration name="encrypt_data" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="mysql_report_job" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Remote Python 3.8.16 (sftp://root@172.29.29.100:22/root/.virtualenvs/mysql_report_job/bin/python) (2)" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\mysql_report_job" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <PathMappingSettings>
+        <option name="pathMappings">
+          <list>
+            <mapping local-root="$PROJECT_DIR$" remote-root="/root/remote_pycharm/mysql_report_job" />
+          </list>
+        </option>
+      </PathMappingSettings>
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/encrypt_data.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="mysql_reporter" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="mysql_report_job" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Remote Python 3.8.16 (sftp://root@172.29.29.100:22/root/.virtualenvs/mysql_report_job/bin/python)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <PathMappingSettings>
+        <option name="pathMappings">
+          <list>
+            <mapping local-root="$PROJECT_DIR$" remote-root="/root/remote_pycharm/mysql_report_job" />
+          </list>
+        </option>
+      </PathMappingSettings>
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mysql_reporter.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="mysql_reporter_init" type="PythonConfigurationType" factoryName="Python">
+      <module name="mysql_report_job" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mysql_reporter.py" />
+      <option name="PARAMETERS" value="-i -iu root -ip Sx12345678 -ih 172.29.29.100 -iP 3106" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.encrypt_data" />
+      <item itemvalue="Python.mysql_reporter" />
+      <item itemvalue="Python.mysql_reporter_init" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="2d81fffa-aae7-4b97-af2b-7896be19c678" name="更改" comment="" />
+      <created>1713753024379</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1713753024379</updated>
+      <workItem from="1713753034298" duration="36379000" />
+      <workItem from="1713937811348" duration="2000" />
+      <workItem from="1713949365553" duration="5205000" />
+      <workItem from="1714009792925" duration="58041000" />
+      <workItem from="1714956666288" duration="194000" />
+      <workItem from="1714956921424" duration="98732000" />
+      <workItem from="1715656243594" duration="1664000" />
+      <workItem from="1715827399261" duration="1818000" />
+      <workItem from="1716259047475" duration="2250000" />
+      <workItem from="1716343172211" duration="2108000" />
+      <workItem from="1716446495428" duration="58447000" />
+      <workItem from="1717049711611" duration="20360000" />
+      <workItem from="1717464069297" duration="32505000" />
+      <workItem from="1718268195661" duration="22121000" />
+      <workItem from="1719304860105" duration="37195000" />
+      <workItem from="1720058652837" duration="604000" />
+      <workItem from="1720750225046" duration="37159000" />
+      <workItem from="1721352294806" duration="29460000" />
+      <workItem from="1722068551713" duration="5000" />
+      <workItem from="1722068572637" duration="10008000" />
+      <workItem from="1722351653264" duration="23444000" />
+      <workItem from="1723780870849" duration="901000" />
+      <workItem from="1723786539200" duration="55000" />
+      <workItem from="1723786606641" duration="5000" />
+      <workItem from="1723790086941" duration="126000" />
+      <workItem from="1723790223490" duration="1888000" />
+      <workItem from="1724208954545" duration="16750000" />
+      <workItem from="1725525924744" duration="11844000" />
+      <workItem from="1726120609814" duration="9502000" />
+      <workItem from="1726223727712" duration="513000" />
+      <workItem from="1726728242502" duration="910000" />
+      <workItem from="1728120941648" duration="3397000" />
+      <workItem from="1728379552518" duration="1799000" />
+      <workItem from="1728609864583" duration="26106000" />
+      <workItem from="1730343750343" duration="612000" />
+      <workItem from="1730682202276" duration="593000" />
+      <workItem from="1731311784323" duration="10000" />
+      <workItem from="1731311808769" duration="6621000" />
+      <workItem from="1731318517564" duration="165000" />
+      <workItem from="1731319237949" duration="107000" />
+      <workItem from="1731319360914" duration="593000" />
+      <workItem from="1731552833392" duration="1223000" />
+      <workItem from="1734135518035" duration="610000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/AppData/Local/JetBrains/PyCharm2023.2/remote_sources/2005552397/-1617366195/mysql/connector/__init__.py</url>
+          <line>38</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="self" />
+        <watch expression="self" />
+        <watch expression="db_info['source_type']" language="Python" />
+        <watch expression="value['source_type']" language="Python" />
+        <watch expression="value['metric_class']" language="Python" />
+        <watch expression="host_port" language="Python" />
+        <watch expression="metric_obj.host" language="Python" />
+        <watch expression="metric_obj.metric_class" language="Python" />
+        <watch expression="metric_class" language="Python" />
+        <watch expression="metric_obj.metric_value" language="Python" />
+        <watch expression="metric_obj.metric_type" language="Python" />
+        <watch expression="metric_obj" language="Python" />
+        <watch expression="df_html_class[muti_index]" language="Python" />
+        <watch expression="html_body" />
+        <watch expression="self.html_body_dict" />
+        <watch expression="metric_class_now" language="Python" />
+        <watch expression="metric_class_old" language="Python" />
+        <watch expression="value['navigation_1_name']" language="Python" />
+        <watch expression="metric_value_json" language="Python" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/mysql_report_job$encrypt_data.coverage" NAME="encrypt_data 覆盖结果" MODIFIED="1722218678189" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\mysql_report_job" />
+    <SUITE FILE_PATH="coverage/mysql_report_job$get_message.coverage" NAME="get_message 覆盖结果" MODIFIED="1713842405355" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/mysql_report_job$metric_message.coverage" NAME="metric_message 覆盖结果" MODIFIED="1713862986980" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/mysql_report_job$err.coverage" NAME="err 覆盖结果" MODIFIED="1713928028768" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/AppData/Local/JetBrains/PyCharm2023.2/remote_sources/1384355498/1373173289/pymysql" />
+    <SUITE FILE_PATH="coverage/mysql_report_job$report_build.coverage" NAME="report_build 覆盖结果" MODIFIED="1714379514472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/mysql_report_job$config.coverage" NAME="config 覆盖结果" MODIFIED="1713928448632" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/mysql_report_job$mysql_operator.coverage" NAME="mysql_operator 覆盖结果" MODIFIED="1713928488342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/mysql_report_job$main.coverage" NAME="mysql_reporter 覆盖结果" MODIFIED="1713928955170" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/mysql_report_job$mysql_reporter.coverage" NAME="mysql_reporter 覆盖结果" MODIFIED="1728716940216" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/mysql_report_job$log_format.coverage" NAME="log_format 覆盖结果" MODIFIED="1713756077142" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/mysql_report_job$mail.coverage" NAME="mail 覆盖结果" MODIFIED="1721112414195" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>

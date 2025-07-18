@@ -8,6 +8,15 @@ mysql:
 列：字符集，排序规则；
 引擎：存储引擎非innodb；
 索引：未使用的索引，重复索引；
+页：页分裂页合并发生的次数；
+session 内存：%sort_merge%，%cache_disk%；
+buffer_pool:
+死锁记录：
+阻塞记录：
+慢查询：
+
+
+
 
 mysql参数巡检：
 show globle status like '%sort%';

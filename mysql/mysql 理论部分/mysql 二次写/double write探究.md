@@ -71,28 +71,16 @@ A：因为[redolog](https://so.csdn.net/so/search?q=redolog&spm=1001.2101.3001.7
 
 ```sql
 mysql> show global status like '%dblwr%';
-
-+
-
 | Variable_name | Value |
-
-+
-
 | Innodb_dblwr_pages_written | 7 |
-
 | Innodb_dblwr_writes | 3 |
-
-+
-
-2 rows in set (0.00 sec)
-
 ```
 
-关注点：Innodb\_dblwr\_pages\_written / Innodb\_dblwr\_writes
+关注点：Innodb_dblwr_pages_written / Innodb_dblwr_writes
 
 开启doublewrite后，每次脏页刷新必须要先写doublewrite，而doublewrite存在于磁盘上的是两个连续的区，每个区由连续的页组成，一般情况下一个区最多有64个页，所以一次IO写入应该可以最多写64个页。
 
-而根据以上系统Innodb\_dblwr\_pages\_written与Innodb\_dblwr\_writes的比例来看，大概在3左右，远远还没到64(如果约等于64，那么说明系统的写压力非常大，有大量的脏页要往磁盘上写)，所以从这个角度也可以看出，系统写入压力并不高。
+而根据以上系统Innodb_dblwr_pages_written与Innodb_dblwr_writes的比例来看，大概在3左右，远远还没到64(如果约等于64，那么说明系统的写压力非常大，有大量的脏页要往磁盘上写)，所以从这个角度也可以看出，系统写入压力并不高。
 
 3、关闭double write适合的场景
 
@@ -104,19 +92,8 @@ mysql> show global status like '%dblwr%';
 
 ```sql
 mysql> show variables like '%double%';
-
-+
-
 | Variable_name | Value |
-
-+
-
 | innodb_doublewrite | ON |
-
-+
-
-1 row in set (0.04 sec)
-
 ```
 
 作为InnoDB的一个关键特性，doublewrite功能默认是开启的，但是在上述特殊的一些场景也可以视情况关闭，来提高数据库写性能。静态参数，配置文件修改，重启数据库。

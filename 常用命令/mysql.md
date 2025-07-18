@@ -10,7 +10,9 @@
 ## 实时运行的SQL查询
 
 ```sql
-SELECT CONCAT('kill ',id,';' ) ,db,info,time,host  FROM information_schema.`PROCESSLIST`WHERE  command<>'Sleep' AND    (info  is not null  and   info not LIKE '% kill %' )   ORDER BY TIME;Select CONCAT('kill ',id,';' ) ,info from  information_schema.`PROCESSLIST` where db='tcbiz_ins_config';
+SELECT CONCAT('kill ',id,';' ) ,db,info,time,host  FROM information_schema.`PROCESSLIST`WHERE  command<>'Sleep' AND    (info  is not null  and   info not LIKE '% kill %' )   ORDER BY TIME;
+
+Select CONCAT('kill ',id,';' ) ,info from  information_schema.`PROCESSLIST` where db='tcbiz_ins_config';
 
 SELECT * FROM information_schema.`PROCESSLIST` where DB='tcbiz_rcs_kunpeng';
 
@@ -226,7 +228,7 @@ SELECT CONCAT('GRANT ',  PRIVILEGE_TYPE, ' ON ', TABLE_SCHEMA, '.', TABLE_NAME, 
 --triggers 
 --events 
 --databases algorithm 
---table tcm_rag wm_embedding_data 
+--tables tcm_rag wm_embedding_data 
 --net_buffer_length=16777216 
 --max_allowed_packet=134217728 
 --master-data=1 
@@ -253,4 +255,126 @@ SELECT CONCAT('GRANT ',  PRIVILEGE_TYPE, ' ON ', TABLE_SCHEMA, '.', TABLE_NAME, 
 --extended-insert > table_schema.sql
 ```
 
+## change master
 
+
+涉及主库状态探测心跳包的配置
+
+```sql
+change master to master_host='192.168.163.131',master_port=3307,master_user='rep',master_password='rep',master_auto_position=1,MASTER_HEARTBEAT_PERIOD=2,MASTER_CONNECT_RETRY=1, MASTER_RETRY_COUNT=86400;
+set global slave_net_timeout=8;
+```
+
+
+非gtid
+```sql
+CHANGE MASTER TO MASTER_HOST = '10.10.0.142',  MASTER_USER = 'mhaadmin', MASTER_PASSWORD = 'mhapass', MASTER_PORT = 3306, MASTER_LOG_FILE='mysql-bin.000051',MASTER_LOG_POS=87047215
+```
+
+## mysqlbinlog
+
+```bash
+mysqlbinlog --database=db --base64-output=decode-rows -v --start-datetime='2019-04-11 00:00:00' --stop-datetime='2019-04-11 15:00:00'
+```
+
+--no-defaults   不使用no default可能会报错  
+--base64-output=decode-rows -v   解析语句部分的内容
+
+
+## pt-osc
+
+```bash
+pt-online-schema-change --host=172.16.1.7 --port=3306  --user=root --ask-pass --no-check-replication-filters --recursion-method --alter "ADD COLUMN deleted tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否删除 0:否 1:是'" D=tcbiz_airtkt_policy,t=tk_discount_code —execute
+```
+
+## Mysqldump
+
+```bash
+mysqldump -h $DB_HOST -u $DB_USER -p$DB_PASSWORD --single-transaction --routines --triggers --events --databases $DB_NAME --net_buffer_length=16777216 --max_allowed_packet=134217728 --master-data=1 --extended-insert > dump.sql
+```
+* --no-create-db：不包括 CREATE DATABASE 语句。
+* --no-create-info：不包括 CREATE TABLE 语句。
+* --no-data：只备份表结构，不包括数据。
+* --skip-lock-tables：在备份期间不锁定表，允许其他会话对表进行读写操作。
+* --ignore-table：忽略备份中的特定表。可以同时指定多个表，以逗号分隔。
+* --where：指定一个 WHERE 条件来选择要备份的数据记录。
+
+## LOAD DATA INFILE
+
+```sql
+LOAD DATA INFILE '/path/to/file.csv'
+INTO TABLE your_table
+CHARACTER SET gbk  -- 文件为 GBK 编码
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n';
+```
+
+对于 secure_file_priv =''的mysql 服务
+
+```sql
+LOAD DATA LOCAL INFILE '/root/新-联合用药信息-提交.csv'
+INTO TABLE shangdongqilu.新_联合用药信息_提交_csv
+CHARACTER SET utf8
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;  -- 忽略表头
+```
+
+## 索引合规探测
+
+1. 基础探测：CARDINALITY 与总行数对比
+
+```sql
+SELECT 
+  s.TABLE_NAME,
+  s.INDEX_NAME,
+  s.COLUMN_NAME,
+  s.CARDINALITY,
+  t.TABLE_ROWS,
+  ROUND(s.CARDINALITY / t.TABLE_ROWS, 4) AS selectivity_ratio
+FROM 
+  INFORMATION_SCHEMA.STATISTICS s
+JOIN 
+  INFORMATION_SCHEMA.TABLES t 
+  ON s.TABLE_SCHEMA = t.TABLE_SCHEMA 
+  AND s.TABLE_NAME = t.TABLE_NAME
+WHERE 
+  s.TABLE_SCHEMA = 'your_database'
+  AND t.TABLE_ROWS > 0  -- 过滤空表
+ORDER BY 
+  selectivity_ratio ASC;  -- 选择性低的索引优先
+```
+
+2. 深度探测：具体列值分布
+
+```sql
+SELECT 
+  column_name,
+  value,
+  count_value,
+  total_rows,
+  ROUND(count_value / total_rows, 4) AS value_ratio
+FROM (
+  SELECT 
+    'column_name' AS column_name,  -- 替换为实际列名
+    column_name AS value,
+    COUNT(*) AS count_value,
+    (SELECT COUNT(*) FROM your_table) AS total_rows
+  FROM 
+    your_table
+  GROUP BY 
+    column_name
+) t
+ORDER BY 
+  value_ratio DESC
+LIMIT 10;  -- 查看最频繁出现的值
+```
+
+```sql
+-- 重复索引
+SELECT * FROM sys.schema_redundant_indexes;
+-- 未使用索引
+SELECT * FROM sys.schema_unused_indexes;
+```

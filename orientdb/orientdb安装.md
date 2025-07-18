@@ -36,14 +36,20 @@ drwxr-xr-x 2 mysql mysql 4096 5月 15 2019 log
 drwxr-xr-x 2 mysql mysql 4096 12月 27 17:27 plugins 
 -r--r--r-- 1 mysql mysql 3227 5月 15 2019 readme.txt 
 drwxr-xr-x 2 mysql mysql 4096 5月 15 2019 www
-2.3 安装java
+```
+
+### 2.3 安装java
 JDK：建议jdk8版本（3.0版本要求jdk8）
+```bash
 rpm -ivh jdk-8u341-linux-x64.rpm
 [root@localhost orientdb]# java -version 
 java version "1.8.0_341" 
 Java(TM) SE Runtime Environment (build 1.8.0_341-b10) 
 Java HotSpot(TM) 64-Bit Server VM (build 25.341-b10, mixed mode)
-2.4 创建用户
+```
+
+### 2.4 创建用户
+```bash
 groupadd orientdb
 useradd -g orientdb orientdb
 #export JAVA_HOME=/usr/local/java
@@ -67,8 +73,8 @@ chown -R orientdb. /usr/local/data/orientdb/orientdb-server/
 ### 3.2 手动脚本启动方式
 此脚本是官方的启动脚本，也是使用 server.sh 进行启动
 配置脚本orientdb.sh
-为了在系统上使用该脚本，您需要编辑该文件以定义两个变量：安装目录的路径和要运行数据库服务器的用户。
-$ vi $ORIENTDB_HOME/bin/orientdb.sh
+为了在系统上使用该脚本，您需要编辑该文件以定义两个变量：安装目录的路径和要运行数据库服务器的用户。  
+` vi $ORIENTDB_HOME/bin/orientdb.sh`
 ```bash
 #!/bin/sh
 # OrientDB service script
