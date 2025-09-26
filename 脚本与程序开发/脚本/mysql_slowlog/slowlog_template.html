@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Mysql慢查询报告</title>
+    <!-- Bootstrap -->
+    <link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="Https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
+    <!-- Prism.js CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css" rel="stylesheet" />
+    <!-- Prism.js JS -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-sql.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sql-formatter@latest/dist/sql-formatter.min.js"></script>
+
+    <script>
+        function formatSQL(sqlId) {
+            const sql = document.getElementById(sqlId).textContent;
+            const formattedSql = sqlFormatter.format(sql,{'language':'mysql'});
+            document.getElementById(sqlId).textContent = formattedSql;
+            Prism.highlightElement(document.getElementById(sqlId));
+        }
+    </script>
+
+   <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        h1 {
+            color: #007BFF;
+        }
+
+        .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+            background-color: #f5f5f5;
+        }
+
+        .table-bordered {
+            border: 1px solid #ddd;
+        }
+
+        .table-condensed {
+            font-size: 14px;
+        }
+
+        .btn-default {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-default:hover {
+            background-color: #0056b3;
+        }
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+    </style>
+
+</head>
+
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span12">
+            <h1>Mysql慢查询报告</h1>
+            <hr></hr>
+            <br>
+            <br>
+            <br>
+            <br>
+            <caption  class="table table-hover" style="text-align: top; "><b id="section1" style = "font-size: 22px;">目录</b></caption>
+            <br>
+            <hr></hr>
+            <a href="#section1" style = "font-size: 20px;">1. Sum Total Parse Report</a><br>
+            <br>
+            <a href="#section2" style = "font-size: 20px;">2. Instance Total Parse Report</a><br>
+            <br>
+            <a href="#section3" style = "font-size: 20px;">3. Instance Detail Parse Report</a><br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <caption  class="table table-hover" style="text-align: top; "><b id="section1" style = "font-size: 22px;">1. Sum Total Parse Report</b></caption>
+            <hr></hr>
+            <br>
+            <br>
+            <br>
+            <br>
+            <caption id = "section1-1" class="table table-hover" style="text-align: left;"><b>Total Parse Report</b></caption>
+            <table class="table table-hover table-striped table-bordered table-condensed" style="width: 800px; ">
+                <hr></hr>
+                <tr><td></td></tr>
+                <tbody>
+                    <tr class=""><th style="width: 200px;">Current date</th ><td style="width: 200px;">{{total_info.current_date}}</td></tr>
+                    <tr class=""><th>Hostname</th><td>{{total_info.hostname}}</td></tr>
+                    <tr class=""><th>Ipaddress</th><td>{{total_info.ipaddress}}</td></tr>
+                    <tr class=""><th>Data From</th><td>{{total_info.data_from}}</td></tr>
+                    <tr class=""><th>Files Directory</th><td>{{total_info.file_dir}}</td></tr>
+                    <tr class=""><th>Files Name</th><td>{{total_info.file_name}}</td></tr>
+                    <tr class=""><th>Overall</th><td>{{total_info.overall}}</td></tr>
+                    <tr class=""><th>Time range</th><td>{{total_info.time_range}}</td></tr>
+                    <tr><th></th><td></td></tr>
+                </tbody>
+            </table>
+            <a class="btn btn-default" href="#" role="button" style="position:fixed;right:0;bottom:0">
+                回到顶部
+            </a>
+            <br>
+            <br>
+            <br>
+            <br>
+            <caption id = "section1-2" class="table table-hover" style="text-align: left;"><b>Total Parse Report items</b></caption>
+            <table class="table table-hover table-striped table-bordered table-condensed">
+                <hr></hr>
+                <tr>
+                    <!--<th>ID</th>-->
+                    <th>慢查询指标</th>
+                    <th>总数(total)</th>
+                    <th>最小数值(min)</th>
+                    <th>最大数值(max)</th>
+                    <th>平均数值(avg)</th>
+                    <th>数值95值(95%)</th>
+                    <th>数值标准差(stddev)</th>
+                    <th>数值中位数(median)</th>
+
+                </tr>
+                <div>
+                    {% for key,value in total_info.data.items() %}
+                    <tr>
+                        <td>{{ key }}</td>
+                        <td>{{ value.sum }}</td>
+                        <td>{{ value.min }}</td>
+                        <td>{{ value.max }}</td>
+                        <td>{{ value.mean }}</td>
+                        <td>{{ value.quantile_95 }}</td>
+                        <td>{{ value.std }}</td>
+                        <td>{{ value.quantile }}</td></tr>
+                    </tr>
+                    {% endfor %}
+                </div>
+            </table>
+
+            {% for key,value in profile_info.items() %}
+                <br>
+                <br>
+                <br>
+                <br>
+                <caption class="table table-hover" style="text-align: left;"><b>{{key}}</b></caption>
+                <table class="table table-hover table-striped table-bordered table-condensed">
+                    <hr></hr>
+                    <tr>
+                        <!--<th>ID</th>-->
+                        <th>Rank</th>
+                        <th>Query ID</th>
+                        <th>Response time</th>
+                        <th>Percent</th>
+                        <th>Calls</th>
+                        <th>R/Call</th>
+                        <th>Lock Time</th>
+                        <th>Avg Lock Time</th>
+                        <th>SQL_TEXT</th>
+
+                    </tr>
+                    <div>
+                        {% for t in value.data %}
+                        <tr>
+                            <td style="width: 10px;">{{ t.rank }}</td>
+                            <td><a href="#{{t.query_id}}">{{ t.query_id }}</a></td>
+                            <td>{{ t.response_time }}</td>
+                            <td>{{ t.percent }}</td>
+                            <td>{{ t.calls }}</td>
+                            <td>{{ t.avg_query_time }}</td>
+                            <td>{{ t.lock_time }}</td>
+                            <td>{{ t.avg_lock_time }}</td>
+                            <td>{{- t.sql_text | truncate(length=100,killwords=False) -}}</td>
+                            <td>
+                                <!-- 按钮触发模态框 -->
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#{{ value.html_model_target }}-{{t.rank }}" onclick=formatSQL("myModalLabel-{{value.html_model_target}}-code-{{t.rank}}")>
+                                    完整Sql语句
+                                </button>
+                            </td>
+                        </tr>
+
+                        <div class="container-fluid text-center">
+                            <!-- 模态框（Modal） -->
+                            <div class="modal fade" id="{{ value.html_model_target }}-{{ t.rank }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-{{ value.html_model_target }}-{{ t.rank }}"
+                                 aria-hidden="true">
+                                <div class="modal-dialog" style="width: 1300px;">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                                ×
+                                            </button>
+                                            <h4 class="modal-title" id="myModalLabel-{{ value.html_model_target }}-{{ t.rank }}">
+                                                Sql
+                                            </h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <pre style="text-align: left;"><code  id="myModalLabel-{{ value.html_model_target }}-code-{{ t.rank }}" class="language-sql line-numbers">
+                                                {{- t.sql_text -}}
+                                            </code></pre>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-success" data-dismiss="modal">关闭
+                                            </button>
+                                            <!--<button type="button" class="btn btn-primary">-->
+                                            <!--提交更改-->
+                                            <!--</button>-->
+                                        </div>
+                                    </div>
+                                    <!-- /.modal-content -->
+                                </div>
+                                <!-- /.modal -->
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </table>
+            {% endfor %}
+            <br>
+            <br>
+
+            <br>
+            <br>
+            <br>
+            <caption class="table table-hover" style="text-align: top; "><b id="section2"  style="font-size: 22px;">2. Instance Total Parse Report</b></caption>
+            <br>
+            <br>
+            {% if instance_info %}
+                {% for key,value in instance_info.items() %}
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <caption class="table table-hover" style="text-align: left;"><b>Instance {{ key }} Parse Report</b></caption>
+                    <table class="table table-hover table-striped table-bordered table-condensed" style="width: 800px; ">
+                        <hr></hr>
+                            <tr><td></td></tr>
+                        <tbody>
+                            <tr class=""><th style="width: 200px;">Current date</th ><td style="width: 200px;">{{value.total_info.current_date}}</td></tr>
+                            <tr class=""><th>Hostname</th><td>{{value.total_info.hostname}}</td></tr>
+                            <tr class=""><th>Ipaddress</th><td>{{value.total_info.ipaddress}}</td></tr>
+                            <tr class=""><th>Data From</th><td>{{value.total_info.data_from}}</td></tr>
+                            <tr class=""><th>Files Directory</th><td>{{value.total_info.file_dir}}</td></tr>
+                            <tr class=""><th>Files Name</th><td>{{value.total_info.file_name}}</td></tr>
+                            <tr class=""><th>Overall</th><td>{{value.total_info.overall}}</td></tr>
+                            <tr class=""><th>Time range</th><td>{{value.total_info.time_range}}</td></tr>
+                            <tr><th></th><td></td></tr>
+                        </tbody>
+                    </table>
+
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <caption class="table table-hover" style="text-align: left;"><b>Instance {{key}} Parse Report items</b></caption>
+                    <table class="table table-hover table-striped table-bordered table-condensed">
+                        <hr></hr>
+                        <tr>
+                            <!--<th>ID</th>-->
+                            <th>慢查询指标</th>
+                            <th>总数(total)</th>
+                            <th>最小数值(min)</th>
+                            <th>最大数值(max)</th>
+                            <th>平均数值(avg)</th>
+                            <th>数值95值(95%)</th>
+                            <th>数值标准差(stddev)</th>
+                            <th>数值中位数(median)</th>
+
+                        </tr>
+                        <div>
+                            {% for key,value in value.total_info.data.items() %}
+                            <tr>
+                                <td>{{ key }}</td>
+                                <td>{{ value.sum }}</td>
+                                <td>{{ value.min }}</td>
+                                <td>{{ value.max }}</td>
+                                <td>{{ value.mean }}</td>
+                                <td>{{ value.quantile_95 }}</td>
+                                <td>{{ value.std }}</td>
+                                <td>{{ value.quantile }}</td></tr>
+                            </tr>
+                            {% endfor %}
+                        </div>
+                    </table>
+
+                    {% for k,v in value.profile_info.items() %}
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <caption class="table table-hover" style="text-align: left;"><b>Instance {{ key }} {{k}}</b></caption>
+                        <table class="table table-hover table-striped table-bordered table-condensed">
+                            <hr></hr>
+                            <tr>
+                                <!--<th>ID</th>-->
+                                <th>Rank</th>
+                                <th>Query ID</th>
+                                <th>Response time</th>
+                                <th>Percent</th>
+                                <th>Calls</th>
+                                <th>R/Call</th>
+                                <th>Lock Time</th>
+                                <th>Avg Lock Time</th>
+                                <th>SQL_TEXT</th>
+
+                            </tr>
+                            <div>
+                                {% for t in v.data %}
+                                <tr>
+                                    <td style="width: 10px;">{{ t.rank }}</td>
+                                    <td><a href="#{{t.query_id}}">{{ t.query_id }}</a></td>
+                                    <td>{{ t.response_time }}</td>
+                                    <td>{{ t.percent }}</td>
+                                    <td>{{ t.calls }}</td>
+                                    <td>{{ t.avg_query_time }}</td>
+                                    <td>{{ t.lock_time }}</td>
+                                    <td>{{ t.avg_lock_time }}</td>
+                                    <td>{{- t.sql_text | truncate(length=100,killwords=False) -}}</td>
+                                    <td>
+                                        <!-- 按钮触发模态框 -->
+                                        <button class="btn btn-primary" data-toggle="modal" data-target="#{{ key | replace('.','')}}-{{ v.html_model_target }}-{{t.rank }}" onclick=formatSQL("{{key|replace('.','')}}-{{v.html_model_target}}-code-{{t.rank}}">
+                                            完整Sql语句
+                                        </button>
+                                    </td>
+
+
+                                </tr>
+
+
+                                <div class="container-fluid text-center">
+                                    <!-- 模态框（Modal） -->
+                                    <div class="modal fade" id="{{ key | replace('.','')}}-{{ v.html_model_target }}-{{t.rank }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog" style="width: 1300px;">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                                        ×
+                                                    </button>
+                                                    <h4 class="modal-title" id="myModalLabel">
+                                                        Sql
+                                                    </h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                     <pre style="text-align: left;"><code class="language-sql line-numbers" id = "{{ key | replace('.','')}}-{{ v.html_model_target }}-code--{{t.rank}}">
+                                                        {{- t.sql_text -}}
+                                                    </code></pre>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-success" data-dismiss="modal">关闭
+                                                    </button>
+                                                    <!--<button type="button" class="btn btn-primary">-->
+                                                    <!--提交更改-->
+                                                    <!--</button>-->
+                                                </div>
+                                            </div>
+                                            <!-- /.modal-content -->
+                                        </div>
+                                        <!-- /.modal -->
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </table>
+                    {% endfor %}
+                {% endfor %}
+            {% endif %}
+
+
+            {% if detail_info %}
+                <br>
+                <br>
+                <br>
+                <caption  class="table table-hover" style="text-align: top; "><b id="section3" style="font-size: 22px;">3. Instance Detail Parse Report</b></caption>
+
+                <br>
+                <br>
+
+                <table class="table table-hover table-striped table-bordered table-condensed">
+                    <hr></hr>
+                    <tr>
+                        <!--<th>ID</th>-->
+                        <th>Ipaddress</th>
+                        <th>Query ID</th>
+                        <th>user</th>
+                        <th>Client IP</th>
+                        <th>Schema</th>
+                        <th>Time range</th>
+                        <th>Count</th>
+                        <th>Exec time</th>
+                        <th>Lock time</th>
+                        <th>Rows sent</th>
+                        <th>Rows examine</th>
+                        <th>Sql Text</th>
+                    </tr>
+                    <div>
+                        {% for key,value in detail_info.items() %}
+                            {% for v in value.data %}
+                                    <tr>
+                                    <td>{{ v.ipaddress }}</td>
+                                    <td id="{{ v.query_id }}">{{ v.query_id }}</td>
+                                    <td>{{ v.user }}</td>
+                                    <td>{{ v.client_ip }}</td>
+                                    <td>{{ v.schema }}</td>
+                                    <td>{{ v.time_range }}</td>
+                                    <td>{{ v.data.count.total }}</td>
+                                    <td>{{ v.data.query_time.total }}</td>
+                                    <td>{{ v.data.lock_time.total }}</td>
+                                    <td>{{ v.data.rows_sent.total }}</td>
+                                    <td>{{ v.data.rows_examined.total }}</td>
+                                    <td>{{- v.data.sql_text  | truncate(length=100,killwords=False) -}}</td>
+                                    <td>
+                                        <!-- 按钮触发模态框 -->
+                                        <button class="btn btn-primary" data-toggle="modal" data-target="#{{ v.ipaddress | replace('.','') }}{{ v.query_id | truncate(length=5,killwords=True) | replace('.','')  }}1" onclick=formatSQL("{{v.ipaddress|replace('.','')}}{{v.query_id|truncate(length=5,killwords=True)|replace('.','')}}1-code")>
+                                            完整Sql语句
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <!-- 按钮触发模态框 -->
+                                        <button class="btn btn-primary" data-toggle="modal" data-target="#{{ v.ipaddress | replace('.','') }}{{ v.query_id | truncate(length=5,killwords=True) | replace('.','')  }}2">
+                                            完整信息
+                                        </button>
+                                    </td>
+                                    </tr>
+                            {% endfor %}
+                        {% endfor %}
+                    </div>
+                </table>
+
+
+                {% for key,value in detail_info.items() %}
+                {% for v in value.data %}
+                        <div class="container-fluid text-center">
+                            <!-- 模态框（Modal） -->
+                            <div class="modal fade" id="{{ v.ipaddress | replace('.','') }}{{ v.query_id | truncate(length=5,killwords=True) | replace('.','')  }}1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" style="width: 1300px;">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                                ×
+                                            </button>
+                                            <h4 class="modal-title" id="myModalLabel">
+                                                Sql
+                                            </h4>
+                                        </div>
+                                        <div class="modal-body">
+                                             <pre style="text-align: left;"><code class="language-sql line-numbers" id = "{{ v.ipaddress | replace('.','') }}{{ v.query_id | truncate(length=5,killwords=True) | replace('.','')  }}1-code">
+                                                {{- v.data.sql_text -}}
+                                            </code></pre>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-success" data-dismiss="modal">关闭
+                                            </button>
+                                            <!--<button type="button" class="btn btn-primary">-->
+                                            <!--提交更改-->
+                                            <!--</button>-->
+                                        </div>
+                                    </div>
+                                    <!-- /.modal-content -->
+                                </div>
+                                <!-- /.modal -->
+                            </div>
+                        </div>
+
+                        <div class="container-fluid text-center">
+                            <!-- 模态框（Modal） -->
+                            <div class="modal fade" id="{{ v.ipaddress | replace('.','') }}{{ v.query_id | truncate(length=5,killwords=True) | replace('.','')  }}2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-xl" style="width: 1300px;">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                                ×
+                                            </button>
+                                            <h4 class="modal-title" id="myModalLabel2">
+                                                {{value.title}}
+                                            </h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <table class="table table-hover table-striped table-bordered table-condensed" style="width: 100%; text-align:left" >
+
+                                                <hr></hr>
+                                                <tr>
+                                                    <!--<th>ID</th>-->
+                                                    <th>慢查询指标</th>
+                                                    <th>pct</th>
+                                                    <th>总数(total)</th>
+                                                    <th>最小数值(min)</th>
+                                                    <th>最大数值(max)</th>
+                                                    <th>平均数值(avg)</th>
+                                                    <th>数值95值(95%)</th>
+                                                    <th>数值标准差(stddev)</th>
+                                                    <th>数值中位数(median)</th>
+
+                                                </tr>
+                                                <div>
+                                                    {% for ik,iv in v.data.items() %}
+
+                                                    {% if ik != 'sql_text' %}
+                                                    <tr>
+                                                        <td>{{ ik }}</td>
+                                                        <td>{{ iv.pct }}</td>
+                                                        <td>{{ iv.total }}</td>
+                                                        <td>{{ iv.min }}</td>
+                                                        <td>{{ iv.max }}</td>
+                                                        <td>{{ iv.avg }}</td>
+                                                        <td>{{ iv.per95 }}</td>
+                                                        <td>{{ iv.stddev }}</td>
+                                                        <td>{{ iv.per }}</td>
+                                                    </tr>
+                                                    {% endif %}
+                                                    {% endfor %}
+                                                </div>
+                                            </table>
+
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-success" data-dismiss="modal">关闭
+                                            </button>
+                                            <!--<button type="button" class="btn btn-primary">-->
+                                            <!--提交更改-->
+                                            <!--</button>-->
+                                        </div>
+                                    </div>
+                                    <!-- /.modal-content -->
+                                </div>
+                                <!-- /.modal -->
+                            </div>
+                        </div>
+                {% endfor %}
+            {% endfor %}
+            {% endif %}
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

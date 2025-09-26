@@ -1,0 +1,8 @@
+{
+    "id": "url-into-selection",
+    "name": "Paste URL into selection",
+    "description": "将URL“粘贴到”所选文本中。",
+    "isDesktopOnly": false,
+    "js": "main.js",
+    "version": "1.11.3"
+}

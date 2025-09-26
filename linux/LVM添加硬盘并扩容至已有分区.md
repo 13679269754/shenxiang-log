@@ -1,7 +1,7 @@
 | operator | createtime | updatetime |
-| ---- | ---- | ---- |
-| shenx | 2024-5月-11 | 2024-5月-11  |
-| ... | ... | ... |
+| -------- | ---------- | ---------- |
+| shenx    | 2024-5月-11 | 2024-5月-11 |
+
 ---
 # LVM添加硬盘并扩容至已有分区
 
@@ -23,15 +23,14 @@ LVM模型如下：
 
 ![](https://ask.qcloudimg.com/http-save/yehe-1005774/fahp1lv120.png)
 
-img_5de0e0690faf0-7eb636ef-8a0d-46e6-8cdf-85b10af5c849
 
 #### LVM添加硬盘
 
 新增一块硬盘，大小为200G，如下：
 
-代码语言：javascript
 
-复制
+
+
 
 ```
 # lsblk
@@ -48,9 +47,9 @@ sr0              11:0    1 1024M  0 rom
 
 #### 分区
 
-代码语言：javascript
 
-复制
+
+
 
 ```
 # fdisk /dev/sdb        #执行此命令，进行分区
@@ -140,9 +139,9 @@ Syncing disks.
 
 查看是否以分好区
 
-代码语言：javascript
 
-复制
+
+
 
 ```
 # lsblk
@@ -160,9 +159,9 @@ sr0              11:0    1 1024M  0 rom
 
 创建物理卷
 
-代码语言：javascript
 
-复制
+
+
 
 ```
 # pvcreate /dev/sdb1 
@@ -171,9 +170,9 @@ sr0              11:0    1 1024M  0 rom
 
 查看物理卷创建情况
 
-代码语言：javascript
 
-复制
+
+
 
 ```
 # pvdisplay 
@@ -205,9 +204,9 @@ sr0              11:0    1 1024M  0 rom
 
 查看卷组情况
 
-代码语言：javascript
 
-复制
+
+
 
 ```
 # vgdisplay 
@@ -235,9 +234,9 @@ sr0              11:0    1 1024M  0 rom
 
 将新的分区/dev/sdb1加入到卷组中，这里的卷组名为centos
 
-代码语言：javascript
 
-复制
+
+
 
 ```
 # vgextend centos /dev/sdb1 
@@ -246,9 +245,9 @@ sr0              11:0    1 1024M  0 rom
 
 添加完成后再次查看卷组信息
 
-代码语言：javascript
 
-复制
+
+
 
 ```
 # vgdisplay                 
@@ -278,9 +277,9 @@ sr0              11:0    1 1024M  0 rom
 
 下面是对现有分区进行逻辑卷扩容，我们这里根分区为40G，我们准备扩容根分区 查看根分区的LV路径
 
-代码语言：javascript
 
-复制
+
+
 
 ```
 # df -h
@@ -296,9 +295,7 @@ tmpfs                    1.6G     0  1.6G   0% /run/user/0
 
 或者通过lvdisplay一样可以查看，这里的路径为`/dev/mapper/centos-root`，下面进行扩容
 
-代码语言：javascript
 
-复制
 
 ```
 # lvextend -l +100%FREE /dev/mapper/centos-root
@@ -308,9 +305,7 @@ tmpfs                    1.6G     0  1.6G   0% /run/user/0
 
 查看扩容后的逻辑卷大小
 
-代码语言：javascript
 
-复制
 
 ```
 # lvdisplay /dev/mapper/centos-root
@@ -334,9 +329,9 @@ tmpfs                    1.6G     0  1.6G   0% /run/user/0
 
 然后使用xfs_groupfs进行在线调整xfs格式的文件系统大小
 
-代码语言：javascript
 
-复制
+
+
 
 ```
 # xfs_growfs /dev/mapper/centos-root 
@@ -354,9 +349,9 @@ data blocks changed from 9697280 to 62126080
 
 最后查看下根分区的大小是否扩容成功
 
-代码语言：javascript
 
-复制
+
+
 
 ```
 # df -h

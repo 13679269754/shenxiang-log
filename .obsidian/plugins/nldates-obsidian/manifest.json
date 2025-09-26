@@ -1,0 +1,10 @@
+{
+    "id": "nldates-obsidian",
+    "name": "Natural Language Dates",
+    "description": "根据自然语言创建日期链接",
+    "version": "0.6.2",
+    "author": "Argentina Ortega Sainz",
+    "authorUrl": "https://argentinaos.com/",
+    "isDesktopOnly": false,
+    "minAppVersion": "1.0.0"
+}

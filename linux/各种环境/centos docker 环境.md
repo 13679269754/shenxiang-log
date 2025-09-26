@@ -1,6 +1,6 @@
 | operator | createtime | updatetime |
-| ---- | ---- | ---- |
-| shenx | 2025-1月-09 | 2025-1月-09  |
+| -------- | ---------- | ---------- |
+| shenx    | 2025-1月-09 | 2025-1月-09 |
 | ... | ... | ... |
 ---
 # docker 环境
@@ -106,31 +106,24 @@
 
 1.  **配置加速器**
     
-    ```
-    `sudo tee /etc/docker/daemon.json <<-'EOF'
-    {
-      "registry-mirrors": [
-        "https://docker.m.daocloud.io",
-        "https://dockerproxy.com",
-        "https://docker.mirrors.ustc.edu.cn",
-        "https://docker.nju.edu.cn",
-        "https://vp5v3vra.mirror.aliyuncs.com",
-        "https://docker.registry.cyou",
-        "https://docker-cf.registry.cyou",
-        "https://dockercf.jsdelivr.fyi",
-        "https://docker.jsdelivr.fyi",
-        "https://dockertest.jsdelivr.fyi",
-        "https://mirror.baidubce.com",
-        "https://docker.m.daocloud.io",
-        "https://docker.nju.edu.cn",
-        "https://docker.mirrors.sjtug.sjtu.edu.cn",
-        "https://docker.mirrors.ustc.edu.cn",
-        "https://mirror.iscas.ac.cn",
-        "https://docker.rainbond.cc"
-      ]
-    }
-    EOF    
+```bash
 
+sudo tee /etc/docker/daemon.json << EOF
+{
+
+    "registry-mirrors": [
+        "https://docker.m.daocloud.io",
+        "https://docker.imgdb.de",
+        "https://docker-0.unsee.tech",
+        "https://docker.hlmirror.com",
+        "https://docker.1ms.run",
+        "https://func.ink",
+        "https://lispy.org",
+        "https://docker.xiaogenban1993.com"
+    ],
+    "data-root": "/usr/local/data/docker"
+}
+EOF
     ```
     
 2.  **重启 Docker 服务**

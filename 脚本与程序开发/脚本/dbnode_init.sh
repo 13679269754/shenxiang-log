@@ -151,6 +151,10 @@ sudo sed -i '/swap/s/^/#/' /etc/fstab
 
 # change ssd
 sed -i 's/#UseDNS yes/UseDNS no/g' /etc/ssh/sshd_config
+
+# 修改 PermitRootLogin 配置（使用 | 作为分隔符）
+sed -i 's|#PermitRootLogin prohibit-password|PermitRootLogin yes|g' /etc/ssh/sshd_config
+
 systemctl restart sshd
 
 # yum 源配置

@@ -74,7 +74,7 @@ performance_schema=1
 #redo
 innodb_log_group_home_dir=/usr/local/mysql/mysqldata/db3306/data
 innodb_log_files_in_group=3
-innodb_log_file_size=512M
+innodb_log_file_size=4G
 innodb_log_buffer_size=20M
 innodb_flush_log_at_trx_commit=1
 
@@ -147,6 +147,11 @@ sync_master_info=1000
 sync_relay_log_info=1000
 relay_log_recovery=1
 relay_log_purge=1
+
+######parallel-replication######
+slave_parallel_type='LOGICAL_CLOCK';
+slave_parallel_workers=8
+binlog_transaction_dependency_tracking = 'WRITESET';
 
 #####gtid#####
 gtid_mode=on

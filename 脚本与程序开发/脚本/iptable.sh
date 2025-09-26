@@ -39,41 +39,12 @@ $IPTABLES -A INPUT -p icmp --icmp-type echo-request -j ACCEPT
 $IPTABLES -A INPUT -p tcp -s 172.30.1.37 --dport 22 -j ACCEPT
 $IPTABLES -A INPUT -p tcp -s 172.30.1.37 --dport 3106 -j ACCEPT
 
-$IPTABLES -A INPUT -p tcp -s 172.30.2.246 --dport 22 -j ACCEPT
-$IPTABLES -A INPUT -p tcp -s 172.30.2.246 --dport 3106 -j ACCEPT
-
-$IPTABLES -A INPUT -p tcp -s 172.30.2.245 --dport 22 -j ACCEPT
-$IPTABLES -A INPUT -p tcp -s 172.30.2.245 --dport 3106 -j ACCEPT
-
-$IPTABLES -A INPUT -p tcp -s 172.30.2.251 --dport 22 -j ACCEPT
-$IPTABLES -A INPUT -p tcp -s 172.30.2.251 --dport 3106 -j ACCEPT
-
-
 ###########################################################################
 $IPTABLES -A INPUT -p tcp -s 172.30.70.41 --dport 3106 -j ACCEPT
 $IPTABLES -A INPUT -p tcp -s 172.30.70.42 --dport 3106 -j ACCEPT
 $IPTABLES -A INPUT -p tcp -s 172.30.70.43 --dport 3106 -j ACCEPT
 $IPTABLES -A INPUT -p tcp -s 172.30.70.44 --dport 3106 -j ACCEPT
 $IPTABLES -A INPUT -p tcp -s 172.30.70.45 --dport 3106 -j ACCEPT
-
-$IPTABLES -A INPUT -p tcp -s 172.30.70.41 --dport 22 -j ACCEPT
-$IPTABLES -A INPUT -p tcp -s 172.30.70.42 --dport 22 -j ACCEPT
-$IPTABLES -A INPUT -p tcp -s 172.30.70.43 --dport 22 -j ACCEPT
-$IPTABLES -A INPUT -p tcp -s 172.30.70.44 --dport 22 -j ACCEPT
-$IPTABLES -A INPUT -p tcp -s 172.30.70.45 --dport 22 -j ACCEPT
-
-
-
-$IPTABLES -A INPUT -p tcp -s 172.30.70.31 --dport 3106 -j ACCEPT
-$IPTABLES -A INPUT -p tcp -s 172.30.70.32 --dport 3106 -j ACCEPT
-$IPTABLES -A INPUT -p tcp -s 172.30.70.33 --dport 3106 -j ACCEPT
-$IPTABLES -A INPUT -p tcp -s 172.30.70.34 --dport 3106 -j ACCEPT
-$IPTABLES -A INPUT -p tcp -s 172.30.72.11 --dport 3106 -j ACCEPT
-
-$IPTABLES -A INPUT -p tcp -s 172.30.70.31 --dport 22 -j ACCEPT
-$IPTABLES -A INPUT -p tcp -s 172.30.70.32 --dport 22 -j ACCEPT
-$IPTABLES -A INPUT -p tcp -s 172.30.70.33 --dport 22 -j ACCEPT
-$IPTABLES -A INPUT -p tcp -s 172.30.70.34 --dport 22 -j ACCEPT
 
 ###########################################################################
 /usr/sbin/iptables-save > /etc/sysconfig/iptables

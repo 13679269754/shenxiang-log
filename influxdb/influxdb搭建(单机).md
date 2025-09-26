@@ -1,6 +1,6 @@
-| operator | createtime | updatetime |
-| ---- | ---- | ---- |
-| shenx | 2023-12月-05 | 2023-12月-05  |
+| operator | createtime  | updatetime  |
+| -------- | ----------- | ----------- |
+| shenx    | 2023-12月-05 | 2023-12月-05 |
 | ... | ... | ... |
 ---
 # influxdb搭建

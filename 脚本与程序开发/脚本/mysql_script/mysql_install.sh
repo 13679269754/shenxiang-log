@@ -59,10 +59,10 @@ run_step=0
 
 function dir_format(){
     dir=$1
-    path1=`basename $dir`
-    path2=`dirname $dir`
+    path1=$(basename $dir)
+    path2=$(dirname $dir)
     path=$path2/$path1
-    echo $path
+    echo "$path"
 }
 
 function usage(){
@@ -82,7 +82,7 @@ function usage(){
 #-o或--options选项后面接可接受的短选项，如ab:c::，表示可接受的短选项为-a -b -c，其中-a选项不接参数，-b选项后必须接参数，-c选项的参数为可选的
 #-l或--long选项后面接可接受的长选项，用逗号分开，冒号的意义同短选项。
 #-n选项后接选项解析错误时提示的脚本名字
-ARGS=`getopt --options p:h --long package_dir:,package_file:,port:,help,data_path:,base_path:,version_control:,run_step:, -n 'mysql_install.sh' -- "$@"`
+ARGS=$(getopt --options p:h --long package_dir:,package_file:,port:,help,data_path:,base_path:,version_control:,run_step:, -n 'mysql_install.sh' -- "$@")
 if [ $? != 0 ]; then
     echo ""
     echo "Terminating..."
@@ -195,42 +195,42 @@ echo ""
 package_path=$package_dir/$package_file
 base_path=$(dir_format "$base_path")
 data_path=$(dir_format "$data_path")
-version=`ls $package_path|awk -F '-' '{print $2}'|awk -F '.' '{print $1$2}'`
-little_version=`ls $package_path|awk -F '-' '{print $2}'|awk -F '.' '{print $1$2$3$4}'`
-date=`/usr/bin/date +%Y%m%d_%H_%M`
+version=$(ls "$package_path"|awk -F '-' '{print $2}'|awk -F '.' '{print $1$2}')
+little_version=$(ls "$package_path"|awk -F '-' '{print $2}'|awk -F '.' '{print $1$2$3$4}')
+date=$(/usr/bin/date +%Y%m%d_%H_%M)
 
 if [[ $version -ne '56' && $version -ne '57' && $version -ne '80' ]]; then
     echo "mysql version not right!!!"
     exit 1
 fi
 
-if [ $version_control -eq 0 ];then
+if [ "$version_control" -eq 0 ];then
     base_dir=$base_path
     data_dir=$data_path
-elif [ $version_control -eq 1 ];then
+elif [ "$version_control" -eq 1 ];then
     base_dir=$base_path/mysql$little_version
     data_dir=$data_path/mysqldata$little_version
-elif [ $version_control -eq 2 ];then
+elif [ "$version_control" -eq 2 ];then
     base_dir=$base_path/mysql$little_version
     data_dir=$data_path
-elif [ $version_control -eq 3 ];then
+elif [ "$version_control" -eq 3 ];then
     base_dir=$base_path
     data_dir=$data_path/mysqldata$little_version
 fi
 
 conf_path=$data_dir/db$dbport/conf/my$dbport.cnf 
-if [ ! -e $package_path ]; then
+if [ ! -e "$package_path" ]; then
     echo "mysql package not exist!!!"
     exit 1
 fi
 
 
 function log(){
-    if [ $1 == 'warning' ]; then 
+    if [ "$1" == 'warning' ]; then 
         echo -e "\e[033mWarning: $2\e[0m"
-    elif [ $1 == 'info' ]; then
+    elif [ "$1" == 'info' ]; then
         echo -e "\e[032mInfo:    $2\e[0m"
-    elif [ $1 == 'error' ]; then
+    elif [ "$1" == 'error' ]; then
         echo -e "\e[031mError:   $2\e[0m"
     else 
         echo "$1"
@@ -241,11 +241,11 @@ function log(){
 function linux_system_limit(){
     log 'info' "Begin update linux system variables......"
     echo ""
-    cp /etc/sysctl.conf /tmp/sysctl.conf_$date
+    cp /etc/sysctl.conf /tmp/sysctl.conf_"$date"
     log 'info' "/etc/sysctl.conf backup path /tmp/sysctl.conf_$date"
-    mem_max=`cat /proc/meminfo | grep MemTotal | awk '{printf ("%d\n",$2*1024*0.8)}'`
-    mem_max_set=`cat /etc/sysctl.conf | grep 'kernel.shmmax' | wc -l`
-    if [ $mem_max_set -eq 0 ];then
+    mem_max=$(cat /proc/meminfo | grep MemTotal | awk '{printf ("%d\n",$2*1024*0.8)}')
+    mem_max_set=$(cat /etc/sysctl.conf | grep 'kernel.shmmax' | wc -l)
+    if [ "$mem_max_set" -eq 0 ];then
         log 'info' "shmmax not set, shmmax value: $mem_max ......"
         echo "kernel.shmmax=$mem_max" >> /etc/sysctl.conf
     else
@@ -253,9 +253,9 @@ function linux_system_limit(){
         #sed -i "s/kernel.shmmax\s*=\s*[0-9]*/kernel.shmmax=$mem_max/g" /etc/sysctl.conf
     fi
     
-    mem_all=`cat /proc/meminfo | grep MemTotal | awk '{printf ("%d\n",$2*1024/4096)}'`
-    mem_all_set=`cat /etc/sysctl.conf | grep 'kernel.shmall' | wc -l`
-    if [ $mem_max_set -eq 0 ];then
+    mem_all=$(cat /proc/meminfo | grep MemTotal | awk '{printf ("%d\n",$2*1024/4096)}')
+    mem_all_set=$(cat /etc/sysctl.conf | grep 'kernel.shmall' | wc -l)
+    if [ "$mem_max_set" -eq 0 ];then
         log 'info' "shmall not set, shmall value: $mem_all ......"
         echo "kernel.shmall=$mem_all" >> /etc/sysctl.conf
     else
@@ -263,11 +263,11 @@ function linux_system_limit(){
         #sed -i "s/kernel.shmall\s*=\s*[0-9]*/kernel.shmall=$mem_all/g" /etc/sysctl.conf
     fi
     
-    cp /etc/security/limits.conf /tmp/limits.conf_$date
+    cp /etc/security/limits.conf /tmp/limits.conf_"$date"
     echo ""
     log 'info' "/etc/security/limits.conf backup path /tmp/limits.conf_$date"
-    nofile_limit=`cat /etc/security/limits.conf | grep -E 'mysql' | grep 'nofile' | grep -v "#"| wc -l`
-    if [ $nofile_limit -eq 0 ];then
+    nofile_limit=$(cat /etc/security/limits.conf | grep -E 'mysql' | grep 'nofile' | grep -v "#"| wc -l)
+    if [ "$nofile_limit" -eq 0 ];then
         echo 'mysql   soft    nofile   65535' >> /etc/security/limits.conf
         echo 'mysql   hard    nofile   65535' >> /etc/security/limits.conf
     else
@@ -275,8 +275,8 @@ function linux_system_limit(){
         sed -i "s/^mysql\s*hard\s*nofile\s*[0-9]*/mysql hard nofile 65535/g" /etc/security/limits.conf 
     fi
     
-    nproc_limit=`cat /etc/security/limits.conf | grep -E 'mysql' | grep 'nproc' | grep -v "#"| wc -l`
-    if [ $nofile_limit -eq 0 ];then
+    nproc_limit=$(cat /etc/security/limits.conf | grep -E 'mysql' | grep 'nproc' | grep -v "#"| wc -l)
+    if [ "$nofile_limit" -eq 0 ];then
         echo 'mysql   soft    nproc   65535' >> /etc/security/limits.conf
         echo 'mysql   hard    nproc   65535' >> /etc/security/limits.conf
     else
@@ -290,17 +290,17 @@ function create_mysql_server() {
 
     log 'info' "Begin install mysql ......"
    
-    if [ -e $base_dir ]; then
+    if [ -e "$base_dir" ]; then
         log 'error' "Base dir $base_dir already exist, please check ...... \n\n\n"
         exit 1
     else
-        mkdir -p $base_dir
+        mkdir -p "$base_dir"
     fi
     
 
     #create user
-    user_count=`id mysql | wc -l`
-    if [ $user_count -eq 0 ];then
+    user_count=$(id mysql | wc -l)
+    if [ "$user_count" -eq 0 ];then
         groupadd mysql
         useradd -g mysql mysql
         
@@ -323,14 +323,14 @@ function create_mysql_server() {
     #install mysql 
     yum install -y make gcc-c++ cmake bison-devel ncurses-devel bison pstack openssl libaio  autoconf
   
-    if [ $version -eq '56' ]; then
-        tar -zxf $package_path -C $base_dir --strip-components 1
-        cp $base_dir/bin/mysqld_safe $base_dir/bin/mysqld_safe_bak
-        sed "s#/usr/local/mysql#$base_dir#g" $base_dir/bin/mysqld_safe_bak > $base_dir/bin/mysqld_safe
+    if [ "$version" -eq '56' ]; then
+        tar -zxf "$package_path" -C "$base_dir" --strip-components 1
+        cp "$base_dir"/bin/mysqld_safe "$base_dir"/bin/mysqld_safe_bak
+        sed "s#/usr/local/mysql#$base_dir#g" "$base_dir"/bin/mysqld_safe_bak > "$base_dir"/bin/mysqld_safe
     else
-        tar -zxf $package_path -C $base_dir --strip-components 1
+        tar -zxf "$package_path" -C "$base_dir" --strip-components 1
     fi
-    chown -R mysql. $base_dir
+    chown -R mysql. "$base_dir"
     
     log 'info' "END install mysql ......\n\n\n"
 
@@ -339,53 +339,53 @@ function create_mysql_server() {
 
 function create_mysql_instance(){
     log 'info' "Begin install mysql instance......"
-    if [ -e $data_dir/db$dbport ]; then
+    if [ -e "$data_dir"/db"$dbport" ]; then
         log 'error' "Mysql $data_dir/db$dbport already exist!!!"
         exit 1    
     fi 
     
-    port_count=`netstat -anl| grep $dbport | grep -v 33060 | grep -v 33061 | grep LISTEN | wc -l`
-    if [ $port_count -gt 0 ]; then
+    port_count=$(netstat -anl| grep "$dbport" | grep -v 33060 | grep -v 33061 | grep LISTEN | wc -l)
+    if [ "$port_count" -gt 0 ]; then
         log 'error' "Mysql $dbport already exist!!!"
         exit 1    
     fi 
     
 
-    mkdir -p $data_dir/db$dbport
-    mkdir -p $data_dir/db$dbport/log
-    mkdir -p $data_dir/db$dbport/run
-    mkdir -p $data_dir/db$dbport/data
-    mkdir -p $data_dir/db$dbport/tmp
-    mkdir -p $data_dir/db$dbport/conf
-	touch $data_dir/db$dbport/log/alert.log
+    mkdir -p "$data_dir"/db"$dbport"
+    mkdir -p "$data_dir"/db"$dbport"/log
+    mkdir -p "$data_dir"/db"$dbport"/run
+    mkdir -p "$data_dir"/db"$dbport"/data
+    mkdir -p "$data_dir"/db"$dbport"/tmp
+    mkdir -p "$data_dir"/db"$dbport"/conf
+	touch "$data_dir"/db"$dbport"/log/alert.log
 	
-    if [ $version -eq '56' ]; then
+    if [ "$version" -eq '56' ]; then
         init_mysql_cmd="$base_dir/scripts/mysql_install_db --user=mysql --basedir=$base_dir --datadir=$data_dir/db$dbport/data --innodb-data-file-path=ibdata1:16m --innodb-undo-tablespaces=4 --lower-case-table-names=1"
-        cp ./my56.cnf $conf_path
-    elif [ $version -eq '57' ]; then
+        cp ./my56.cnf "$conf_path"
+    elif [ "$version" -eq '57' ]; then
         init_mysql_cmd="$base_dir/bin/mysqld --initialize-insecure --user=mysql --basedir=$base_dir --datadir=$data_dir/db$dbport/data --innodb-undo-tablespaces=4 --lower-case-table-names=1 --innodb-data-file-path=ibdata1:16m"
-        cp ./my57.cnf $conf_path
-    elif [ $version -eq '80' ]; then
+        cp ./my57.cnf "$conf_path"
+    elif [ "$version" -eq '80' ]; then
         init_mysql_cmd="$base_dir/bin/mysqld --initialize-insecure --user=mysql --basedir=$base_dir --datadir=$data_dir/db$dbport/data --innodb-undo-tablespaces=4 --lower-case-table-names=1 --innodb-data-file-path=ibdata1:16m"
-        cp ./my80.cnf $conf_path
+        cp ./my80.cnf "$conf_path"
     fi
 
-    chown mysql. $data_dir
-    chown -R mysql. $data_dir/db$dbport
+    chown mysql. "$data_dir"
+    chown -R mysql. "$data_dir"/db"$dbport"
     
     log 'info' "$init_mysql_cmd"
     echo ""
     echo ""
-    `$init_mysql_cmd`
+    $($init_mysql_cmd)
     
     ##配置参数
-    buffer_limit=`cat /proc/meminfo | grep MemTotal | awk '{printf ("%d\n",$2/1024/1024*0.8*0.8)}'`G
+    buffer_limit=$(cat /proc/meminfo | grep MemTotal | awk '{printf ("%d\n",$2/1024/1024*0.8*0.8)}')G
     server_id=$RANDOM
     #sed -i "s/innodb_buffer_pool_size=[0-9]*G/innodb_buffer_pool_size=$buffer_limit/g" $conf_path
-    sed -i "s/server_id=[0-9]*/server_id=$server_id/g" $conf_path
-    sed -i "s/3306/$dbport/g" $conf_path
-	sed -i "s#/usr/local/mysql/mysqldata#$data_dir#g" $conf_path
-	sed -i "s#/usr/local/mysql/mysqlserver#$base_dir#g" $conf_path
+    sed -i "s/server_id=[0-9]*/server_id=$server_id/g" "$conf_path"
+    sed -i "s/3306/$dbport/g" "$conf_path"
+	sed -i "s#/usr/local/mysql/mysqldata#$data_dir#g" "$conf_path"
+	sed -i "s#/usr/local/mysql/mysqlserver#$base_dir#g" "$conf_path"
     echo ""
     echo ""
     log 'warning' "Server_id: $server_id"
@@ -402,17 +402,17 @@ function create_mysql_instance(){
 }
 
 function mysql_startup(){
-    echo "$base_dir/bin/mysqld_safe --defaults-file=$conf_path &2>&1 > /dev/null" > /home/mysql/$dbport-start.sh
-    echo "$base_dir/bin/mysql -S $data_dir/db$dbport/run/mysql$dbport.sock" > /home/mysql/$dbport-login.sh 
+    echo "$base_dir/bin/mysqld_safe --defaults-file=$conf_path &2>&1 > /dev/null" > /home/mysql/"$dbport"-start.sh
+    echo "$base_dir/bin/mysql -S $data_dir/db$dbport/run/mysql$dbport.sock" > /home/mysql/"$dbport"-login.sh 
     
-    chmod u+x /home/mysql/$dbport-login.sh 
-    chown -R mysql. /home/mysql/$dbport-login.sh 
+    chmod u+x /home/mysql/"$dbport"-login.sh 
+    chown -R mysql. /home/mysql/"$dbport"-login.sh 
     
-    chmod u+x /home/mysql/$dbport-start.sh
-    chown -R mysql. /home/mysql/$dbport-start.sh
+    chmod u+x /home/mysql/"$dbport"-start.sh
+    chown -R mysql. /home/mysql/"$dbport"-start.sh
     
     
-    /home/mysql/$dbport-start.sh
+    /home/mysql/"$dbport"-start.sh
     echo ""
     echo ""
     log 'info' "Mysql $dbport Already in starting....."
@@ -423,8 +423,8 @@ function mysql_startup(){
     while true
     do  
         sleep 10
-        connect=`$base_dir/bin/mysql -S $data_dir/db$dbport/run/mysql$dbport.sock -e 'select now()' | wc -l`
-        if [ $connect -gt 0 ];then
+        connect=$($base_dir/bin/mysql -S "$data_dir"/db"$dbport"/run/mysql"$dbport".sock -e 'select now()' | wc -l)
+        if [ "$connect" -gt 0 ];then
             break
         fi
     done
@@ -439,8 +439,8 @@ function create_mysql_user(){
 echo ""
 log 'info' "Create mysql user......"
 
-if [ $version -eq '56' ]; then
-$base_dir/bin/mysql -S $data_dir/db$dbport/run/mysql$dbport.sock <<EOF
+if [ "$version" -eq '56' ]; then
+"$base_dir"/bin/mysql -S "$data_dir"/db"$dbport"/run/mysql"$dbport".sock <<EOF
     create user 'dzjroot'@'%' identified by 'Dzj_pwd_2022';
     grant all privileges on *.* to 'dzjroot'@'%';
     create user 'dzjrep'@'%' identified by 'Dzj_pwd_2022';
@@ -449,7 +449,7 @@ $base_dir/bin/mysql -S $data_dir/db$dbport/run/mysql$dbport.sock <<EOF
     flush privileges;
 EOF
 else
-$base_dir/bin/mysql -S $data_dir/db$dbport/run/mysql$dbport.sock <<EOF
+"$base_dir"/bin/mysql -S "$data_dir"/db"$dbport"/run/mysql"$dbport".sock <<EOF
     drop user if EXISTS 'dzjroot'@'%';
     create user 'dzjroot'@'%' identified by 'Dzj_pwd_2022';
     grant all privileges on *.* to 'dzjroot'@'%';
@@ -476,19 +476,19 @@ else
 fi 
 }
 
-if [ $run_step -eq 0 ] || [ $run_step -eq 11 ]; then
+if [ "$run_step" -eq 0 ] || [ "$run_step" -eq 11 ]; then
     linux_system_limit
 fi
 
-if [ $run_step -eq 0 ] || [ $run_step -eq 1 ] || [ $run_step -eq 12 ]; then
+if [ "$run_step" -eq 0 ] || [ "$run_step" -eq 1 ] || [ "$run_step" -eq 12 ]; then
     create_mysql_server
 fi
 
-if [ $run_step -eq 0 ] || [ $run_step -eq 1 ] || [ $run_step -eq 2 ] || [ $run_step -eq 13 ]; then
+if [ "$run_step" -eq 0 ] || [ "$run_step" -eq 1 ] || [ "$run_step" -eq 2 ] || [ "$run_step" -eq 13 ]; then
     create_mysql_instance
     mysql_startup
 fi
 
-if [ $run_step -eq 0 ] || [ $run_step -eq 1 ] || [ $run_step -eq 2 ] || [ $run_step -eq 14 ]; then
+if [ "$run_step" -eq 0 ] || [ "$run_step" -eq 1 ] || [ "$run_step" -eq 2 ] || [ "$run_step" -eq 14 ]; then
     create_mysql_user
 fi

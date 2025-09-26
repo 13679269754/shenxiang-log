@@ -4,7 +4,104 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d81fffa-aae7-4b97-af2b-7896be19c678" name="更改" comment="" />
+    <list default="true" id="2d81fffa-aae7-4b97-af2b-7896be19c678" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../elasticearch/elasticsearch + kibana 安装 添加用户验证 开启https访问.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../elasticearch/elasticsearch + kibana 安装 添加用户验证 开启https访问.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../elasticearch/elasticsearch + kibana 安装新.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../elasticearch/elasticsearch + kibana 安装新.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../elasticearch/elasticsearch reindex.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../elasticearch/elasticsearch reindex.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../elasticearch/单机安装集群-添加SSL及用户认证.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../elasticearch/单机安装集群-添加SSL及用户认证.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../linux/LVM添加硬盘并扩容至已有分区.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../linux/LVM添加硬盘并扩容至已有分区.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../linux/centos7 job dev-mapper-vg_data_2.device.start timeout.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../linux/centos7 job dev-mapper-vg_data_2.device.start timeout.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../linux/各种环境/centos docker 环境.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../linux/各种环境/centos docker 环境.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../linux/各种环境/centos yum国内源.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../linux/各种环境/centos yum国内源.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../linux/各种环境/docker国内源.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../linux/各种环境/ubunto系统初始化&amp;docker安装.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../mysql-组件集/mysqlrouter/MySQL Router实现MySQL的读写分离.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../mysql-组件集/mysqlrouter/MySQL Router实现MySQL的读写分离.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../mysql/mysql 参数调优.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../mysql/mysql 参数调优.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../mysql/mysql_doc学习/mysql8.0字符串函数.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../mysql/mysql_doc学习/mysql8.0字符串函数.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../mysql/大技小智2020/mysql8.0/2.6 从 wireshark 看 MySQL 8.0 加密连接.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../mysql/大技小智2020/mysql8.0/2.6 从 wireshark 看 MySQL 8.0 加密连接.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../mysql/大技小智2020/mysql8.0/2.9 MySQL 8 的备份工具该如何选择？.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../mysql/大技小智2020/mysql8.0/2.9 MySQL 8 的备份工具该如何选择？.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../mysql/大技小智2020/一问一实验/1.7 innodb_buffer_pool_instances 是如何影响性能的.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../mysql/大技小智2020/一问一实验/1.7 innodb_buffer_pool_instances 是如何影响性能的.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../mysql/工具/xtrabackup8.0.34 安装依赖zstd .md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../mysql/工具/xtrabackup8.0.34 安装依赖zstd .md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../orientdb/orientdb安装.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../orientdb/orientdb安装.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../orientdb/orientdb集群安装.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../orientdb/orientdb集群安装.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../postgresql/资料路径.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../postgresql/资料路径.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../vue3/环境搭建.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../vue3/环境搭建.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../便签/2024-07-07.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../便签/2024-07-07.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../便签/2024-07-18.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../便签/2024-07-18.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../便签/2025-07-01.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../便签/2025-07-01.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../便签/2025-07-02-02.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../便签/2025-07-02-02.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../便签/2025-07-02-03.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../便签/2025-07-02-03.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../便签/2025-07-02-04.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../便签/2025-07-02-04.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../便签/2025-07-02.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../便签/2025-07-02.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../便签/2025.02-14.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../便签/2025.02-14.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/主备环境切换演练.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../工作文档/主备环境切换演练.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/elasticearch+kibana搭建.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../工作文档/迁移航天云/elasticearch+kibana搭建.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/mysql迁移.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../工作文档/迁移航天云/mysql迁移.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../常用命令/elasticsearch.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../常用命令/elasticsearch.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../常用命令/mysql.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../常用命令/mysql.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../常用命令/postgresql.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../常用命令/postgresql.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Archery" beforeDir="false" afterPath="$PROJECT_DIR$/../Archery" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../big_event.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../iptable.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../iptable.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mysql awr报告--小麦苗.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mysql_backup.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/mysql_report_job.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mysql_report_job.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysql_report_job.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mysql_script/my56.cnf" beforeDir="false" afterPath="$PROJECT_DIR$/../mysql_script/my56.cnf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mysql_script/my57.cnf" beforeDir="false" afterPath="$PROJECT_DIR$/../mysql_script/my57.cnf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mysql_script/my80.cnf" beforeDir="false" afterPath="$PROJECT_DIR$/../mysql_script/my80.cnf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mysql_script/mysql_install.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../mysql_script/mysql_install.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mysql_script/mysql_system_youhua.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../mysql_script/mysql_system_youhua.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/.idea/deployment.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/.idea/dictionaries/shenxiang.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/.idea/pythonProject.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/ProcessPoolExecutor.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/csv_test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/infi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/innodbback.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/mail.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/mail_sql/2.0团队审核查询_日期.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/mail_test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/mail_test_tmp.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/mysql_sendmail.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/output.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/qywechat_token.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/semaphore.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/test.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/test_asyncio.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/test_asyncio_coroutine.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/test_coroutine.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/test_generator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/test_iterable_class.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/test_python_queue.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/test_thread.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/test_thread_condition.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/test_thread_local.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/test_thread_pool.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/text_alert_promethous.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/thread_test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/测试1_20230822.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/测试1_20230823.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/测试2_20230822.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/测试3_20230822.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../读书笔记/佛教十三经：金刚经·心经.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../读书笔记/佛教十三经：金刚经·心经.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../读书笔记/反脆弱.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../读书笔记/反脆弱.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../读书笔记/自卑与自信.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../读书笔记/自卑与自信.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../读书笔记/被讨厌的勇气.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../读书笔记/被讨厌的勇气.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../读书笔记/非暴力沟通.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../读书笔记/非暴力沟通.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +114,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -26,21 +126,23 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/shenxiang.DAZHUANJIA/PycharmProjects/mysql_report_job&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/shenxiang.DAZHUANJIA/Desktop/文档/markdown/脚本与程序开发/脚本/mysql_slowlog",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "settings.sync",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Python.mysql_reporter">
     <configuration name="encrypt_data" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="mysql_report_job" />
@@ -50,7 +152,6 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Remote Python 3.8.16 (sftp://root@172.29.29.100:22/root/.virtualenvs/mysql_report_job/bin/python) (2)" />
       <option name="WORKING_DIRECTORY" value="C:\Users\shenxiang.DAZHUANJIA\PycharmProjects\mysql_report_job" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -80,7 +181,6 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Remote Python 3.8.16 (sftp://root@172.29.29.100:22/root/.virtualenvs/mysql_report_job/bin/python)" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />

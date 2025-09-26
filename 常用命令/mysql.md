@@ -1,11 +1,9 @@
-| operator | createtime | updatetime |
-| ---- | ---- | ---- |
-| shenx | 2024-10月-17 | 2024-10月-17  |
-| ... | ... | ... |
+| operator | createtime  | updatetime  |
+| -------- | ----------- | ----------- |
+| shenx    | 2024-10月-17 | 2024-10月-17 |
+
 ---
 # mysql
-
-[toc]
 
 ## 实时运行的SQL查询
 
@@ -378,3 +376,7 @@ SELECT * FROM sys.schema_redundant_indexes;
 -- 未使用索引
 SELECT * FROM sys.schema_unused_indexes;
 ```
+
+## 数据文件校验 mysqlcheck
+
+ mysqlcheck --all-databases   -S /usr/local/data/mysql_data/db3106/run/mysql3106.sock -u root -p

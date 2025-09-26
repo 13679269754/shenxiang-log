@@ -74,7 +74,7 @@ performance_schema=1
 #redo
 innodb_log_group_home_dir=/usr/local/mysql/mysqldata/db3306/data
 innodb_log_files_in_group=3
-innodb_log_file_size=512M
+innodb_log_file_size=4G
 innodb_log_buffer_size=20M
 innodb_flush_log_at_trx_commit=1
 
@@ -127,6 +127,13 @@ myisam_sort_buffer_size=64M
 concurrent_insert=2
 delayed_insert_timeout=300
 
+
+######time_zone#####
+time_zone=SYSTEM
+log_timestamps=SYSTEM
+system_time_zone=CST
+
+
 #####replication#####
 master-info-file=/usr/local/mysql/mysqldata/db3306/log/master.info
 relay-log=/usr/local/mysql/mysqldata/db3306/log/relaylog
@@ -141,6 +148,12 @@ sync_relay_log_info=1000
 relay_log_recovery=1
 relay_log_purge=1
 
+######parallel-replication######
+slave_parallel_type='LOGICAL_CLOCK';
+slave_parallel_workers=8
+binlog_transaction_dependency_tracking = 'WRITESET';
+
+
 #####gtid#####
 gtid_mode=on
 enforce_gtid_consistency=on
@@ -152,9 +165,31 @@ skip-name-resolve
 skip-ssl
 #read_only=1
 
-
 server_id=22670
 
+########### Group Replication 必需配置##############
+report_host = 172.29.105.241
+plugin_dir = "/usr/local/data/mysql/lib/plugin"
+
+
+gtid_mode = ON
+enforce_gtid_consistency = ON
+binlog_checksum = NONE
+log_bin = binlog
+log_slave_updates = ON
+master_info_repository = TABLE
+binlog_format = ROW
+relay_log_info_repository = TABLE
+transaction_write_set_extraction = XXHASH64
+group_replication_group_name = "c342b755-8253-11f0-899b-005056ab29b6"  # 集群唯一 ID（可自定义 UUID）
+group_replication_start_on_boot = OFF
+group_replication_local_address = "172.29.105.241:33061"  # 当前节点 IP:33061 -- 
+group_replication_group_seeds = "172.29.105.240:3306,172.29.105.241:33061,172.29.105.241:33061"  # 所有节点
+group_replication_bootstrap_group = OFF  # 仅初始化集群时在主节点设为 ON
+
+########### Group Replication 建议配置##############
+disabled_storage_engines="MyISAM,BLACKHOLE,FEDERATED,ARCHIVE,MEMORY"
+group_replication_exit_state_action='READ_ONLY'
 
 [mysqldump]
 single_transaction

@@ -1,7 +1,7 @@
 | operator | createtime | updatetime |
 | ---- | ---- | ---- |
 | shenx | 2024-10月-17 | 2024-10月-17  |
-| ... | ... | ... |
+
 ---
 # elasticsearch
 

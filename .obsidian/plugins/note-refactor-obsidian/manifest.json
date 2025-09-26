@@ -1,0 +1,9 @@
+{
+    "id": "note-refactor-obsidian",
+    "name": "Note Refactor",
+    "version": "1.8.2",
+    "description": "将笔记内容提取到新笔记中并拆分笔记",
+    "isDesktopOnly": false,
+    "js": "main.js",
+    "css": "style.css"
+}
