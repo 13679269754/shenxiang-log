@@ -60,7 +60,7 @@ Bye
 ### 5.1 安装`truncate`命令
 
 ```bash
-[root@mysql01 ~]# cruncate
+[root@mysql01 ~]# truncate
 -bash: cruncate: 未找到命令
 通常操作系统会安装truncate命令，该命令在coreutils安装包里面，如果没有安装可以使用下面命令安装
 
@@ -121,3 +121,61 @@ fi
 
 ```
 
+针对目录的清除，并且限速
+```bash
+#!/bin/bash
+
+TRUNCATE=/usr/bin/truncate
+TARGET_DIR="/usr/local/data/mysql_data/db3106/data/research"
+LOG_FILE="/var/log/truncate_cleanup.log"
+SLEEP_INTERVAL=0  # 每次截断后的等待时间（秒）
+STEP_SIZE=100     # 每次减少的大小（MB）
+
+log() {
+    echo "$(date '+%Y-%m-%d %H:%M:%S') $1" | tee -a "$LOG_FILE"
+}
+
+if [ ! -d "$TARGET_DIR" ]; then
+    log "目录不存在: $TARGET_DIR"
+    exit 1
+fi
+
+# 遍历目录下所有文件
+find "$TARGET_DIR" -type f | while read -r FILE; do
+    log "开始处理文件: $FILE"
+
+    SIZE_M=$(du -sm "$FILE" | awk '{print $1}')
+
+    # 每次减少 STEP_SIZE MB，直到 0
+    for ((i=SIZE_M; i>=0; i-=STEP_SIZE)); do
+        if [ "$SLEEP_INTERVAL" -gt 0 ]; then
+            sleep "$SLEEP_INTERVAL"
+        fi
+        log "执行: ${TRUNCATE} -s ${i}M ${FILE}"
+        $TRUNCATE -s "${i}M" "$FILE"
+    done
+
+    rm -f "$FILE"
+    log "文件已删除: $FILE"
+done
+
+# 删除空目录
+# find "$TARGET_DIR" -type d -empty -delete
+log "目录 $TARGET_DIR 已清理完成"
+
+```
+
+
+
+## 实测心得
+
+1. 建立硬链接能减少数据删除操作的等待时间，建议对所有的大表删除都应该做此操作。
+2. truncate 删除硬链接文件，经过测试没有太大必要。
+3. linux 采用标记删除，直接删除单个大文件的io并不高。
+
+## 权限回收
+
+删除库表后，更具表名，库名赋予的权限并不会自动回收。一般不会产生问题，但是，当你需要将会权限导出，写入另一个环境的库时，相关语句会报错，表不存在。
+
+
+[[删除表，库后权限的回收]]

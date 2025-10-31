@@ -18,12 +18,9 @@ program_exists() {
 echo "dzj123,./" | passwd --stdin root
 
 # 修改 SSH 配置
-# 修改 UseDNS 配置
 sed -i 's/#UseDNS yes/UseDNS no/g' /etc/ssh/sshd_config
-
-# 修改 PermitRootLogin 配置（使用 | 作为分隔符）
-sed -i 's|#PermitRootLogin prohibit-password|PermitRootLogin yes|g' /etc/ssh/sshd_config
-systemctl restart sshd
+sed -i 's/#PermitRootLogin prohibit/password/PermitRootLogin yes/g' /etc/ssh/sshd_config
+systemctl restart ssh
 
 # 安装软件
 mv /etc/apt/sources.list /etc/apt/sources.list.1bak
@@ -50,19 +47,19 @@ apt update
 apt install -y ntpdate lvm2 lrzsz wget curl unzip net-tools telnet tcpdump iftop iotop sysstat netcat  xfsprogs htop psmisc tree net-tools bash-completion vim
 apt install -y zlib1g-dev libssl-dev libncurses5-dev libsqlite3-dev libreadline-dev libffi-dev
 apt install -y gcc g++ make cmake bison
-# apt remove -y python3
+apt remove -y python3
 
-# 安装 Python
-# program_exists python3
-# python_exist=$?
-# if [[ $python_exist -eq 0 ]]; then
-#   cd /root/soft
-#   tar -zxvf Python-3.8.16.tgz
-#
-#   cd /root/soft/Python-3.8.16
-#   make clean
-#   ./configure && make && make install
-# fi
+安装 Python
+program_exists python3
+python_exist=$?
+if [[ $python_exist -eq 0 ]]; then
+  cd /root/soft
+  tar -zxvf Python-3.8.16.tgz
+
+  cd /root/soft/Python-3.8.16
+  make clean
+  ./configure && make && make install
+fi
 
 # 安装 Docker
 #apt install -y apt-transport-https
@@ -76,7 +73,7 @@ apt install -y gcc g++ make cmake bison
 
 # 修改日期
 apt-get install chrony -y
-cat > /etc/chrony/sources.d/cn-ntp.sources << 'EOF'
+cat > /etc/chrony/sources.d/cn-ntp.sources <<EOF
 # 中国境内 NTP 服务器
 server ntp.ntsc.ac.cn iburst
 server time1.cloud.tencent.com iburst
@@ -86,13 +83,7 @@ server time2.aliyun.com iburst
 EOF
 timedatectl set-timezone Asia/Shanghai
 locale-gen zh_CN.UTF-8
-cat > /etc/default/locale << EOF
-LANG="zh_CN.UTF-8"
-LC_ALL="zh_CN.UTF-8"
-EOF
-systemctl restart chrony
-
-echo "----------------当前时间：$(date)------------------"
+echo "----------------当前时间：`date`------------------"
 
 # 如果 fdisk_opt 为 1，则执行以下操作
 if [[ $fdisk_opt -eq 1 ]]; then

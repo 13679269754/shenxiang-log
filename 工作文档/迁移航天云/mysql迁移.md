@@ -1,6 +1,6 @@
 | operator | createtime | updatetime |
-| ---- | ---- | ---- |
-| shenx | 2025-2月-27 | 2025-2月-27  |
+| -------- | ---------- | ---------- |
+| shenx    | 2025-2月-27 | 2025-2月-27 |
 | ... | ... | ... |
 ---
 # mysql迁移
@@ -207,7 +207,7 @@ EOF
 
 pip3 install -r requirements.txt
 
-ln -s  /usr/bin/python3 /usr/local/bin/python3
+ln -s   /usr/local/bin/python3 /usr/bin/python3
 ```
 
 ### 创建管理脚本
@@ -291,6 +291,15 @@ EOF
 
 crontab -e
 */2 * * * * source /etc/bashrc && source /root/.bash_profile && /usr/bin/perl -le 'sleep rand 10' && /usr/local/bin/orchestrator-client -c register-candidate -i 10.159.65.156:3106 --promotion-rule must_not >/dev/null 2>&1
+```
+
+注：
+orchestrator-client[18433]: cannot find jq
+
+处理
+```bash
+yum install epel-release -y
+yum install jq -y
 ```
 
 ## proxysql 集群搭建

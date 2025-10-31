@@ -8,12 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "77972d34754619b3",
+            "id": "367a131c238a7169",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "mysql/mysql 理论部分/matedata_lock的研究.md",
+                "file": "大数据学习计划/java 学习/10-31.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,83 +28,10 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "matedata_lock的研究"
-            }
-          },
-          {
-            "id": "404ae62d37547b29",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "influxdb/调整保留期.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "调整保留期"
-            }
-          },
-          {
-            "id": "b98ce25aa7e9c1d8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "便签/2025-09-24.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "2025-09-24"
-            }
-          },
-          {
-            "id": "9343c25ee60e5ce1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "读书笔记/社会心理学.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "社会心理学"
+              "title": "10-31"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -136,7 +63,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "fs.file-max",
+                "query": "docker 国内",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -225,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "便签/2025-09-24.md",
+                "file": "大数据学习计划/java 学习/10-31.md",
                 "followCursor": true,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "2025-09-24 的大纲"
+              "title": "10-31 的大纲"
             }
           },
           {
@@ -268,48 +195,54 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "b98ce25aa7e9c1d8",
+  "active": "367a131c238a7169",
   "lastOpenFiles": [
+    "大数据学习计划/java 学习/java 学习.md",
+    "大数据学习计划/java 学习/10-31.md",
+    "devops/DEVOPS 流程体验.md",
     "读书笔记/社会心理学.md",
-    "便签/2025-09-24.md",
-    "mysql/mysql 理论部分/change buffer 的缓冲与合并.md",
-    "杂谈/相较于RocketMQ的事务消息，本地消息表才是真正的王者.md",
-    "杂谈",
-    "influxdb/调整保留期.md",
-    "便签/2025-09-25.md",
-    "便签/2025-09-17.md",
-    "便签/2025-09-18.md",
-    "便签/2025-09-19.md",
-    "便签/2025-09-23.md",
-    "mysql/mysql 理论部分/matedata_lock的研究.md",
-    "influxdb/influxdb搭建(单机).md",
-    "influxdb/influxdb 文档查询.md",
-    "便签/2025-09-16.md",
-    "obsidian-images/Pasted image 20250924175020.png",
-    "便签/2025-09-12.md",
-    "便签/2025-09-11.md",
-    "便签/2025-09-15.md",
-    "便签/2025-02-14.md",
-    "工作文档/迁移航天云/elasticearch+kibana搭建.md",
-    "读书笔记/被讨厌的勇气.md",
-    "读书笔记/反脆弱.md",
-    "读书笔记/非暴力沟通.md",
-    "读书笔记/费曼物理学讲义.md",
-    "读书笔记/佛教十三经：金刚经·心经.md",
+    "大数据学习计划/java 学习",
+    "大数据学习计划/大数据学习计划表.md",
+    "mysql/mysql 运维/删除表，库后权限的回收.md",
+    "大数据学习计划",
+    "脚本与程序开发/revoker_table_priv.sh",
+    "mysql/MySQL如何优雅的删除大表.md",
+    "脚本与程序开发/脚本/mysql_output_grants.sh",
+    "obsidian-images/Pasted image 20251030135421.png",
+    "devops/代码仓库 + 镜像仓库.md",
+    "devops/harbor 访问权限问题排查.md",
+    "linux/各种环境/centos docker 环境.md",
+    "devops/git 常用.md",
+    "工作文档/格式资料/【劳动类-员工】-岗位职责OSA确认书--沈祥.docx",
+    "问题记录/python 环境问题(urllib3).md",
+    "linux/各种环境/maven 安装.md",
+    "devops",
+    "监控/夜莺 Nightingale 监控.md",
+    "工作文档/迁移航天云/mysql迁移.md",
+    "mysql/大智小技2019/图解/【原理解析】XtraBackup 备份恢复时为什么要加 apply-log-only 参数？.md",
+    "obsidian-images/Pasted image 20251021103236.png",
+    "linux/各种环境/JDK17 安装.md",
+    "devops/k8s/k8s 学习 1.md",
+    "便签/2025-10-13.md",
+    "obsidian中文教程/中文教程.md",
     "读书笔记/狂热分子.md",
-    "读书笔记/人类简史.md",
-    "obsidian-images/Pasted image 20250918141846.png",
-    "附件/Pasted image 20250918141723.png",
-    "附件",
-    "obsidian-images",
-    "便签/未命名",
-    "Pasted image 20250918140319.png",
-    "mysql-组件集/mysql 基准测试",
-    "未命名.base",
-    "脚本与程序开发/脚本/ubuntu_dbnode_init.sh",
-    "脚本与程序开发/脚本/ubuntu_mysql/role.sql",
-    "mysql-组件集/innodb_cluster",
-    "mysql-组件集/mysqlsh",
+    "程序设计/设计理念.md",
+    "程序设计",
+    "未命名 1",
+    "devops/k8s/Kubernetes Federation.md",
+    "工作文档/工作规范/~$库服务启动手册.docx",
+    "工作文档/工作规范/数据库服务启动手册~A896B.tmp",
+    "devops/k8s/KubeFed v2 详细部署手册.md",
+    "mysql/mysql 杂谈/对于购物车减库存如何做到高并发不发生，少发生锁等待呢.md",
+    "devops/k8s/k8s 健康检查.md",
+    "obsidian-images/Pasted image 20251011155138.png",
+    "obsidian-images/Pasted image 20250929114418.png",
+    "obsidian-images/Pasted image 20250929103227.png",
+    "image-cubox/2025-9-26 15-06-15/f713b653-80d3-4471-9041-ff962430a0e2.png",
+    "image-cubox/2025-9-26 15-06-15/c8e523e6-257f-490d-8b55-60e63b66a3a9.png",
+    "image-cubox/2025-9-26 15-06-15/d185e533-7148-4ed4-90ab-e20f7b08b28d.png",
+    "image-cubox/2025-9-26 15-06-15/b3e6cc20-34ac-4874-9f85-bcc8c78318f9.png",
+    "image-cubox/2025-9-26 15-06-15/31d84e9e-2b6d-4ba4-aa58-64166cf28c8b.png",
     "未命名.canvas",
     "未命名 1.canvas"
   ]

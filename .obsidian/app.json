@@ -1,4 +1,5 @@
 {
   "alwaysUpdateLinks": true,
-  "attachmentFolderPath": "obsidian-images"
+  "attachmentFolderPath": "obsidian-images",
+  "promptDelete": false
 }
