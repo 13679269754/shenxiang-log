@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "4f1dbb6b3a32d2a8",
+        "id": "93686592dae35919",
         "type": "tabs",
         "children": [
           {
-            "id": "367a131c238a7169",
+            "id": "7cf45cad5b5b0d5e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "大数据学习计划/java 学习/10-31.md",
+                "file": "数据库/mysql/MySQL复制从库延迟原因深入分析 （并行复制原理）.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,10 +28,35 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "10-31"
+              "title": "MySQL复制从库延迟原因深入分析 （并行复制原理）"
+            }
+          },
+          {
+            "id": "adced4e2f3d4182d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "便签/2025-02-14.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "2025-02-14"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -63,12 +88,12 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "docker 国内",
+                "query": "xtrabackup",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
                 "extraContext": false,
-                "sortOrder": "alphabetical"
+                "sortOrder": "byModifiedTime"
               },
               "icon": "lucide-search",
               "title": "搜索"
@@ -88,7 +113,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 364.5
   },
   "right": {
     "id": "596786d13ee79295",
@@ -104,7 +129,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "读书笔记/专制与民主的社会起源.md",
+                "file": "大数据学习计划/大数据python应用学习/Pandas.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +139,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "专制与民主的社会起源 的反向链接列表"
+              "title": "Pandas 的反向链接列表"
             }
           },
           {
@@ -123,12 +148,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "便签/2025-09-05.md",
+                "file": "大数据学习计划/大数据python应用学习/Pandas.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "2025-09-05 的出链列表"
+              "title": "Pandas 的出链列表"
             }
           },
           {
@@ -138,7 +163,7 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true,
+                "useHierarchy": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
@@ -152,13 +177,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "大数据学习计划/java 学习/10-31.md",
+                "file": "便签/2025-02-14.md",
                 "followCursor": true,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "10-31 的大纲"
+              "title": "2025-02-14 的大纲"
             }
           },
           {
@@ -195,55 +220,55 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "367a131c238a7169",
+  "active": "2734216c2d849b59",
   "lastOpenFiles": [
-    "image-cubox/2025-10-17 10-54-25/fe40bb4b-0786-4b4e-8a10-df2498ed56f1.png",
-    "image-cubox/2025-10-17 10-54-25/fa615d08-c2aa-416a-afd9-0fa1b9bd3511.png",
-    "image-cubox/2025-10-17 10-54-25/d1feafe9-ae40-4ddf-a1cb-143d74c5268f.png",
-    "image-cubox/2025-10-17 10-54-25/fdfc9b88-8b2a-4add-a782-10f6809d5f54.png",
-    "image-cubox/2025-10-17 10-54-25/f5e49202-3cb5-4a45-a38f-8434b4a34c51.png",
-    "image-cubox/2025-10-17 10-54-25/fa7181c5-ce29-44bc-8331-e5457198bc46.png",
-    "image-cubox/2025-10-17 10-54-25/eacd1a2a-f70f-4f0d-b021-7e047307a0dc.png",
-    "image-cubox/2025-10-17 10-54-25/edf154d2-85a3-4e32-a84d-43b7b080cf98.png",
-    "image-cubox/2025-10-17 10-54-25/f17a1cb6-2866-4a6a-821e-e96213e37d87.png",
-    "image-cubox/2025-10-17 10-54-25/e3028623-d0c5-4818-a5d4-efe425209776.png",
-    "image-cubox/2025-10-17 10-54-25/eae75666-794e-4dfb-b68a-513b6a2e1cd8.png",
-    "image-cubox/2025-10-17 10-54-25",
-    "大数据学习计划/java 学习/java 学习.md",
-    "大数据学习计划/java 学习/10-31.md",
-    "devops/DEVOPS 流程体验.md",
-    "读书笔记/社会心理学.md",
-    "大数据学习计划/java 学习",
-    "大数据学习计划/大数据学习计划表.md",
-    "mysql/mysql 运维/删除表，库后权限的回收.md",
-    "大数据学习计划",
-    "脚本与程序开发/revoker_table_priv.sh",
-    "mysql/MySQL如何优雅的删除大表.md",
-    "脚本与程序开发/脚本/mysql_output_grants.sh",
-    "devops/代码仓库 + 镜像仓库.md",
-    "devops/harbor 访问权限问题排查.md",
-    "linux/各种环境/centos docker 环境.md",
-    "devops/git 常用.md",
-    "工作文档/格式资料/【劳动类-员工】-岗位职责OSA确认书--沈祥.docx",
-    "问题记录/python 环境问题(urllib3).md",
-    "linux/各种环境/maven 安装.md",
-    "devops",
-    "监控/夜莺 Nightingale 监控.md",
+    "工作文档.7z",
+    "工作文档/文件备份/~$uat db服务器资源.xlsx",
     "工作文档/迁移航天云/mysql迁移.md",
-    "mysql/大智小技2019/图解/【原理解析】XtraBackup 备份恢复时为什么要加 apply-log-only 参数？.md",
-    "linux/各种环境/JDK17 安装.md",
-    "devops/k8s/k8s 学习 1.md",
-    "便签/2025-10-13.md",
-    "obsidian中文教程/中文教程.md",
-    "读书笔记/狂热分子.md",
-    "程序设计/设计理念.md",
-    "程序设计",
-    "未命名 1",
-    "devops/k8s/Kubernetes Federation.md",
-    "工作文档/工作规范/~$库服务启动手册.docx",
-    "devops/k8s/KubeFed v2 详细部署手册.md",
-    "mysql/mysql 杂谈/对于购物车减库存如何做到高并发不发生，少发生锁等待呢.md",
+    "数据库/mysql/mysql 理论部分/mysql线程池.md",
+    "数据库/mysql/MySQL复制从库延迟原因深入分析 （并行复制原理）.md",
+    "工作文档/文件备份/~$离职通知书.docx",
+    "数据库/mysql/mysql_doc学习/mysql系统库.md",
+    "数据库/mysql/mysql 运维/MySQL如何优雅的删除大表.md",
+    "数据库/mysql/mysql 杂谈/mysql高可用对比.md",
+    "数据库/mysql/mysql 杂谈/mysql-groupby.md",
+    "数据库/mysql/mysql 杂谈/MySQL-8.0.30 版本新特性之动态调整 REDO.md",
+    "数据库/mysql/mysql 杂谈/mysql create table on update的触发机制.md",
+    "数据库/mysql/mysql DBA 综述.md",
+    "数据库/mysql/mysql 运维/mysql 排坑指南.md",
+    "工作文档/格式资料/DBA 工作规范.md",
+    "工作文档/格式资料/2024-8-5数据库安全以及个人文档.md",
+    "工作文档/格式资料/sql 审核工具对比(yearnming vs archery).md",
+    "工作文档/数据库相关文档/大专家架构图(3).jpg",
+    "数据库/mysql/mysql 杂谈/mysql 安全.md",
+    "工作文档/工作规范/mysql 数据库规范.md",
+    "工作文档/工作规范/数据库规范简单.md",
+    "数据库/mysql/mysql_doc学习/mysql 开窗函数.md",
+    "数据库/mysql/mysql 运维/mysql 大表删除.md",
+    "数据库/mysql/mysql 运维/mysql 参数调优.md",
+    "虚拟机/Proxmox Ceph 搭建完整指南.md",
+    "虚拟机/Proxmox Ceph 搭建完整指南-mindmap.md",
+    "虚拟机",
+    "pdf/未命名",
+    "数据库/mysql/mysql 杂谈/mysql 不同平台对不同版本mysql的兼容性.md",
+    "数据库/mysql/mysql 半同步复制.md",
+    "数据库/mysql/mysql 新特性-更新/MySQL 8.0 Instant Add Column功能解析.md",
+    "obsidian-images/Pasted image 20250924175020.png",
+    "obsidian-images/Pasted image 20250929114418.png",
+    "obsidian-images/Pasted image 20251011155138.png",
+    "obsidian-images/Pasted image 20251021103236.png",
+    "obsidian-images/Pasted image 20251030135421.png",
+    "obsidian-images/Pasted image 20251103132358.png",
+    "obsidian-images/Pasted image 20251103132457.png",
+    "obsidian-images/Pasted image 20250929103227.png",
+    "obsidian-images/Pasted image 20250918141846.png",
+    "数据库",
+    "工作文档/文件备份/离职通知书.docx",
+    "工作文档/文件备份/离职通知书~4A2C6.tmp",
     "未命名.canvas",
-    "未命名 1.canvas"
+    "未命名 1.canvas",
+    "未命名 1.base",
+    "未命名.base",
+    "docs/metadata-ingestion"
   ]
 }

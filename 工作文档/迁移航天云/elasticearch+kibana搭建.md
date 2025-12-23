@@ -5,7 +5,7 @@
 ## 综述
 
 ## 旧版安装文档
-[elasticsearch + kibana 安装 添加用户验证 开启https访问](<../../elasticearch/elasticsearch + kibana 安装 添加用户验证 开启https访问.md>)
+[elasticsearch + kibana 安装 添加用户验证 开启https访问](<elasticsearch + kibana 安装 添加用户验证 开启https访问.md>)
 
 ## 搭建规格
 1. 版本：elasticsearch 7.17.9

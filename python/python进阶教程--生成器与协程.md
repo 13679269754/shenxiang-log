@@ -1,7 +1,8 @@
+
 | operator | createtime | updatetime |
-| ---- | ---- | ---- |
-| shenx | 2024-4月-16 | 2024-4月-16  |
-| ... | ... | ... |
+| -------- | ---------- | ---------- |
+| shenx    | 2024-4月-16 | 2024-4月-16 |
+
 ---
 # python进阶教程--协程(迭代器与生成器)
 
@@ -77,7 +78,7 @@ print(dir(a_iter))
 
 print(next(a_iter)) # 迭代器迭代一遍将去除元素，元素就不在迭代器中了
 
-for item in a_iter # 如果重复迭代迭代器，无法获得结果
+for item in a_iter: # 如果重复迭代迭代器，无法获得结果
     print(item)
 
 ```
@@ -112,20 +113,20 @@ if __name__ == "__main__":
 
     ```python
     def demo():
-    print('hello')
-    t = yield 5  # return 5 ，send 方法闯入的参数会被赋给t
-    print('world')
-    print(t)
+	    print('hello')
+	    t = yield 5  # return 5 ，send 方法闯入的参数会被赋给t
+	    print('world')
+	    print(t)
 
 
     if __name__ == "__main__":
-    print(type(demo())) # <class 'generator'>
-    print(dir(demo())) # ……__iter__……__next__……
-
-    # 生成器调用
-    c = demo()
-    next(c)
-    c.send('test') # send方法调用生成器并且吧test字符串传入到生成器, 
+	    print(type(demo())) # <class 'generator'>
+	    print(dir(demo())) # ……__iter__……__next__……
+	
+	    # 生成器调用
+	    c = demo()
+	    next(c)
+	    c.send('test') # send方法调用生成器并且吧test字符串传入到生成器
     ```
 
 3. 生成器的创建与使用
@@ -133,24 +134,24 @@ if __name__ == "__main__":
 生成器的执行过程
 
    ```python
-    def ccountdown(n):
-        print('conting down from ',n)
-        while n>= 0:
-            newvalue = yield n
-            if newvalue is not None:
-                n = newvalue
-            else:
-                n -= 1
-        print('done')
-
-
-    if __name__ == "__main__":
-
-    # 协程调用
-    c = ccountdown(10)
-    for i in c:
-        print(i)
-        if i == 10:
+def ccountdown(n):  
+    print('conting down from ', n)  
+    while n >= 0:  
+        newvalue = yield n  
+        if newvalue is not None:  
+            n = newvalue  
+        else:  
+            n -= 1  
+    print('done')  
+  
+  
+if __name__ == "__main__":  
+  
+    # 协程调用  
+    c = ccountdown(10)  
+    for i in c:  
+        print(i)  
+        if i == 10:  
             c.send(10)
    ```
 
@@ -170,7 +171,7 @@ print(next(b))
 
 ### 协程
 yield 关键字的两个作用：   
-一. 每次遇到yield 关键字后放回相应结果。  
+一. 每次遇到yield 关键字后返回相应结果。  
 二. 保留当前函数的运行状态，等待下一次调用，下一次调用时继续执行之后的语句。  
 
 这以为意味着程序的控制权的转移是临时的，我们的函数还会收回来控制权。这也是yield 和 return 最大的区别。  

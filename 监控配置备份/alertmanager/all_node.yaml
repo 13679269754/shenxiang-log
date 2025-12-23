@@ -1,0 +1,13 @@
+- targets:
+    - 172.29.28.193:9100
+  labels:
+    alias: db193
+- targets:
+    - 172.29.28.194:9100
+  labels:
+    alias: db194
+- targets:
+    - 172.29.28.195:9100 
+  labels:
+    alias: db195
+

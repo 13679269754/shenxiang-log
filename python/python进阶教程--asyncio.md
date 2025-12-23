@@ -1,6 +1,6 @@
 | operator | createtime | updatetime |
-| ---- | ---- | ---- |
-| shenx | 2024-4月-17 | 2024-4月-17  |
+| -------- | ---------- | ---------- |
+| shenx    | 2024-4月-17 | 2024-4月-17 |
 | ... | ... | ... |
 ---
 # python进阶教程--asyncio.md
@@ -21,7 +21,7 @@ web -- Django、Flask
 import asyncio
 
 # 使用装饰器定义协程只是将函数对象标记为协程
-# 实际上还是一个生成器，但是可以当做一个生成器来使用
+# 实际上还是一个生成器，但是可以当做一个协程来使用
 @asyncio.coroutine
 def hello():
     pass
@@ -36,6 +36,7 @@ loop.close()
 
 > async 关键字代表当前定义的对象是一个协程对象
 ```python
+from typing import Coroutine, Generator, Awaitable
 @asyncio.coroutine
 # "@coroutine" decorator is deprecated since Python 3.8, use "async def" instead
 def hello():
@@ -45,7 +46,7 @@ async def hello2():
     print('hello')
 
 
-coro = hello() # 协程对象
+coro = hello() # 生成器对象
 coro2 = hello2() # 协程对象
 
 print(isinstance(coro, Generator))
@@ -54,8 +55,8 @@ print(isinstance(coro2, Coroutine))
 ```
 
 ### 协程装饰器和原生协程之间的区别
-
-装饰器的方式：没有实现__iter__ and__next__ 的方法。
+有
+装饰器的方式：没实现__iter__ and__next__ 的方法。
 
 ## 理解asyncio 
 

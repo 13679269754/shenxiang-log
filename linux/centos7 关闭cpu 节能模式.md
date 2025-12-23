@@ -132,10 +132,10 @@ SELinux要好得多
 net.ipv4.tcp_keepalive_time 可以设置的小一点 ，太小会导致频繁的发心跳包，太打导致TCP连接不能及时释放(应用端没有显示断开连接，意外中断的连接)，导致连接的浪费
 
 ### 更新
-![sysctl.conf](image/image.png)
+![sysctl.conf](linux/image/image.png)
 
 ## 其他
 
 ### 进程资源
 /etc/security/limits.conf
-![Alt text](image/image-1.png)
+![Alt text](linux/image/image-1.png)

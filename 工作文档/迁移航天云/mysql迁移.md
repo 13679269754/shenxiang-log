@@ -85,7 +85,7 @@ scp -r -l 20000 /usr/local/data/mysql_backup/20250115_02_00_05/2025_01_15_02_00_
 ```
 **自此操作都在新集群**
 
-备份解压缩(xtrabackup ,qpress需要预先安装)
+备份解压缩(xtrabackup ,qpress需要预先安装 [[xtrbackup安裝-使用]])
 ```bash
 xtrabackup --decompress --parallel=32 --target-dir=/root/20250225_02_00_05/2025_02_25_02_00_05 --remove-original
 ```
