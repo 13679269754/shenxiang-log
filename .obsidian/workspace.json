@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "数据库/mysql/MySQL复制从库延迟原因深入分析 （并行复制原理）.md",
+                "file": "工作文档/迁移航天云/pmm 服务器搭建以及数据迁移.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,35 +28,10 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "MySQL复制从库延迟原因深入分析 （并行复制原理）"
-            }
-          },
-          {
-            "id": "adced4e2f3d4182d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "便签/2025-02-14.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "2025-02-14"
+              "title": "pmm 服务器搭建以及数据迁移"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -177,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "便签/2025-02-14.md",
+                "file": "工作文档/迁移航天云/pmm 服务器搭建以及数据迁移.md",
                 "followCursor": true,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "2025-02-14 的大纲"
+              "title": "pmm 服务器搭建以及数据迁移 的大纲"
             }
           },
           {
@@ -201,7 +176,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 361.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -220,13 +195,25 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "2734216c2d849b59",
+  "active": "7cf45cad5b5b0d5e",
   "lastOpenFiles": [
+    "docker/docker 配置文件.md",
+    "工作文档/迁移航天云/pmm 服务器搭建以及数据迁移.md",
+    "工作文档/迁移航天云/数据库迁移及切换流程.md",
+    "工作文档/迁移航天云/监控搭建以及迁移配置信息--方案未完已弃用.md",
+    "工作文档/迁移航天云/idc -备用环境数据库应用配置.md",
+    "工作文档/迁移航天云/redis 搭建.md",
+    "工作文档/迁移航天云/elasticearch+kibana搭建.md",
+    "工作文档/迁移航天云/HTY elasticsearch reindex.md",
+    "工作文档/迁移航天云/mysql迁移.md",
+    "数据库/mysql/MySQL复制从库延迟原因深入分析 （并行复制原理）.md",
+    "devops/DEVOPS 流程体验.md",
+    "devops/代码仓库 + 镜像仓库.md",
+    "读书笔记/不公平优势.md",
+    "便签/2025-02-14.md",
     "工作文档.7z",
     "工作文档/文件备份/~$uat db服务器资源.xlsx",
-    "工作文档/迁移航天云/mysql迁移.md",
     "数据库/mysql/mysql 理论部分/mysql线程池.md",
-    "数据库/mysql/MySQL复制从库延迟原因深入分析 （并行复制原理）.md",
     "工作文档/文件备份/~$离职通知书.docx",
     "数据库/mysql/mysql_doc学习/mysql系统库.md",
     "数据库/mysql/mysql 运维/MySQL如何优雅的删除大表.md",
@@ -240,19 +227,8 @@
     "工作文档/格式资料/2024-8-5数据库安全以及个人文档.md",
     "工作文档/格式资料/sql 审核工具对比(yearnming vs archery).md",
     "工作文档/数据库相关文档/大专家架构图(3).jpg",
-    "数据库/mysql/mysql 杂谈/mysql 安全.md",
-    "工作文档/工作规范/mysql 数据库规范.md",
-    "工作文档/工作规范/数据库规范简单.md",
-    "数据库/mysql/mysql_doc学习/mysql 开窗函数.md",
-    "数据库/mysql/mysql 运维/mysql 大表删除.md",
-    "数据库/mysql/mysql 运维/mysql 参数调优.md",
-    "虚拟机/Proxmox Ceph 搭建完整指南.md",
-    "虚拟机/Proxmox Ceph 搭建完整指南-mindmap.md",
     "虚拟机",
     "pdf/未命名",
-    "数据库/mysql/mysql 杂谈/mysql 不同平台对不同版本mysql的兼容性.md",
-    "数据库/mysql/mysql 半同步复制.md",
-    "数据库/mysql/mysql 新特性-更新/MySQL 8.0 Instant Add Column功能解析.md",
     "obsidian-images/Pasted image 20250924175020.png",
     "obsidian-images/Pasted image 20250929114418.png",
     "obsidian-images/Pasted image 20251011155138.png",
@@ -268,7 +244,6 @@
     "未命名.canvas",
     "未命名 1.canvas",
     "未命名 1.base",
-    "未命名.base",
-    "docs/metadata-ingestion"
+    "未命名.base"
   ]
 }

@@ -27,7 +27,7 @@
 
 ![](https://mmbiz.qpic.cn/sz_mmbiz_png/zYias49R9JlRpEHFDc3yYibpMVEpR2teQXhzTeaeqcj3hfKEszsyOxCIVmjLH0LlbdttdibAaUQ7Ths8frBCiaiabqw/640?wx_fmt=png&from=appmsg)
 
-持续观察了一阵`SHOW SLAVE STATUS`的变化，发现pos点位信息在不停的变化，Seconds\_Behind\_master 也是不停的变化的，总体趋势还在不停的变大。
+持续观察了一阵`SHOW SLAVE STATUS`的变化，发现pos点位信息在不停的变化，Seconds_Behind_master 也是不停的变化的，总体趋势还在不停的变大。
 
 ### 资源使用
 
@@ -72,13 +72,13 @@ d due a Worker queue full = 238; waited due the total size = 0; waited at clock 
 
 ### 并行度统计
 
-众所周知，MySQL 从库并行回放主要依赖于 binlog 中的  last\_commmitted 来做判断，如果事务的 last\_commmitted 相同，则基本上可以认为这些事务可以并行回放，下面从环境中获取一个relay log进行并行回放的大概统计
+众所周知，MySQL 从库并行回放主要依赖于 binlog 中的  last_commmitted 来做判断，如果事务的 last_commmitted 相同，则基本上可以认为这些事务可以并行回放，下面从环境中获取一个relay log进行并行回放的大概统计
 
 ```
 $ mysqlsqlbinlog --no-defaults mysql-bin.046638 |grep -o 'last_committed.*' | sed 's/=/ /g' | awk '{print $2}' |sort -n | uniq -c |awk 'BEGIN {print "last_commited group_count Percentage"} {count[$2]=$1   ; sum+=$1} END {for (i in count) printf "%d %d %.2f%%\n", i, count[i], (count[i]/sum)*100|"sort -k 1,1n"}' | awk '{if($2>=1 && $2 <11){sum+=$2}} END {print sum}'    235703``$ mysqlsqlbinlog --no-defaults mysql-bin.046638 |grep -o 'last_committed.*' | sed 's/=/ /g' | awk '{print $2}' |sort -n | uniq -c |awk 'BEGIN {print "last_commited group_count Percentage"} {count[$2]=$1   ; sum+=$1} END {for (i in count) printf "%d %d %.2f%%\n", i, count[i], (count[i]/sum)*100|"sort -k 1,1n"}' | awk '{if($2>10){sum+=$2}} END {print sum}'   314694   
 ```
 
-上述第一条命令，是统计 last\_commmitted 相同的事务数量在1-10个，即并行回放程度较低或者是无法并行回放，这些事务总数量为235703，占43%，详细解析并行回放度比较低的事务分布，可以看出这部分 last\_commmitted 基本上都是单条的，都需要等待先序事务回放完成后，自己才能进行回放，这就会造成前面日志中观察到的协调线程等待无法并行回放而进入等待的时间比较长的情况
+上述第一条命令，是统计 last_commmitted 相同的事务数量在1-10个，即并行回放程度较低或者是无法并行回放，这些事务总数量为235703，占43%，详细解析并行回放度比较低的事务分布，可以看出这部分 last_commmitted 基本上都是单条的，都需要等待先序事务回放完成后，自己才能进行回放，这就会造成前面日志中观察到的协调线程等待无法并行回放而进入等待的时间比较长的情况
 
 ```
 $ mysqlbinlog --no-defaults mysql-bin.046638 |grep -o 'last_committed.*' | sed 's/=/ /g' | awk '{print $2}' |sort -n | uniq -c |awk 'BEGIN {print "last_commited group_count Percentage"} {count[$2]=$1; sum+=$1} END {for (i in count) printf "%d %d %.2f%%\n", i, count[i], (count[i]/sum)*100|"sort -k 1,1n"}' | awk '{if($2>=1 && $2 <11) {print $2}}' | sort | uniq -c  
@@ -91,7 +91,7 @@ $ mysqlbinlog --no-defaults mysql-bin.046638 |grep -o 'last_committed.*' | sed '
 
 ```
 
-第二条命令统计 last\_commmitted 相同的事务数量超过10个的总事务数，其数量为314694，占57%，详细解析了这些并行回放度比较高的事务，可以看到每一组是在6500~9000个事务
+第二条命令统计 last_commmitted 相同的事务数量超过10个的总事务数，其数量为314694，占57%，详细解析了这些并行回放度比较高的事务，可以看到每一组是在6500~9000个事务
 
 ```
 $ mysqlsqlbinlog --no-defaults mysql-bin.046638 |grep -o 'last_committed.*' | sed 's/=/ /g' | awk '{print $2}' |sort -n | uniq -c |awk 'BEGIN {print "last_commited group_count Percentage"} {count[$2]=$1  
@@ -139,33 +139,33 @@ last_commited  group_count  Percentage
 
 ```
 
-### last\_committed 机制介绍
+### last_committed 机制介绍
 
-主库的参数`binlog_transaction_dependency_tracking`用于指定如何生成其写入二进制日志的依赖信息，以帮助从库确定哪些事务可以并行执行，即通过该参数控制 last\_commmitted 的生成机制，参数可选值有 **COMMIT\_ORDER**、**WRITESET**、**SESSION\_WRITESET**。从下面这段代码，很容易看出来三种参数关系：
+主库的参数`binlog_transaction_dependency_tracking`用于指定如何生成其写入二进制日志的依赖信息，以帮助从库确定哪些事务可以并行执行，即通过该参数控制 last_commmitted 的生成机制，参数可选值有 **COMMIT_ORDER**、**WRITESET**、**SESSION_WRITESET**。从下面这段代码，很容易看出来三种参数关系：
 
-1.  基础算法为 **COMMIT\_ORDER**。
+1.  基础算法为 **COMMIT_ORDER**。
     
-2.  **WRITESET** 算法是在 **COMMIT\_ORDER** 基础上再计算一次。
+2.  **WRITESET** 算法是在 **COMMIT_ORDER** 基础上再计算一次。
     
-3.  **SESSION\_WRITESET** 算法是在 **WRITESET** 基础上再计算一次。
+3.  **SESSION_WRITESET** 算法是在 **WRITESET** 基础上再计算一次。
     
 
 ![](https://mmbiz.qpic.cn/sz_mmbiz_png/zYias49R9JlRpEHFDc3yYibpMVEpR2teQXK55cIRQ0jPve1icVbG3oCxj4ULLMB3HdXBwkDLNw7QY3FR0VcUjNlhw/640?wx_fmt=png&from=appmsg)
 
-由于当前数据库实例设置的是**WRITESET**，因此只需关注 **COMMIT\_ORDER** 算法和 **WRITESET** 算法即可。
+由于当前数据库实例设置的是**WRITESET**，因此只需关注 **COMMIT_ORDER** 算法和 **WRITESET** 算法即可。
 
-#### COMMIT\_ORDER
+#### COMMIT_ORDER
 
-**COMMIT\_ORDER** 计算规则：如果两个事务在主节点上是同时提交的，说明两个事务的数据之间没有冲突，那么一定也是可以在从节点上并行执行的，理想中的典型案例如下面的例子
+**COMMIT_ORDER** 计算规则：如果两个事务在主节点上是同时提交的，说明两个事务的数据之间没有冲突，那么一定也是可以在从节点上并行执行的，理想中的典型案例如下面的例子
 
 | session-1 | session-2 |
 | --- | --- |
 | BEGIN | BEGIN |
 | INSERT t1 values(1) |    |
 |    | INSERT t2 values(2) |
-| commit (group\_commit) | commit (group\_commit) |
+| commit (group_commit) | commit (group_commit) |
 
-但对于 MySQL 来说，group\_commit 是内部行为，只要 session-1 和 session-2 是同时执行 commit，不管内部是否合并为 group\_commit，两个事务的数据本质上都是没有冲突的；再退一步来讲，只要 session-1 执行 commit 之后，session-2 没有新的数据写入，两个事务依旧没有数据冲突，依然可以并行复制。
+但对于 MySQL 来说，group_commit 是内部行为，只要 session-1 和 session-2 是同时执行 commit，不管内部是否合并为 group_commit，两个事务的数据本质上都是没有冲突的；再退一步来讲，只要 session-1 执行 commit 之后，session-2 没有新的数据写入，两个事务依旧没有数据冲突，依然可以并行复制。
 
 | session-1 | session-2 |
 | --- | --- |
@@ -189,9 +189,9 @@ last_commited  group_count  Percentage
 
 #### WRITESET
 
-实际上是 **commit\_order** + **writeset** 的组合，会先通过 **commit\_order** 计算出一个last\_commmitted 值，然后再通过 **writeset** 计算一个新值，最后取两者间的小值作为最终事务 GTID 的 last\_commmitted。
+实际上是 **commit_order** + **writeset** 的组合，会先通过 **commit_order** 计算出一个last_commmitted 值，然后再通过 **writeset** 计算一个新值，最后取两者间的小值作为最终事务 GTID 的 last_commmitted。
 
-在 MySQL 中，**writeset** 本质上是对 **schema\_name + table\_name + primary\_key/unique\_key** 计算的hash值，在DML执行语句过程中，通过 **binlog\_log\_row** 生成 row\_event 之前，会将DML语句中所有的主键/唯一键都单独计算hash值，并加入到事务本身的 **writeset** 列表中。而如果存在无主键/唯一索引的表，还会对事务设置 has\_missing\_keys=true。
+在 MySQL 中，**writeset** 本质上是对 **schema_name + table_name + primary_key/unique_key** 计算的hash值，在DML执行语句过程中，通过 **binlog_log_row** 生成 row_event 之前，会将DML语句中所有的主键/唯一键都单独计算hash值，并加入到事务本身的 **writeset** 列表中。而如果存在无主键/唯一索引的表，还会对事务设置 has_missing_keys=true。
 
 参数设置为 **WRITESET**，但是并不一定就能使用上，其限制如下
 
@@ -201,47 +201,47 @@ last_commited  group_count  Percentage
     
 3.  未使用外键。
     
-4.  hash map的容量未超过 binlog\_transaction\_dependency\_history\_size 的设置 以上4个条件均满足时，则可以使用 **WRITESET** 算法，如果有任意一个条件不满足，则会退化为 **COMMIT\_ORDER** 计算方式。
+4.  hash map的容量未超过 binlog_transaction_dependency_history_size 的设置 以上4个条件均满足时，则可以使用 **WRITESET** 算法，如果有任意一个条件不满足，则会退化为 **COMMIT_ORDER** 计算方式。
     
 
 ![](https://mmbiz.qpic.cn/sz_mmbiz_png/zYias49R9JlRpEHFDc3yYibpMVEpR2teQXK5tic8pICrNJbIfdukmTJb0yHVXzic1UYIXofBQMUXuO2qMtzwg37Eicg/640?wx_fmt=png&from=appmsg)
 
 具体 **WRITESET** 算法如下，事务提交时：
 
-1.  last\_commmitted 设置为 m\_writeset\_history\_start，此值为 m\_writeset\_history 列表中最小的 sequence\_number。
+1.  last_commmitted 设置为 m_writeset_history_start，此值为 m_writeset_history 列表中最小的 sequence_number。
     
 2.  遍历事务的 writeset 列表
     
-    a 如果某个 writeset 在全局 m\_writeset\_history 中不存在，构建一个 pair<writeset，当前事务的 sequence\_number 对象，插入到全局 m\_writeset\_history 列表中
+    a 如果某个 writeset 在全局 m_writeset_history 中不存在，构建一个 pair<writeset，当前事务的 sequence_number 对象，插入到全局 m_writeset_history 列表中
     
-    b. 如果存在，那么 last\_committed=max（last\_committed，历史 writeset 的 sequence\_number 值），并同时更新 m\_writeset\_history 中该 writeset 对应的 sequence\_number 为当前事务值
+    b. 如果存在，那么 last_committed=max（last_committed，历史 writeset 的 sequence_number 值），并同时更新 m_writeset_history 中该 writeset 对应的 sequence_number 为当前事务值
     
-3.  如果 has\_missing\_keys\=false，即事务所有数据表均包含主键或者唯一索引，则最后取 commit\_order 和 writeset 两种方式计算的最小值作为最终的 last\_commmitted 值
+1.  如果 has_missing_keys\=false，即事务所有数据表均包含主键或者唯一索引，则最后取 commit_order 和 writeset 两种方式计算的最小值作为最终的 last_commmitted 值
     
 
 ![](https://mmbiz.qpic.cn/sz_mmbiz_png/zYias49R9JlRpEHFDc3yYibpMVEpR2teQXKPaMyiaQRnL5u2cqGgTy927SvumUibdOTsKIY9L2Oyv8ibxc2ibqgNCPcg/640?wx_fmt=png&from=appmsg)
 
-_**TIPS：基于上面WRITESET规则，就会出现后提交的事务的 last\_committed 比先提交的事务还小的情况**_
+_**TIPS：基于上面WRITESET规则，就会出现后提交的事务的 last_committed 比先提交的事务还小的情况**_
 
 结论分析
 ----
 
 ### 结论描述
 
-根据 **WRITESET** 的使用限制，对  relay log 及事务中涉及到的表结构进行了对比，分析单 last\_commmitted 的事务组成发现如下两种情况：
+根据 **WRITESET** 的使用限制，对  relay log 及事务中涉及到的表结构进行了对比，分析单 last_commmitted 的事务组成发现如下两种情况：
 
-1.  单 last\_commmitted 的事务中涉及到的数据和 sequence\_number 存在数据冲突
+1.  单 last_commmitted 的事务中涉及到的数据和 sequence_number 存在数据冲突
     
-2.  单 last\_commmitted 的事务中涉及到的表存在无主键的情况，而且这种事务特别多
+2.  单 last_commmitted 的事务中涉及到的表存在无主键的情况，而且这种事务特别多
     
 
-从上面的分析中可以得出结论：无主键表的事务太多，导致 **WRITESET** 退化为**COMMIT\_ORDER**，而由于数据库为TP应用，事务都快速提交，多个事务提交无法保证在一个commit周期内，导致 **COMMIT\_ORDER** 机制产生的 last\_commmitted 重复读很低。从库也就只能串行回放这些事务，引起回放延迟。
+从上面的分析中可以得出结论：无主键表的事务太多，导致 **WRITESET** 退化为**COMMIT_ORDER**，而由于数据库为TP应用，事务都快速提交，多个事务提交无法保证在一个commit周期内，导致 **COMMIT_ORDER** 机制产生的 last_commmitted 重复读很低。从库也就只能串行回放这些事务，引起回放延迟。
 
 ### 优化措施
 
 1.  从业务侧对表做改造，在允许的情况下给相关表都添加上主键。
     
-2.  尝试调大参数 binlog\_group\_commit\_sync\_delay、binlog\_group\_commit\_sync\_no\_delay\_count，从0修改为10000，由于特殊环境限制，该调整并未生效，不同的场景可能会有不同的表现。  
+2.  尝试调大参数 binlog_group_commit_sync_delay、binlog_group_commit_sync_no_delay_count，从0修改为10000，由于特殊环境限制，该调整并未生效，不同的场景可能会有不同的表现。  
     
 
 Enjoy GreatSQL :)
