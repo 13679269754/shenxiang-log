@@ -343,7 +343,7 @@ function create_mysql_instance(){
         exit 1
     fi
 
-    port_count=$(apt install net-tools && netstat -anl| grep "$dbport" | grep -v 33060 | grep -v 33061 | grep LISTEN | wc -l)
+    port_count=$(apt-get -y install net-tools && netstat -anl| grep "$dbport" | grep -v 33060 | grep -v 33061 | grep LISTEN | wc -l)
     if [ "$port_count" -gt 0 ]; then
         log 'error' "Mysql $dbport already exist!!!"
         exit 1
