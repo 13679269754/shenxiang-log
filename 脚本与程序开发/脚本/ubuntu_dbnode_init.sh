@@ -15,7 +15,7 @@ program_exists() {
 }
 
 # 修改密码
-echo "dzj123,./" | passwd --stdin root
+## echo "dzj123,./" | passwd --stdin root
 
 # 修改 SSH 配置
 # 修改 UseDNS 配置
@@ -23,7 +23,7 @@ sed -i 's/#UseDNS yes/UseDNS no/g' /etc/ssh/sshd_config
 
 # 修改 PermitRootLogin 配置（使用 | 作为分隔符）
 sed -i 's|#PermitRootLogin prohibit-password|PermitRootLogin yes|g' /etc/ssh/sshd_config
-systemctl restart sshd
+systemctl restart ssh
 
 # 安装软件
 mv /etc/apt/sources.list /etc/apt/sources.list.1bak
@@ -50,7 +50,7 @@ apt update
 apt install -y ntpdate lvm2 lrzsz wget curl unzip net-tools telnet tcpdump iftop iotop sysstat netcat  xfsprogs htop psmisc tree net-tools bash-completion vim
 apt install -y zlib1g-dev libssl-dev libncurses5-dev libsqlite3-dev libreadline-dev libffi-dev
 apt install -y gcc g++ make cmake bison
-# apt remove -y python3
+apt remove -y python3
 
 # 安装 Python
 # program_exists python3
@@ -71,12 +71,12 @@ apt install -y gcc g++ make cmake bison
 #apt update
 #apt install -y docker-ce docker-ce-cli containerd.io
 
-#systemctl start docker
-#pip3 install docker-compose
+systemctl start docker
+pip3 install docker-compose
 
 # 修改日期
 apt-get install chrony -y
-cat > /etc/chrony/sources.d/cn-ntp.sources << 'EOF'
+cat > /etc/chrony/sources.d/cn-ntp.sources << EOF
 # 中国境内 NTP 服务器
 server ntp.ntsc.ac.cn iburst
 server time1.cloud.tencent.com iburst
@@ -84,6 +84,7 @@ server time2.cloud.tencent.com iburst
 server time1.aliyun.com iburst
 server time2.aliyun.com iburst
 EOF
+
 timedatectl set-timezone Asia/Shanghai
 locale-gen zh_CN.UTF-8
 cat > /etc/default/locale << EOF

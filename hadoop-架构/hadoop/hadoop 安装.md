@@ -54,11 +54,12 @@ haddoop 默认使用host解析，不使用hostname会报错
 （1）默认配置文件：
 要获取的默认文件
 文件存放在 Hadoop 的 jar 包中的位置
-| 文件名称 | 文件位置 |
-| --- | --- |
-| [core-default.xml] | hadoop-common-3.1.3.jar/core-default.xml |
-| [hdfs-default.xml] | hadoop-hdfs-3.1.3.jar/hdfs-default.xml |
-| [yarn-default.xml] | hadoop-yarn-common-3.1.3.jar/yarn-default.xml |
+
+| 文件名称                 | 文件位置                                                      |
+| -------------------- | --------------------------------------------------------- |
+| [core-default.xml]   | hadoop-common-3.1.3.jar/core-default.xml                  |
+| [hdfs-default.xml]   | hadoop-hdfs-3.1.3.jar/hdfs-default.xml                    |
+| [yarn-default.xml]   | hadoop-yarn-common-3.1.3.jar/yarn-default.xml             |
 | [mapred-default.xml] | hadoop-mapreduce-client-core-3.1.3.jar/mapred-default.xml |
 
 （2）自定义配置文件：

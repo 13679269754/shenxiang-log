@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "influxdb/调整保留期.md",
+                "file": "hadoop-架构/hadoop/hadoop 安装.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,16 +52,16 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "调整保留期"
+              "title": "hadoop 安装"
             }
           },
           {
-            "id": "b98ce25aa7e9c1d8",
+            "id": "ecdb6cc00ee6304a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "便签/2025-09-24.md",
+                "file": "hadoop-架构/hadoop/hadoop 安装.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -76,16 +76,16 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "2025-09-24"
+              "title": "hadoop 安装"
             }
           },
           {
-            "id": "9343c25ee60e5ce1",
+            "id": "0232fe6f967a630c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "读书笔记/社会心理学.md",
+                "file": "问题记录/mysql长连接问题长时间不释放导致临时表空间过大.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -100,11 +100,11 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "社会心理学"
+              "title": "mysql长连接问题长时间不释放导致临时表空间过大"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -136,7 +136,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "fs.file-max",
+                "query": "orche",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -161,7 +161,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "596786d13ee79295",
@@ -196,12 +196,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "便签/2025-09-05.md",
+                "file": "问题记录/mysql长连接问题长时间不释放导致临时表空间过大.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "2025-09-05 的出链列表"
+              "title": "mysql长连接问题长时间不释放导致临时表空间过大 的出链列表"
             }
           },
           {
@@ -225,13 +225,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "便签/2025-09-24.md",
+                "file": "问题记录/mysql长连接问题长时间不释放导致临时表空间过大.md",
                 "followCursor": true,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "2025-09-24 的大纲"
+              "title": "mysql长连接问题长时间不释放导致临时表空间过大 的大纲"
             }
           },
           {
@@ -245,11 +245,11 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 314.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -263,19 +263,32 @@
       "random-note:开始漫游笔记": true,
       "markdown-importer:打开 Markdown 格式转换器": false,
       "workspaces:管理工作区布局": false,
-      "obsidian-excalidraw-plugin:新建绘图文件": false,
       "i18n:I18N": false,
+      "obsidian-excalidraw-plugin:新建绘图文件": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "b98ce25aa7e9c1d8",
+  "active": "549e0f8e516a22e2",
   "lastOpenFiles": [
-    "读书笔记/社会心理学.md",
+    "mysql-组件集/orchestrator/orchestrator.md",
+    "工作文档/迁移航天云/mysql迁移.md",
+    "hadoop-架构/hadoop/hadoop参数调优.md",
+    "hadoop-架构/hadoop/hadoop常用命令总结.md",
+    "hadoop-架构/HDFS/HDFS 常用命令.md",
+    "hadoop-架构/yarn/yarn 参数详解.md",
+    "hadoop-架构/yarn/yarn常用命令.md",
+    "linux/各种环境/JDK17 安装.md",
+    "hadoop-架构/hadoop/hadoop 安装.md",
+    "hadoop-架构/hadoop/hadoop-hbase伪集群安装.md",
+    "ansible/ansible安装redis.md",
+    "ansible/aansible-galaxy安装.md",
+    "便签/2025-10-12.md",
+    "influxdb/调整保留期.md",
     "便签/2025-09-24.md",
+    "读书笔记/社会心理学.md",
     "mysql/mysql 理论部分/change buffer 的缓冲与合并.md",
     "杂谈/相较于RocketMQ的事务消息，本地消息表才是真正的王者.md",
     "杂谈",
-    "influxdb/调整保留期.md",
     "便签/2025-09-25.md",
     "便签/2025-09-17.md",
     "便签/2025-09-18.md",
@@ -284,20 +297,7 @@
     "mysql/mysql 理论部分/matedata_lock的研究.md",
     "influxdb/influxdb搭建(单机).md",
     "influxdb/influxdb 文档查询.md",
-    "便签/2025-09-16.md",
     "obsidian-images/Pasted image 20250924175020.png",
-    "便签/2025-09-12.md",
-    "便签/2025-09-11.md",
-    "便签/2025-09-15.md",
-    "便签/2025-02-14.md",
-    "工作文档/迁移航天云/elasticearch+kibana搭建.md",
-    "读书笔记/被讨厌的勇气.md",
-    "读书笔记/反脆弱.md",
-    "读书笔记/非暴力沟通.md",
-    "读书笔记/费曼物理学讲义.md",
-    "读书笔记/佛教十三经：金刚经·心经.md",
-    "读书笔记/狂热分子.md",
-    "读书笔记/人类简史.md",
     "obsidian-images/Pasted image 20250918141846.png",
     "附件/Pasted image 20250918141723.png",
     "附件",
