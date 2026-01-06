@@ -11,33 +11,33 @@
 
 ### 数据源实例架构
 
-| ip | port | 服务类型 | 
-| -- | -- | -- | 
-| 172.30.70.41 | 3106 | mysql-master |
-| 172.30.70.42 | 3106 | mysql-slave |
-| 172.30.70.43 | 3106 | mysql-slave |
-| 172.30.70.44 | 3106 | mysql-slave |
-| 172.30.70.45 | 3106 | mysql-slave-backup |
-| 172.30.70.31 | 6032-3000 | proxysql-orch |
-| 172.30.70.32 | 6032-3000| proxysql-orch |
-| 172.30.70.33 | 6032 | proxysql |
-| 172.30.70.34 | 3000 | orch |
+| ip           | port      | 服务类型               |     |
+| ------------ | --------- | ------------------ | --- |
+| 172.30.70.41 | 3106      | mysql-master       |     |
+| 172.30.70.42 | 3106      | mysql-slave        |     |
+| 172.30.70.43 | 3106      | mysql-slave        |     |
+| 172.30.70.44 | 3106      | mysql-slave        |     |
+| 172.30.70.45 | 3106      | mysql-slave-backup |     |
+| 172.30.70.31 | 6032-3000 | proxysql-orch      |     |
+| 172.30.70.32 | 6032-3000 | proxysql-orch      |     |
+| 172.30.70.33 | 6032      | proxysql           |     |
+| 172.30.70.34 | 3000      | orch               |     |
 
 ### 迁移后架构
 
-| ip | port | 服务类型 | 
-| -- | -- | -- | 
-| 10.159.65.152 | 3106 | mysql-master |
-| 10.159.65.153 | 3106 | mysql-slave-read |
-| 10.159.65.154 | 3106 | mysql-slave-read |
-| 10.159.65.155 | 3106 | mysql-slave-read |
-| 10.159.65.156 | 3106 | mysql-slave-backup |
-| 172.30.70.157 | 3000 | orch |
-| 172.30.70.158 | 3000 | orch |
-| 172.30.70.159 | 3000 | orch |
-| 172.30.70.160 | 6032 | proxysql |
-| 172.30.70.161 | 6032 | proxysql |
-| 172.30.70.163 | 6032 | proxysql |
+| ip            | port | 服务类型               |     |
+| ------------- | ---- | ------------------ | --- |
+| 10.159.65.152 | 3106 | mysql-master       |     |
+| 10.159.65.153 | 3106 | mysql-slave-read   |     |
+| 10.159.65.154 | 3106 | mysql-slave-read   |     |
+| 10.159.65.155 | 3106 | mysql-slave-read   |     |
+| 10.159.65.156 | 3106 | mysql-slave-backup |     |
+| 172.30.70.157 | 3000 | orch               |     |
+| 172.30.70.158 | 3000 | orch               |     |
+| 172.30.70.159 | 3000 | orch               |     |
+| 172.30.70.160 | 6032 | proxysql           |     |
+| 172.30.70.161 | 6032 | proxysql           |     |
+| 172.30.70.163 | 6032 | proxysql           |     |
 
 
 ## 新数据库服务器环境准备
@@ -85,7 +85,7 @@ scp -r -l 20000 /usr/local/data/mysql_backup/20250115_02_00_05/2025_01_15_02_00_
 ```
 **自此操作都在新集群**
 
-备份解压缩(xtrabackup ,qpress需要预先安装)
+备份解压缩(xtrabackup ,qpress需要预先安装 [[xtrbackup安裝-使用]])
 ```bash
 xtrabackup --decompress --parallel=32 --target-dir=/root/20250225_02_00_05/2025_02_25_02_00_05 --remove-original
 ```
@@ -207,7 +207,7 @@ EOF
 
 pip3 install -r requirements.txt
 
-ln -s  /usr/bin/python3 /usr/local/bin/python3
+ln -s   /usr/local/bin/python3 /usr/bin/python3
 ```
 
 ### 创建管理脚本
@@ -291,6 +291,15 @@ EOF
 
 crontab -e
 */2 * * * * source /etc/bashrc && source /root/.bash_profile && /usr/bin/perl -le 'sleep rand 10' && /usr/local/bin/orchestrator-client -c register-candidate -i 10.159.65.156:3106 --promotion-rule must_not >/dev/null 2>&1
+```
+
+注：
+orchestrator-client[18433]: cannot find jq
+
+处理
+```bash
+yum install epel-release -y
+yum install jq -y
 ```
 
 ## proxysql 集群搭建

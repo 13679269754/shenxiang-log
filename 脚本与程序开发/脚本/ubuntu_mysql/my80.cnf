@@ -142,9 +142,9 @@ relay_log_recovery=1
 relay_log_purge=1
 
 ######parallel-replication######
-slave_parallel_type='LOGICAL_CLOCK';
+slave_parallel_type=LOGICAL_CLOCK
 slave_parallel_workers=8
-binlog_transaction_dependency_tracking = 'WRITESET';
+binlog_transaction_dependency_tracking = WRITESET
 
 
 #####gtid#####
@@ -161,29 +161,29 @@ skip-ssl
 
 server_id=22670
 
-########### Group Replication 必需配置##############
-report_host = 172.29.105.241
-plugin_dir = "/usr/local/data/mysql/lib/plugin"
-
-
-gtid_mode = ON
-enforce_gtid_consistency = ON
-binlog_checksum = NONE
-log_bin = binlog
-log_slave_updates = ON
-binlog_format = ROW
-master_info_repository = TABLE
-relay_log_info_repository = TABLE
-transaction_write_set_extraction = XXHASH64
-loose-group_replication_group_name = "c342b755-8253-11f0-899b-005056ab29b6"  # 集群唯一 ID（可自定义 UUID）
-loose-group_replication_start_on_boot = OFF
-loose-group_replication_local_address = "172.29.105.241:33061"  # 当前节点 IP:33061
-loose-group_replication_group_seeds = "172.29.105.240:3306,172.29.105.241:33061,172.29.105.241:33061"  # 所有节点
-loose-group_replication_bootstrap_group = OFF  # 仅初始化集群时在主节点设为 ON
-
-########### Group Replication 建议配置##############
-disabled_storage_engines="MyISAM,BLACKHOLE,FEDERATED,ARCHIVE,MEMORY"
-
-[mysqldump]
-single_transaction
-master_data=1
+############ Group Replication 必需配置##############
+#report_host = 172.29.105.241
+#plugin_dir = "/usr/local/data/mysql/lib/plugin"
+#
+#
+#gtid_mode = ON
+#enforce_gtid_consistency = ON
+#binlog_checksum = NONE
+#log_bin = binlog
+#log_slave_updates = ON
+#binlog_format = ROW
+#master_info_repository = TABLE
+#relay_log_info_repository = TABLE
+#transaction_write_set_extraction = XXHASH64
+#loose-group_replication_group_name = "c342b755-8253-11f0-899b-005056ab29b6"  # 集群唯一 ID（可自定义 UUID）
+#loose-group_replication_start_on_boot = OFF
+#loose-group_replication_local_address = "172.29.105.241:33061"  # 当前节点 IP:33061
+#loose-group_replication_group_seeds = "172.29.105.240:3306,172.29.105.241:33061,172.29.105.241:33061"  # 所有节点
+#loose-group_replication_bootstrap_group = OFF  # 仅初始化集群时在主节点设为 ON
+#
+############ Group Replication 建议配置##############
+#disabled_storage_engines="MyISAM,BLACKHOLE,FEDERATED,ARCHIVE,MEMORY"
+#
+#[mysqldump]
+#single_transaction
+#master_data=1

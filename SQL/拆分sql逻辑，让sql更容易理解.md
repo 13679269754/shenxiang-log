@@ -1,6 +1,6 @@
 | operator | createtime | updatetime |
-| ---- | ---- | ---- |
-| shenx | 2024-4月-10 | 2024-4月-10  |
+| -------- | ---------- | ---------- |
+| shenx    | 2024-4月-10 | 2024-4月-10 |
 | ... | ... | ... |
 ---
 # 拆分sql逻辑，让sql更容易理解
@@ -67,7 +67,7 @@ SELECT count(IF(manager_1='manager_1',1,null)),count(IF(manager_2='manager_2',2,
 	   CASE WHEN id >30 AND id <40 THEN 'manager_4' END AS manager_4
 FROM sx_test.manager_slave ) t
 ```
-![行转列](image-1.png)
+![行转列](SQL/image-1.png)
 
 
 ## 同比问题

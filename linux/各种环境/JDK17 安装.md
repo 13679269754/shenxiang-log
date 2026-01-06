@@ -17,7 +17,7 @@ sudo tar -zxvf OpenJDK17U-jdk_x64_linux_hotspot_17.0.8_7.tar.gz -C  /usr/local/d
 ```
 
 ```bash
-echo 'export JAVA_HOME=/opt/java/jdk-17.0.8+7' | sudo tee -a /etc/profile
+echo 'export JAVA_HOME=/usr/local/data/java/jdk-17.0.8+7' | sudo tee -a /etc/profile
 echo 'export PATH=$JAVA_HOME/bin:$PATH' | sudo tee -a /etc/profile
 source /etc/profile
 ```

@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "4f1dbb6b3a32d2a8",
+        "id": "93686592dae35919",
         "type": "tabs",
         "children": [
           {
-            "id": "77972d34754619b3",
+            "id": "7cf45cad5b5b0d5e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "mysql/mysql 理论部分/matedata_lock的研究.md",
+                "file": "数据库/mysql/工具/xtrabackup8.0.34 安装依赖zstd .md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,6 +28,7 @@
                 }
               },
               "icon": "lucide-file",
+<<<<<<< HEAD
               "title": "matedata_lock的研究"
             }
           },
@@ -105,6 +106,12 @@
           }
         ],
         "currentTab": 3
+=======
+              "title": "xtrabackup8.0.34 安装依赖zstd"
+            }
+          }
+        ]
+>>>>>>> 7c9fa65e1dd98a74d1c3bcd367be7c21be4e3f25
       }
     ],
     "direction": "vertical"
@@ -136,12 +143,16 @@
             "state": {
               "type": "search",
               "state": {
+<<<<<<< HEAD
                 "query": "orche",
+=======
+                "query": "zstd",
+>>>>>>> 7c9fa65e1dd98a74d1c3bcd367be7c21be4e3f25
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
                 "extraContext": false,
-                "sortOrder": "alphabetical"
+                "sortOrder": "byModifiedTime"
               },
               "icon": "lucide-search",
               "title": "搜索"
@@ -157,11 +168,16 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
+<<<<<<< HEAD
     "width": 200
+=======
+    "width": 364.5
+>>>>>>> 7c9fa65e1dd98a74d1c3bcd367be7c21be4e3f25
   },
   "right": {
     "id": "596786d13ee79295",
@@ -177,7 +193,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "读书笔记/专制与民主的社会起源.md",
+                "file": "大数据学习计划/大数据python应用学习/Pandas.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -187,7 +203,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "专制与民主的社会起源 的反向链接列表"
+              "title": "Pandas 的反向链接列表"
             }
           },
           {
@@ -196,12 +212,20 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+<<<<<<< HEAD
                 "file": "问题记录/mysql长连接问题长时间不释放导致临时表空间过大.md",
+=======
+                "file": "大数据学习计划/大数据python应用学习/Pandas.md",
+>>>>>>> 7c9fa65e1dd98a74d1c3bcd367be7c21be4e3f25
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
+<<<<<<< HEAD
               "title": "mysql长连接问题长时间不释放导致临时表空间过大 的出链列表"
+=======
+              "title": "Pandas 的出链列表"
+>>>>>>> 7c9fa65e1dd98a74d1c3bcd367be7c21be4e3f25
             }
           },
           {
@@ -211,7 +235,7 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true,
+                "useHierarchy": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
@@ -225,13 +249,17 @@
             "state": {
               "type": "outline",
               "state": {
+<<<<<<< HEAD
                 "file": "问题记录/mysql长连接问题长时间不释放导致临时表空间过大.md",
+=======
+                "file": "数据库/mysql/工具/xtrabackup8.0.34 安装依赖zstd .md",
+>>>>>>> 7c9fa65e1dd98a74d1c3bcd367be7c21be4e3f25
                 "followCursor": true,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "mysql长连接问题长时间不释放导致临时表空间过大 的大纲"
+              "title": "xtrabackup8.0.34 安装依赖zstd  的大纲"
             }
           },
           {
@@ -249,7 +277,11 @@
       }
     ],
     "direction": "horizontal",
+<<<<<<< HEAD
     "width": 314.5
+=======
+    "width": 361.5
+>>>>>>> 7c9fa65e1dd98a74d1c3bcd367be7c21be4e3f25
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -268,6 +300,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
+<<<<<<< HEAD
   "active": "549e0f8e516a22e2",
   "lastOpenFiles": [
     "mysql-组件集/orchestrator/orchestrator.md",
@@ -310,6 +343,56 @@
     "脚本与程序开发/脚本/ubuntu_mysql/role.sql",
     "mysql-组件集/innodb_cluster",
     "mysql-组件集/mysqlsh",
+=======
+  "active": "7cf45cad5b5b0d5e",
+  "lastOpenFiles": [
+    "脚本与程序开发/脚本/mysql-backup.7z",
+    "脚本与程序开发/脚本/uat_rotation.7z",
+    "脚本与程序开发/脚本/wechat-OAuth.7z",
+    "工作文档/迁移航天云/mysql迁移.md",
+    "工作文档/迁移航天云/pmm 服务器搭建以及数据迁移.md",
+    "image-cubox/2025-12-22 16-29-16/2a937404-fe28-4fc5-948e-9d66014d0761.png",
+    "image-cubox/2025-12-22 16-29-16/ce3c1bc2-fe98-49ac-aaa5-3357b4ae3dba.png",
+    "image-cubox/2025-12-22 16-29-16/bfe00757-f716-48a9-a7d4-1443d00aeba9.png",
+    "image-cubox/2025-12-22 16-29-16/be203b27-d4fc-41b7-8317-6155963a2c3b.png",
+    "image-cubox/2025-12-22 16-29-16/b67e6474-5f5e-49d1-b2e3-0cf3023aa1ac.png",
+    "image-cubox/2025-12-22 16-29-16/8933c057-eec4-4af0-a1e0-cf07a4f44922.png",
+    "image-cubox/2025-12-22 16-29-16/829bee88-840d-4629-ad56-98a430b37bf7.png",
+    "image-cubox/2025-12-22 16-29-16",
+    "docker/docker 配置文件.md",
+    "工作文档/迁移航天云/数据库迁移及切换流程.md",
+    "工作文档/迁移航天云/监控搭建以及迁移配置信息--方案未完已弃用.md",
+    "工作文档/迁移航天云/idc -备用环境数据库应用配置.md",
+    "工作文档/迁移航天云/redis 搭建.md",
+    "工作文档/迁移航天云/elasticearch+kibana搭建.md",
+    "工作文档/迁移航天云/HTY elasticsearch reindex.md",
+    "数据库/mysql/MySQL复制从库延迟原因深入分析 （并行复制原理）.md",
+    "devops/DEVOPS 流程体验.md",
+    "devops/代码仓库 + 镜像仓库.md",
+    "读书笔记/不公平优势.md",
+    "便签/2025-02-14.md",
+    "工作文档.7z",
+    "工作文档/文件备份/~$uat db服务器资源.xlsx",
+    "数据库/mysql/mysql 理论部分/mysql线程池.md",
+    "工作文档/文件备份/~$离职通知书.docx",
+    "数据库/mysql/mysql_doc学习/mysql系统库.md",
+    "数据库/mysql/mysql 运维/MySQL如何优雅的删除大表.md",
+    "数据库/mysql/mysql 杂谈/mysql高可用对比.md",
+    "数据库/mysql/mysql 杂谈/mysql-groupby.md",
+    "数据库/mysql/mysql 杂谈/MySQL-8.0.30 版本新特性之动态调整 REDO.md",
+    "数据库/mysql/mysql 杂谈/mysql create table on update的触发机制.md",
+    "数据库/mysql/mysql DBA 综述.md",
+    "数据库/mysql/mysql 运维/mysql 排坑指南.md",
+    "工作文档/格式资料/DBA 工作规范.md",
+    "工作文档/格式资料/2024-8-5数据库安全以及个人文档.md",
+    "工作文档/数据库相关文档/大专家架构图(3).jpg",
+    "虚拟机",
+    "pdf/未命名",
+    "obsidian-images/Pasted image 20250924175020.png",
+    "obsidian-images/Pasted image 20250929114418.png",
+    "数据库",
+    "工作文档/文件备份/离职通知书.docx",
+>>>>>>> 7c9fa65e1dd98a74d1c3bcd367be7c21be4e3f25
     "未命名.canvas",
     "未命名 1.canvas"
   ]

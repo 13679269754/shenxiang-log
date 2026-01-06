@@ -82,7 +82,7 @@ except Exception as e:
     from info_config import orchestrator_http_auth_password
     from info_config import orchestrator_url
     from info_config import gtid_check_time
-    from info_config import gtid_check_interval
+    from info_config import gtid_check_interval0
     from info_config import proxysql_wait_time
     from info_config import proxysql_read_group_master
 

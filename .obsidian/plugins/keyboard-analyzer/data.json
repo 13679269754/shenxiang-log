@@ -51,5 +51,21 @@
   "quickViewHeight": 360,
   "quickViewWidth": 420,
   "quickViewAutoRun": true,
-  "settingsSchemaVersion": 1
+  "settingsSchemaVersion": 1,
+  "allGroupDefaultFilters": {
+    "StrictModifierMatch": true,
+    "ViewWOhotkeys": true,
+    "OnlyCustom": false,
+    "OnlyDuplicates": false,
+    "FeaturedFirst": false,
+    "HighlightCustom": false,
+    "HighlightDuplicates": false,
+    "HighlightBuiltIns": false,
+    "DisplayIDs": false,
+    "ShowPluginBadges": true,
+    "GroupByPlugin": false,
+    "DisplayGroupAssignment": false,
+    "DisplayInternalModules": true,
+    "DisplaySystemShortcuts": false
+  }
 }

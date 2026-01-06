@@ -1,0 +1,52 @@
+groups:
+- name: mysql_rules
+  rules:
+  - alert: Mysql Exporter or DB Down
+    expr: up{job="mysql"} == 0
+    for: 0m
+    labels:
+      severity: 危险
+    annotations:
+      summary: "Instance {{ $labels.instance }} Mysql or Exporter Down！"
+      description: "Instance {{ $labels.instance }} Mysql 或者 进程Exporter 宕机！！！！"
+  rules:
+   - alert: MysqlDown
+     expr: 'mysql_up == 0'
+     for: 0m
+     labels:
+       severity: 危险
+     annotations:
+       summary: "Instance {{ $labels.instance }} MySQL Down！"
+       description: "Instance {{ $labels.instance }} MySQL 宕机！！！！"
+
+  rules:
+  - alert: Mysql 主从延迟
+    expr: max(mysql_slave_status_seconds_behind_master)by(instance) > 20
+    for: 2m
+    labels:
+      severity: 警告
+    annotations:
+      description: "Instance {{ $labels.instance }} 主从延迟时间：{{ $value }} \n已超过 20s 阈值，且持续时间已超过 2 分钟！"
+      summary: "Instance {{ $labels.instance }} 主从延迟"
+
+
+  rules:
+  - alert: Mysql 连接数过多
+    expr: 'max_over_time(mysql_global_status_threads_connected[1m]) / mysql_global_variables_max_connections * 100 > 80'
+    for: 2m
+    labels:
+      severity: 警告
+    annotations:
+      summary: "Instance {{ $labels.instance }} MySQL 连接数过多！"
+      description: "Instance {{ $labels.instance }} 当前MySQL连接率为：{{ $value }}% \n超过阈值 80%，且持续时间已超过 2 分钟！"
+
+  rules:
+  - alert: Mysql Running连接过多
+    expr: 'max_over_time(mysql_global_status_threads_running[1m]) / mysql_global_variables_max_connections * 100 > 60'
+    for: 2m
+    labels:
+      severity: 警告
+    annotations:
+      summary: "Instance {{ $labels.instance }} MySQL Running连接过多！"
+      description: "Instance {{ $labels.instance }} 当前MySQL Running数为：{{ $value }}% \n超过阈值 60%，且持续时间已超过 2 分钟！"
+

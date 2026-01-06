@@ -1,7 +1,7 @@
 | operator | createtime | updatetime |
-| ---- | ---- | ---- |
-| shenx | 2025-4月-09 | 2025-4月-09  |
-| ... | ... | ... |
+| -------- | ---------- | ---------- |
+| shenx    | 2025-4月-09 | 2025-4月-09 |
+
 ---
 # pmm 服务器搭建以及数迁移.md
 
@@ -113,7 +113,7 @@ sync_user:sync_user_pwd
 ![服务端rsync path下安装包](images/pmm-package.png)
 
 -----
-
+ 
 ### PMM客户端安装
 
 [pmm_agent_manage](../../脚本与程序开发/脚本/pmm_agent_manage)  

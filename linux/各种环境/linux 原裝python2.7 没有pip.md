@@ -228,12 +228,9 @@ export PATH`
 
 `source ~/.bash_profile` 
 
-
 7.检查Python及pip是否正常可用，是否匹配python3：
 
-
 `python -V` 
-
 
 `pip -V` 
 

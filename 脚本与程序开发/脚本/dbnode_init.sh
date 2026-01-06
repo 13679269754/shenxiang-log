@@ -186,14 +186,14 @@ if [[ $python_exist -eq 0 ]]; then
     ./configure && make && make install
 fi 
 
-# yum install docker
+#docker_install
 #yum install -y yum-utils
 #yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
 #yum makecache fast
 #yum install -y docker-ce docker-ce-cli containerd.io
 
 #systemctl start docker
-#pip3 install docker-compose
+#pip3 install docker-compose -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 # chanage date
 ntpdate ntp.tencent.com

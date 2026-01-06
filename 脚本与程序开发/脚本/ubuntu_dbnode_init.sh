@@ -18,11 +18,12 @@ program_exists() {
 ## echo "dzj123,./" | passwd --stdin root
 
 # 修改 SSH 配置
-# 修改 UseDNS 配置
 sed -i 's/#UseDNS yes/UseDNS no/g' /etc/ssh/sshd_config
+
 
 # 修改 PermitRootLogin 配置（使用 | 作为分隔符）
 sed -i 's|#PermitRootLogin prohibit-password|PermitRootLogin yes|g' /etc/ssh/sshd_config
+
 systemctl restart ssh
 
 # 安装软件
@@ -52,17 +53,17 @@ apt install -y zlib1g-dev libssl-dev libncurses5-dev libsqlite3-dev libreadline-
 apt install -y gcc g++ make cmake bison
 apt remove -y python3
 
-# 安装 Python
-# program_exists python3
-# python_exist=$?
-# if [[ $python_exist -eq 0 ]]; then
-#   cd /root/soft
-#   tar -zxvf Python-3.8.16.tgz
-#
-#   cd /root/soft/Python-3.8.16
-#   make clean
-#   ./configure && make && make install
-# fi
+安装 Python
+program_exists python3
+python_exist=$?
+if [[ $python_exist -eq 0 ]]; then
+  cd /root/soft || exit
+  tar -zxvf Python-3.8.16.tgz
+
+  cd /root/soft/Python-3.8.16 || exit
+  make clean
+  ./configure && make && make install
+fi
 
 # 安装 Docker
 #apt install -y apt-transport-https
@@ -87,12 +88,6 @@ EOF
 
 timedatectl set-timezone Asia/Shanghai
 locale-gen zh_CN.UTF-8
-cat > /etc/default/locale << EOF
-LANG="zh_CN.UTF-8"
-LC_ALL="zh_CN.UTF-8"
-EOF
-systemctl restart chrony
-
 echo "----------------当前时间：$(date)------------------"
 
 # 如果 fdisk_opt 为 1，则执行以下操作

@@ -1,0 +1,13 @@
+- targets:
+    - 172.29.28.193:9104
+  labels:
+    alias: mysql-193
+- targets:
+    - 172.29.28.194:9104
+  labels:
+    alias: mysql-194
+- targets:
+    - 172.29.28.195:9104
+  labels:
+    alias: mysql-195
+

@@ -1,0 +1,176 @@
+groups:
+- name: Node_rules
+  rules:
+  - alert: node 宕机
+    expr: up{job="node"} == 0
+    for: 1m
+    labels:
+      severity: 危险
+    annotations:
+      description: "{{ $labels.instance }}　已停止运行，持续时间已超过 1 分钟！"
+      summary: "{{ $labels.instance }} 宕机！"
+    
+
+  rules:
+  - alert: Node CPU使用率过高
+    expr: round((100 * (1 - avg(irate(node_cpu_seconds_total{mode="idle"}[5m])) BY (instance))),0.01) > 80
+    for: 2m
+    labels:
+      severity: 危险
+    annotations:
+      description: "Instance {{ $labels.instance }} 当前CPU使用率：{{ $value }}% \n已超过 80%，且持续时间已超过 2 分钟！"
+      summary: "Instance {{ $labels.instance }} CPU使用率过高！"
+    
+
+  rules:
+  - alert: Node 内存使用率过高
+    expr: round((100 - (100 * node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)),0.01) > 80
+    for: 2m
+    labels:
+      severity: 危险
+    annotations:
+      description: "Instance {{ $labels.instance }} 当前Memory使用率：{{ $value }}% \n已超过 80%，且持续时间已超过 2 分钟！"
+      summary: "Instance {{ $labels.instance }} Memory使用率过高！"
+    
+
+  rules:
+  - alert: Node 磁盘使用率超过 95%
+    expr: (round(max((node_filesystem_size_bytes{job=~"node",fstype=~"ext.|xfs"}-node_filesystem_free_bytes{job=~"node",fstype=~"ext.?|xfs"}) *100/(node_filesystem_avail_bytes {job=~"node",fstype=~"ext.?|xfs"}+(node_filesystem_size_bytes{job=~"node",fstype=~"ext.?|xfs"}-node_filesystem_free_bytes{job=~"node",fstype=~"ext.?|xfs"})))by(instance,mountpoint),0.01) > 95)
+    for: 2m
+    labels:
+      severity: 危险
+    annotations:
+      description: "Instance {{ $labels.instance }} 当前 {{ $labels.mountpoint }} 磁盘使用率：{{ $value }}% \n已超过 95%，且持续时间已超过 2 分钟！"
+      summary: "Instance {{ $labels.instance }} 磁盘使用率过高！"
+    
+
+  rules:
+  - alert: Node 磁盘使用率超过 90% 且剩余大小小于 100G ！
+    expr: ((95 > round(max((node_filesystem_size_bytes{job=~"node",fstype=~"ext.|xfs"}-node_filesystem_free_bytes{job=~"node",fstype=~"ext.?|xfs"}) *100/(node_filesystem_avail_bytes {job=~"node",fstype=~"ext.?|xfs"}+(node_filesystem_size_bytes{job=~"node",fstype=~"ext.?|xfs"}-node_filesystem_free_bytes{job=~"node",fstype=~"ext.?|xfs"})))by(instance,mountpoint),0.01) >= 90) and (max(node_filesystem_avail_bytes {job=~"node",fstype=~"ext.?|xfs"})by(instance,mountpoint)/1024/1024/1024 < 100))
+    for: 2m
+    labels:
+      severity: 危险
+    annotations:
+      description: "Instance {{ $labels.instance }} 当前 {{ $labels.mountpoint }} 磁盘使用率：{{ $value }}% \n已超过90%且剩余大小小于 100G，且持续时间已超过 2 分钟！"
+      summary: "Instance {{ $labels.instance }} 磁盘使用率过高！"
+    
+
+  rules:
+  - alert: Node 磁盘使用率超过 85% 且剩余大小小于 80G ！
+    expr: ((90 > round(max((node_filesystem_size_bytes{job=~"node",fstype=~"ext.|xfs"}-node_filesystem_free_bytes{job=~"node",fstype=~"ext.?|xfs"}) *100/(node_filesystem_avail_bytes {job=~"node",fstype=~"ext.?|xfs"}+(node_filesystem_size_bytes{job=~"node",fstype=~"ext.?|xfs"}-node_filesystem_free_bytes{job=~"node",fstype=~"ext.?|xfs"})))by(instance,mountpoint),0.01) >= 85) and (max(node_filesystem_avail_bytes {job=~"node",fstype=~"ext.?|xfs"})by(instance,mountpoint)/1024/1024/1024 < 80))
+    for: 2m
+    labels:
+      severity: 危险
+    annotations:
+      description: "Instance {{ $labels.instance }} 当前 {{ $labels.mountpoint }} 磁盘使用率：{{ $value }}% \n已超过85%且剩余大小小于 80G，且持续时间已超过 2 分钟！"
+      summary: "Instance {{ $labels.instance }} 磁盘使用率过高！"
+    
+
+  rules:
+  - alert: Node 磁盘使用率超过 80% 且剩余大小小于 60G ！
+    expr: ((85 > round(max((node_filesystem_size_bytes{job=~"node",fstype=~"ext.|xfs"}-node_filesystem_free_bytes{job=~"node",fstype=~"ext.?|xfs"}) *100/(node_filesystem_avail_bytes {job=~"node",fstype=~"ext.?|xfs"}+(node_filesystem_size_bytes{job=~"node",fstype=~"ext.?|xfs"}-node_filesystem_free_bytes{job=~"node",fstype=~"ext.?|xfs"})))by(instance,mountpoint),0.01) >= 80) and (max(node_filesystem_avail_bytes {job=~"node",fstype=~"ext.?|xfs"})by(instance,mountpoint)/1024/1024/1024 < 60))
+    for: 2m
+    labels:
+      severity: 危险
+    annotations:
+      description: "Instance {{ $labels.instance }} 当前 {{ $labels.mountpoint }} 磁盘使用率：{{ $value }}% \n已超过80%且剩余大小小于 60G，且持续时间已超过 2 分钟！"
+      summary: "Instance {{ $labels.instance }} 磁盘使用率过高！"
+    
+  rules:
+  - alert: Node 网络接口接收数据过多
+    expr: 'round(sum by (instance) (rate(node_network_receive_bytes_total[2m])) / 1024 / 1024,0.01) > 200'
+    for: 2m
+    labels:
+      severity: 警告
+    annotations:
+      summary: "Instance {{ $labels.instance }} 网络接口接收数据过多！"
+      description: "Instance {{ $labels.instance }} 当前网络接口接收速率：{{ $value }}M/s \n已超过 200M/s，且持续时间已超过 2 分钟！"
+    
+
+  rules:
+  - alert: Node 网络接口发送数据过多
+    expr: 'round(sum by (instance) (rate(node_network_transmit_bytes_total[2m])) / 1024 / 1024,0.01) > 200'
+    for: 2m
+    labels:
+      severity: 警告
+    annotations:
+      summary: "Instance {{ $labels.instance }} 网络接口发送数据过多！"
+      description: "Instance {{ $labels.instance }} 当前网络接口发送速率：{{ $value }}M/s \n已超过 200M/s，且持续时间已超过 2 分钟！"
+    
+
+  rules:
+  - alert: Node 异常的磁盘读取速率
+    expr: 'round(sum by (instance) (rate(node_disk_read_bytes_total[2m])) / 1024 / 1024,0.01) > 200'
+    for: 2m
+    labels:
+      severity: 警告
+    annotations:
+      summary: "Instance {{ $labels.instance }} 异常的磁盘读取速率！"
+      description: "Instance {{ $labels.instance }} 当前磁盘读取速率：{{ $value }}M/s \n已超过 200M/s，且持续时间已超过 2 分钟！"
+    
+
+  rules:
+  - alert: Node 异常的磁盘写入速率
+    expr: 'round(sum by (instance) (rate(node_disk_written_bytes_total[2m])) / 1024 / 1024,0.01) > 200'
+    for: 2m
+    labels:
+      severity: 警告
+    annotations:
+      summary: "Instance {{ $labels.instance }} 异常的磁盘写入速率！"
+      description: "Instance {{ $labels.instance }} 当前磁盘写入速率：{{ $value }}M/s \n已超过 200M/s，且持续时间已超过 2 分钟！"
+    
+
+  rules:
+  - alert: Node 磁盘将在 24 小时内填满
+    expr: 'round(predict_linear(node_filesystem_avail_bytes{job=~"node",fstype=~"ext.?|xfs"}[6h], 24 * 3600) /1024/1024/1024,0.01) < 0'
+    for: 2m
+    labels:
+      severity: 危险
+    annotations:
+      summary: "Instance {{ $labels.instance }} 磁盘可能将在 24 小时内填满！"
+      description: "Instance {{ $labels.instance }} 预测磁盘剩余大小为：{{ $value }}G \n可能将在 24 小时内填满，且持续时间已超过 2 分钟！"
+    
+
+  rules:
+  - alert: Node Inodes不足
+    expr: 'round(node_filesystem_files_free / node_filesystem_files * 100,0.01) < 10'
+    for: 2m
+    labels:
+      severity: 警告
+    annotations:
+      summary: "Instance {{ $labels.instance }} Node Inodes不足！"
+      description: "Instance {{ $labels.instance }} 当前Inodes空闲率为：{{ $value }}% \n小于阈值 10%，且持续时间已超过 2 分钟！"
+    
+
+  rules:
+  - alert: Node CPU 高 iowait
+    expr: 'avg by (instance) (rate(node_cpu_seconds_total{mode="iowait"}[5m])) * 100 > 10'
+    for: 0m
+    labels:
+      severity: 警告
+    annotations:
+      summary: "Instance {{ $labels.instance }} Node iowait过高，可能受磁盘或网络影响！"
+      description: "Instance {{ $labels.instance }} 当前iowait为：{{ $value }}% \n大于阈值 10，且持续时间已超过 2 分钟！"
+    
+
+  rules:
+  - alert: Node 异常磁盘 IO
+    expr: 'rate(node_disk_io_time_seconds_total[1m]) > 1'
+    for: 5m
+    labels:
+      severity: 警告
+    annotations:
+      summary: "Instance {{ $labels.instance }} Node 异常磁盘 IO！"
+      description: "Instance {{ $labels.instance }} 当前磁盘 IO为：{{ $value }} \n大于阈值 1，且持续时间已超过 2 分钟！"
+    
+
+  rules:
+  - alert: Node SWAP 不足
+    expr: '(1 - (node_memory_SwapFree_bytes / node_memory_SwapTotal_bytes)) * 100 > 85'
+    for: 2m
+    labels:
+      severity: 警告
+    annotations:
+      summary: "Instance {{ $labels.instance }} Node SWAP 不足！"
+      description: "Instance {{ $labels.instance }} 当前 SWAP 利用率为：{{ $value }}% \n大于阈值 85%，且持续时间已超过 2 分钟！"
+    

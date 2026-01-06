@@ -39,7 +39,7 @@ psql -h host_address -p port_number -U username -d database_name
 
 ## 权限
 
-[postgresql权限管理](../../postgresql/postgresql%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86.md)
+[postgresql权限管理](postgresql权限管理.md)
 
 常用查看：
 ```sql

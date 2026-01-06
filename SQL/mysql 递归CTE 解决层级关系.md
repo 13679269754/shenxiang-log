@@ -25,7 +25,7 @@ SELECT * FROM get_slave ;
 
 ```
 
-![递归CET 三要素](image.png)
+![递归CET 三要素](SQL/image.png)
 三要素：
 **锚成员**
 **递归成员**
