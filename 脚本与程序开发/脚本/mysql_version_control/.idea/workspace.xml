@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="230d0d42-cfc5-471e-8b51-e965351ba277" name="更改" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../.obsidian/community-plugins.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.obsidian/community-plugins.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.obsidian/core-plugins.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.obsidian/core-plugins.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.obsidian/daily-notes.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.obsidian/daily-notes.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.obsidian/hotkeys.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.obsidian/hotkeys.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.obsidian/plugins/dataview/lang/state.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.obsidian/plugins/dataview/lang/state.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.obsidian/plugins/dataview/lang/zh-cn.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.obsidian/plugins/dataview/lang/zh-cn.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.obsidian/plugins/dataview/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.obsidian/plugins/dataview/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.obsidian/plugins/i18n/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.obsidian/plugins/i18n/data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.obsidian/plugins/keyboard-analyzer/duplicate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.obsidian/plugins/keyboard-analyzer/lang/state.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.obsidian/plugins/keyboard-analyzer/lang/state.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.obsidian/plugins/keyboard-analyzer/lang/zh-cn.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.obsidian/plugins/keyboard-analyzer/lang/zh-cn.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.obsidian/plugins/keyboard-analyzer/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.obsidian/plugins/keyboard-analyzer/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.obsidian/plugins/keyboard-analyzer/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.obsidian/plugins/keyboard-analyzer/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.obsidian/plugins/note-refactor-obsidian/lang/zh-cn.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.obsidian/plugins/note-refactor-obsidian/lang/zh-cn.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.obsidian/plugins/obsidian-excalidraw-plugin/lang/zh-cn.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.obsidian/plugins/obsidian-excalidraw-plugin/lang/zh-cn.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.obsidian/plugins/table-editor-obsidian/lang/zh-cn.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.obsidian/plugins/table-editor-obsidian/lang/zh-cn.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.obsidian/plugins/url-into-selection/duplicate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.obsidian/plugins/url-into-selection/lang/state.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.obsidian/plugins/url-into-selection/lang/state.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.obsidian/plugins/url-into-selection/lang/zh-cn.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.obsidian/plugins/url-into-selection/lang/zh-cn.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.obsidian/plugins/url-into-selection/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.obsidian/plugins/url-into-selection/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.obsidian/plugins/url-into-selection/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.obsidian/plugins/url-into-selection/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.obsidian/templates.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.obsidian/templates.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.obsidian/workspace.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.obsidian/workspace.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/sql脚本/创建航天云网用户-2025-03.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/sql脚本/大专家常用sql.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/其他/uat db服务器资源.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/其他/大专家架构图250717.drawio" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/其他/消息.io.drawio" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/其他/消息111.drawio" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/其他/运维管理平台.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/工作规范/3月份数据库迁移航天云网注意事项.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/工作规范/Mysql sql优化.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/工作规范/mysql sql 优化.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/工作规范/mysql 数据库规范.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/工作规范/redis 监控数据.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/工作规范/~$库服务启动手册.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/工作规范/主备环境切换演练.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/工作规范/大专家数据库运维架构.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/工作规范/数据库服务启动手册.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/工作规范/数据库监控项目.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/工作规范/数据库规范简单.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/工作规范/监控问题处理流程.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/工作规范/运维不要怎么做.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/数据库相关文档/CDH 2 安装搭建.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/数据库相关文档/Mysql_172_29_29_20_20240820110113_20240820114226_report.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/数据库相关文档/大专家架构图(3).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/数据库相关文档/数据库密码加解密方案.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/数据库相关文档/补充批次规则.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/数据库相关文档/质量评价0814.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/文件备份/2.0数据库中大字段.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/文件备份/DB机器列表(非IDC).xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/文件备份/Dzj_sx_password.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/文件备份/uat db服务器资源.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/文件备份/uat_password.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/文件备份/~$离职通知书.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/文件备份/大专家2.0.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/文件备份/离职通知书.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/文件备份/虚机信息.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/格式资料/(沈祥)部门月度OSA考核评分表20251018修改版.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/格式资料/1、2025年度一季度OSA指标执行情况评审表-模板定稿-20250402-沈祥.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/格式资料/2024-8-5数据库安全以及个人文档.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/格式资料/2024年度DBA工作年度总结（沈祥）.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/格式资料/2025年OSA岗位职责表-周考核-沈祥-2025-12-27.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/格式资料/2025年OSA岗位职责表-沈祥241219.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/格式资料/2025年度一季度OSA指标执行情况评审表-沈祥-20250402.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/格式资料/4、普通员工-2025年二季度岗位职责OSA确认书-模板-20250402-沈祥.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/格式资料/DBA 工作规范.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/格式资料/DBA岗-沈祥 岗位说明书.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/格式资料/DBA岗-沈详 岗位说明书12.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/格式资料/DBA岗-沈详 岗位说明书123.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/格式资料/OSA岗位职责--沈祥.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/格式资料/OSA岗位职责--沈祥11-12.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/格式资料/sql 审核工具对比(yearnming vs archery).md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/格式资料/~$-岗位说明书202511.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/格式资料/【2025.6.19版本：劳动类-员工】-岗位职责OSA确认书--沈祥.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/格式资料/【劳动类-员工】-岗位职责OSA确认书--沈祥.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/格式资料/备份脚本定时任务配置.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/格式资料/大专家数据库安全规范及现状.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/格式资料/姜孝保-应用运维岗位OSA.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/格式资料/数据库安全方案--沈祥.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/格式资料/沈祥-DBA-OSA.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/格式资料/沈祥-岗位说明书2025.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/格式资料/沈祥-岗位说明书202511.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/格式资料/等保.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/格式资料/钱相州-DBA-OSA.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/格式资料/陈永辉-岗位说明书2024.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/格式资料/韩鹏-应用运维岗位-OSA.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/爱数备份一体机操作手册/image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/爱数备份一体机操作手册/images/分配用户.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/爱数备份一体机操作手册/images/爱数客户端下载.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/爱数备份一体机操作手册/客户端安装.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/自测试环境.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/HTY elasticsearch reindex.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/elasticearch+kibana搭建.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/idc -备用环境数据库应用配置.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/images/PMM3.0-docker.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/images/pmm-package.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/mysql 小版本升级.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/mysql迁移.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/pmm 服务器搭建以及数据迁移.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/redis 搭建.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/数据库迁移及切换流程.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/监控搭建以及迁移配置信息--方案未完已弃用.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/系统运维配置项目" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/脚本/dbnode_init.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/脚本/influxdb_restore.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/脚本/mysql_replication_status.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/脚本/orchestrator.script/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/脚本/orchestrator.script/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/脚本/orchestrator.script/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/脚本/orchestrator.script/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/脚本/orchestrator.script/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/脚本/orchestrator.script/.idea/orchestrator.script.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/脚本/orchestrator.script/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/脚本/orchestrator.script/script/ProxySql_utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/脚本/orchestrator.script/script/get_config_info.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/脚本/orchestrator.script/script/info_config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/脚本/orchestrator.script/script/interactive_with_dbpt.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/脚本/orchestrator.script/script/log/execute.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/脚本/orchestrator.script/script/log/fail_over_log/orchestrator_failover_switch_processes-20230422_15_54_34.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/脚本/orchestrator.script/script/log/fail_over_log/orchestrator_failover_switch_processes-20230422_15_55_55.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/脚本/orchestrator.script/script/log/fail_over_log/orchestrator_failover_switch_processes-20230422_15_57_44.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/脚本/orchestrator.script/script/log/fail_over_log/orchestrator_failover_switch_processes-20230422_16_00_06.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/脚本/orchestrator.script/script/log/fail_over_log/orchestrator_failover_switch_processes-20230422_16_00_27.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/脚本/orchestrator.script/script/log/fail_over_log/orchestrator_failover_switch_processes-20230422_16_05_26.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/脚本/orchestrator.script/script/log/fail_over_log/orchestrator_failover_switch_processes-20230422_16_06_17.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/脚本/orchestrator.script/script/log/fail_over_log/orchestrator_failover_switch_processes-20230422_16_06_30.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/脚本/orchestrator.script/script/log/fail_over_log/orchestrator_failover_switch_processes-20230422_18_20_58.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/脚本/orchestrator.script/script/log/graceful_takeover/orchestrator_graceful_takeover_check_processes-20230422_095433.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/脚本/orchestrator.script/script/log/graceful_takeover/orchestrator_graceful_takeover_check_processes-20230422_095436.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/脚本/orchestrator.script/script/mysql_topology_recover.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/脚本/orchestrator.script/script/mysql_utils/ProxySql_utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/脚本/orchestrator.script/script/mysql_utils/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/脚本/orchestrator.script/script/mysql_utils/get_set_orchestrator_info.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/脚本/orchestrator.script/script/mysql_utils/mysql_get_set_info.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/脚本/orchestrator.script/script/mysql_utils/mysql_utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/脚本/orchestrator.script/script/orchestrator_check.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/脚本/orchestrator.script/script/orchestrator_graceful_switch.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/脚本/orchestrator.script/script/orchestrator_prepare.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/脚本/orchestrator.script/script/orchestrator_switch.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/脚本/orchestrator.script/script/os_utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/脚本/orchestrator.script/script/qywechat_notify.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/脚本/orientdb._backup_restore.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/配置文件/orchestrator.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../工作文档/迁移航天云/配置文件/proxysql.cnf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../常用命令/mysql.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../常用命令/mysql.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../数据库/mysql/mysql-组件集/proxysql/proxysql 连接池的相关配置.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../数据库/mysql/mysql-组件集/proxysql/proxysql 连接池的相关配置.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../数据库/redis/redis_cluster/redis_cluster install.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../数据库/redis/redis_cluster/redis_cluster install.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mysql_report_job/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../mysql_report_job/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ubuntu_mysql/mysql_install.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../ubuntu_mysql/mysql_install.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../虚拟机/Proxmox Ceph 搭建完整指南-mindmap.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../虚拟机/Proxmox Ceph 搭建完整指南.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../问题记录/9-27回滚user_account表操作记录.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../问题记录/crontab 调用命令会报错，手动执行可以.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../问题记录/insert into select数据截断没有报错.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../问题记录/mysql 5.6 数据库目录迁移问题.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../问题记录/mysql_初始化失败.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../问题记录/mysql长连接问题长时间不释放导致临时表空间过大.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../问题记录/python 环境问题(urllib3).md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../问题记录/redis 哨兵模式从库无法访问导致服务访问报错.md" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_C:/Users/shuaigun/Desktop/shenxiang-log-main/脚本与程序开发/脚本/mysql_version_control" value="38mpXHSHl7sZ4gjqQn8JkuSJrxr" />
+    </persistenceIdMap>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="38mpXHSHl7sZ4gjqQn8JkuSJrxr" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "main",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-PY-253.29346.308" />
+        <option value="bundled-python-sdk-ca5e2b39c7df-6e1f45a539f7-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-253.29346.308" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="230d0d42-cfc5-471e-8b51-e965351ba277" name="更改" comment="" />
+      <created>1769414638607</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1769414638607</updated>
+      <workItem from="1769414639629" duration="2402000" />
+      <workItem from="1771904206416" duration="3466000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
+  </component>
+</project>

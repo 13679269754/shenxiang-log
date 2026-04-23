@@ -1,131 +1,37 @@
 {
   "main": {
-    "id": "47642bad656e7ed7",
+    "id": "0a2549f9d0e5c7e1",
     "type": "split",
     "children": [
       {
-        "id": "93686592dae35919",
+        "id": "8b99b61e39052ee3",
         "type": "tabs",
         "children": [
           {
-            "id": "7cf45cad5b5b0d5e",
+            "id": "f2bb166def7de195",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "数据库/mysql/工具/xtrabackup8.0.34 安装依赖zstd .md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-<<<<<<< HEAD
-              "title": "matedata_lock的研究"
-            }
-          },
-          {
-            "id": "404ae62d37547b29",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "hadoop-架构/hadoop/hadoop 安装.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "hadoop 安装"
-            }
-          },
-          {
-            "id": "ecdb6cc00ee6304a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "hadoop-架构/hadoop/hadoop 安装.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "hadoop 安装"
-            }
-          },
-          {
-            "id": "0232fe6f967a630c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "问题记录/mysql长连接问题长时间不释放导致临时表空间过大.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "mysql长连接问题长时间不释放导致临时表空间过大"
-            }
-          }
-        ],
-        "currentTab": 3
-=======
-              "title": "xtrabackup8.0.34 安装依赖zstd"
+              "title": "新标签页"
             }
           }
         ]
->>>>>>> 7c9fa65e1dd98a74d1c3bcd367be7c21be4e3f25
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "386a5fd16a2fd0cb",
+    "id": "b3f42c0a9907cf3e",
     "type": "split",
     "children": [
       {
-        "id": "21bad00a516efdfe",
+        "id": "681661dd6687ed85",
         "type": "tabs",
         "children": [
           {
-            "id": "2734216c2d849b59",
+            "id": "2fa84c5cf92e1c8b",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -138,28 +44,24 @@
             }
           },
           {
-            "id": "dc84cc0cdb9a1843",
+            "id": "171caaced6241bfc",
             "type": "leaf",
             "state": {
               "type": "search",
               "state": {
-<<<<<<< HEAD
-                "query": "orche",
-=======
-                "query": "zstd",
->>>>>>> 7c9fa65e1dd98a74d1c3bcd367be7c21be4e3f25
+                "query": "组提交",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
                 "extraContext": false,
-                "sortOrder": "byModifiedTime"
+                "sortOrder": "alphabetical"
               },
               "icon": "lucide-search",
               "title": "搜索"
             }
           },
           {
-            "id": "2c6a8a86c64c7e22",
+            "id": "c6739fe744a2685b",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -168,102 +70,84 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-<<<<<<< HEAD
-    "width": 200
-=======
-    "width": 364.5
->>>>>>> 7c9fa65e1dd98a74d1c3bcd367be7c21be4e3f25
+    "width": 300
   },
   "right": {
-    "id": "596786d13ee79295",
+    "id": "4f5de1a7088e3634",
     "type": "split",
     "children": [
       {
-        "id": "b765edf97ca47d2f",
+        "id": "1007c2795d7696de",
         "type": "tabs",
         "children": [
           {
-            "id": "2c68f9500f1f5e83",
+            "id": "9d69c7d7f5209904",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "大数据学习计划/大数据python应用学习/Pandas.md",
-                "collapseAll": true,
+                "file": "工作文档/迁移航天云/redis 搭建.md",
+                "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
                 "backlinkCollapsed": false,
-                "unlinkedCollapsed": false
+                "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Pandas 的反向链接列表"
+              "title": "Backlinks for redis 搭建"
             }
           },
           {
-            "id": "549e0f8e516a22e2",
+            "id": "ac4d6f536d45389a",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-<<<<<<< HEAD
-                "file": "问题记录/mysql长连接问题长时间不释放导致临时表空间过大.md",
-=======
-                "file": "大数据学习计划/大数据python应用学习/Pandas.md",
->>>>>>> 7c9fa65e1dd98a74d1c3bcd367be7c21be4e3f25
+                "file": "工作文档/迁移航天云/redis 搭建.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-<<<<<<< HEAD
-              "title": "mysql长连接问题长时间不释放导致临时表空间过大 的出链列表"
-=======
-              "title": "Pandas 的出链列表"
->>>>>>> 7c9fa65e1dd98a74d1c3bcd367be7c21be4e3f25
+              "title": "Outgoing links from redis 搭建"
             }
           },
           {
-            "id": "bd001d2d74ff88fd",
+            "id": "6ba66505bc3e93a1",
             "type": "leaf",
             "state": {
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": false,
+                "useHierarchy": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-tags",
-              "title": "标签"
+              "title": "Tags"
             }
           },
           {
-            "id": "dcaedabecf2235db",
+            "id": "ba418f2d5a50cc46",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-<<<<<<< HEAD
-                "file": "问题记录/mysql长连接问题长时间不释放导致临时表空间过大.md",
-=======
-                "file": "数据库/mysql/工具/xtrabackup8.0.34 安装依赖zstd .md",
->>>>>>> 7c9fa65e1dd98a74d1c3bcd367be7c21be4e3f25
-                "followCursor": true,
-                "showSearch": true,
+                "followCursor": false,
+                "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "xtrabackup8.0.34 安装依赖zstd  的大纲"
+              "title": "大纲"
             }
           },
           {
-            "id": "6c37ce326b589493",
+            "id": "4339537ece0737d6",
             "type": "leaf",
             "state": {
               "type": "advanced-tables-toolbar",
@@ -273,127 +157,81 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-<<<<<<< HEAD
-    "width": 314.5
-=======
-    "width": 361.5
->>>>>>> 7c9fa65e1dd98a74d1c3bcd367be7c21be4e3f25
+    "width": 283.5
   },
   "left-ribbon": {
     "hiddenItems": {
-      "bases:创建新数据库": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
       "daily-notes:打开/创建今天的日记": false,
-      "templates:插入模板": false,
       "command-palette:打开命令面板": false,
-      "random-note:开始漫游笔记": true,
       "markdown-importer:打开 Markdown 格式转换器": false,
+      "random-note:开始漫游笔记": false,
       "workspaces:管理工作区布局": false,
+      "bases:新建数据库": false,
       "i18n:I18N": false,
-      "obsidian-excalidraw-plugin:新建绘图文件": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "pdf-plus:PDF++: Toggle auto-copy": true,
+      "pdf-plus:PDF++: Toggle auto-focus": true,
+      "pdf-plus:PDF++: Toggle auto-paste": true,
+      "templater-obsidian:Templater": false,
+      "vscode-editor:新建代码文件": false
     }
   },
-<<<<<<< HEAD
-  "active": "549e0f8e516a22e2",
+  "active": "f2bb166def7de195",
   "lastOpenFiles": [
-    "mysql-组件集/orchestrator/orchestrator.md",
-    "工作文档/迁移航天云/mysql迁移.md",
-    "hadoop-架构/hadoop/hadoop参数调优.md",
-    "hadoop-架构/hadoop/hadoop常用命令总结.md",
-    "hadoop-架构/HDFS/HDFS 常用命令.md",
-    "hadoop-架构/yarn/yarn 参数详解.md",
-    "hadoop-架构/yarn/yarn常用命令.md",
-    "linux/各种环境/JDK17 安装.md",
-    "hadoop-架构/hadoop/hadoop 安装.md",
-    "hadoop-架构/hadoop/hadoop-hbase伪集群安装.md",
-    "ansible/ansible安装redis.md",
-    "ansible/aansible-galaxy安装.md",
-    "便签/2025-10-12.md",
-    "influxdb/调整保留期.md",
-    "便签/2025-09-24.md",
-    "读书笔记/社会心理学.md",
-    "mysql/mysql 理论部分/change buffer 的缓冲与合并.md",
-    "杂谈/相较于RocketMQ的事务消息，本地消息表才是真正的王者.md",
-    "杂谈",
-    "便签/2025-09-25.md",
-    "便签/2025-09-17.md",
-    "便签/2025-09-18.md",
-    "便签/2025-09-19.md",
-    "便签/2025-09-23.md",
-    "mysql/mysql 理论部分/matedata_lock的研究.md",
-    "influxdb/influxdb搭建(单机).md",
-    "influxdb/influxdb 文档查询.md",
-    "obsidian-images/Pasted image 20250924175020.png",
-    "obsidian-images/Pasted image 20250918141846.png",
-    "附件/Pasted image 20250918141723.png",
-    "附件",
-    "obsidian-images",
-    "便签/未命名",
-    "Pasted image 20250918140319.png",
-    "mysql-组件集/mysql 基准测试",
-    "未命名.base",
-    "脚本与程序开发/脚本/ubuntu_dbnode_init.sh",
-    "脚本与程序开发/脚本/ubuntu_mysql/role.sql",
-    "mysql-组件集/innodb_cluster",
-    "mysql-组件集/mysqlsh",
-=======
-  "active": "7cf45cad5b5b0d5e",
-  "lastOpenFiles": [
-    "脚本与程序开发/脚本/mysql-backup.7z",
-    "脚本与程序开发/脚本/uat_rotation.7z",
-    "脚本与程序开发/脚本/wechat-OAuth.7z",
-    "工作文档/迁移航天云/mysql迁移.md",
-    "工作文档/迁移航天云/pmm 服务器搭建以及数据迁移.md",
-    "image-cubox/2025-12-22 16-29-16/2a937404-fe28-4fc5-948e-9d66014d0761.png",
-    "image-cubox/2025-12-22 16-29-16/ce3c1bc2-fe98-49ac-aaa5-3357b4ae3dba.png",
-    "image-cubox/2025-12-22 16-29-16/bfe00757-f716-48a9-a7d4-1443d00aeba9.png",
-    "image-cubox/2025-12-22 16-29-16/be203b27-d4fc-41b7-8317-6155963a2c3b.png",
-    "image-cubox/2025-12-22 16-29-16/b67e6474-5f5e-49d1-b2e3-0cf3023aa1ac.png",
-    "image-cubox/2025-12-22 16-29-16/8933c057-eec4-4af0-a1e0-cf07a4f44922.png",
-    "image-cubox/2025-12-22 16-29-16/829bee88-840d-4629-ad56-98a430b37bf7.png",
-    "image-cubox/2025-12-22 16-29-16",
-    "docker/docker 配置文件.md",
-    "工作文档/迁移航天云/数据库迁移及切换流程.md",
+    "问题记录/redis 哨兵模式从库无法访问导致服务访问报错.md",
+    "问题记录/python 环境问题(urllib3).md",
+    "问题记录/mysql长连接问题长时间不释放导致临时表空间过大.md",
+    "问题记录/mysql_初始化失败.md",
+    "问题记录/mysql 5.6 数据库目录迁移问题.md",
+    "问题记录/insert into select数据截断没有报错.md",
+    "问题记录/crontab 调用命令会报错，手动执行可以.md",
+    "问题记录/9-27回滚user_account表操作记录.md",
+    "虚拟机/Proxmox Ceph 搭建完整指南.md",
+    "虚拟机/Proxmox Ceph 搭建完整指南-mindmap.md",
+    "脚本与程序开发/脚本/wechat-OAuth",
+    "脚本与程序开发/脚本/Archery",
+    "脚本与程序开发/revoker_table_priv.sh",
+    "工作文档/迁移航天云/脚本/orchestrator.script/script/mysql_utils/__pycache__/__init__.cpython-311.pyc",
+    "工作文档/迁移航天云/脚本/orchestrator.script/script/mysql_utils/__pycache__/__init__.cpython-38.pyc",
+    "工作文档/迁移航天云/脚本/orchestrator.script/script/mysql_utils/__pycache__/mysql_utils.cpython-38.pyc",
+    "工作文档/迁移航天云/脚本/orchestrator.script/script/mysql_utils/__pycache__/ProxySql_utils.cpython-38.pyc",
+    "工作文档/迁移航天云/脚本/orchestrator.script/script/mysql_utils/__pycache__/ProxySql_utils.cpython-311.pyc",
+    "工作文档/迁移航天云/脚本/orchestrator.script/script/mysql_utils/__pycache__/mysql_utils.cpython-311.pyc",
+    "工作文档/迁移航天云/脚本/orchestrator.script/script/mysql_utils/__pycache__/mysql_get_set_info.cpython-38.pyc",
+    "工作文档/迁移航天云/images/pmm-package.png",
+    "工作文档/迁移航天云/images/PMM3.0-docker.png",
     "工作文档/迁移航天云/监控搭建以及迁移配置信息--方案未完已弃用.md",
-    "工作文档/迁移航天云/idc -备用环境数据库应用配置.md",
+    "工作文档/迁移航天云/数据库迁移及切换流程.md",
     "工作文档/迁移航天云/redis 搭建.md",
-    "工作文档/迁移航天云/elasticearch+kibana搭建.md",
+    "工作文档/迁移航天云/pmm 服务器搭建以及数据迁移.md",
+    "工作文档/迁移航天云/mysql迁移.md",
+    "工作文档/迁移航天云/mysql 小版本升级.md",
+    "工作文档/迁移航天云/idc -备用环境数据库应用配置.md",
     "工作文档/迁移航天云/HTY elasticsearch reindex.md",
-    "数据库/mysql/MySQL复制从库延迟原因深入分析 （并行复制原理）.md",
-    "devops/DEVOPS 流程体验.md",
-    "devops/代码仓库 + 镜像仓库.md",
-    "读书笔记/不公平优势.md",
-    "便签/2025-02-14.md",
-    "工作文档.7z",
-    "工作文档/文件备份/~$uat db服务器资源.xlsx",
-    "数据库/mysql/mysql 理论部分/mysql线程池.md",
-    "工作文档/文件备份/~$离职通知书.docx",
-    "数据库/mysql/mysql_doc学习/mysql系统库.md",
-    "数据库/mysql/mysql 运维/MySQL如何优雅的删除大表.md",
-    "数据库/mysql/mysql 杂谈/mysql高可用对比.md",
-    "数据库/mysql/mysql 杂谈/mysql-groupby.md",
-    "数据库/mysql/mysql 杂谈/MySQL-8.0.30 版本新特性之动态调整 REDO.md",
-    "数据库/mysql/mysql 杂谈/mysql create table on update的触发机制.md",
-    "数据库/mysql/mysql DBA 综述.md",
-    "数据库/mysql/mysql 运维/mysql 排坑指南.md",
+    "工作文档/迁移航天云/elasticearch+kibana搭建.md",
+    "工作文档/爱数备份一体机操作手册/images/分配用户.png",
+    "工作文档/爱数备份一体机操作手册/images/爱数客户端下载.png",
+    "工作文档/爱数备份一体机操作手册/客户端安装.md",
+    "工作文档/爱数备份一体机操作手册/image.png",
+    "工作文档/格式资料/sql 审核工具对比(yearnming vs archery).md",
     "工作文档/格式资料/DBA 工作规范.md",
     "工作文档/格式资料/2024-8-5数据库安全以及个人文档.md",
     "工作文档/数据库相关文档/大专家架构图(3).jpg",
-    "虚拟机",
-    "pdf/未命名",
-    "obsidian-images/Pasted image 20250924175020.png",
-    "obsidian-images/Pasted image 20250929114418.png",
-    "数据库",
-    "工作文档/文件备份/离职通知书.docx",
->>>>>>> 7c9fa65e1dd98a74d1c3bcd367be7c21be4e3f25
-    "未命名.canvas",
-    "未命名 1.canvas"
+    "工作文档/工作规范/运维不要怎么做.md",
+    "工作文档/工作规范/监控问题处理流程.md",
+    "工作文档/工作规范/数据库规范简单.md",
+    "工作文档/其他/运维管理平台.jpg",
+    "obsidian-images/Pasted image 20260423141920.png",
+    "obsidian-images/Pasted image 20260423141836.png",
+    "读书笔记/image/首因近因 copy.png",
+    "Untitled.canvas"
   ]
 }
