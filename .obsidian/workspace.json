@@ -1,20 +1,34 @@
 {
   "main": {
-    "id": "0a2549f9d0e5c7e1",
+    "id": "c697b0cd01a2bc72",
     "type": "split",
     "children": [
       {
-        "id": "8b99b61e39052ee3",
+        "id": "fb38a774faa3cf95",
         "type": "tabs",
         "children": [
           {
-            "id": "f2bb166def7de195",
+            "id": "72584787ac1c1531",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "日常/对自己说的话.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "对自己说的话"
             }
           }
         ]
@@ -23,15 +37,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "b3f42c0a9907cf3e",
+    "id": "cac0446c0f00c0cc",
     "type": "split",
     "children": [
       {
-        "id": "681661dd6687ed85",
+        "id": "85fa4d36ef01961d",
         "type": "tabs",
         "children": [
           {
-            "id": "2fa84c5cf92e1c8b",
+            "id": "616984cbb1e72e55",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -44,12 +58,12 @@
             }
           },
           {
-            "id": "171caaced6241bfc",
+            "id": "a6983b6e1f21fb8c",
             "type": "leaf",
             "state": {
               "type": "search",
               "state": {
-                "query": "组提交",
+                "query": "docker ",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -61,38 +75,38 @@
             }
           },
           {
-            "id": "c6739fe744a2685b",
+            "id": "807986d5607d165b",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
               "state": {},
               "icon": "lucide-bookmark",
-              "title": "Bookmarks"
+              "title": "书签"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 267.5
   },
   "right": {
-    "id": "4f5de1a7088e3634",
+    "id": "35ffa28c792032c2",
     "type": "split",
     "children": [
       {
-        "id": "1007c2795d7696de",
+        "id": "00c1eba483970662",
         "type": "tabs",
         "children": [
           {
-            "id": "9d69c7d7f5209904",
+            "id": "f2e3bf7d9acb883e",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "工作文档/迁移航天云/redis 搭建.md",
-                "collapseAll": false,
-                "extraContext": false,
+                "file": "日常/对自己说的话.md",
+                "collapseAll": true,
+                "extraContext": true,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
@@ -100,25 +114,25 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for redis 搭建"
+              "title": "对自己说的话 的反向链接列表"
             }
           },
           {
-            "id": "ac4d6f536d45389a",
+            "id": "3a0edb663400cf92",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "工作文档/迁移航天云/redis 搭建.md",
+                "file": "日常/对自己说的话.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from redis 搭建"
+              "title": "对自己说的话 的出链列表"
             }
           },
           {
-            "id": "6ba66505bc3e93a1",
+            "id": "d7c8a468daaf93df",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -129,31 +143,22 @@
                 "searchQuery": ""
               },
               "icon": "lucide-tags",
-              "title": "Tags"
+              "title": "标签"
             }
           },
           {
-            "id": "ba418f2d5a50cc46",
+            "id": "a2fbe2ad35a6e7a2",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
+                "file": "日常/对自己说的话.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲"
-            }
-          },
-          {
-            "id": "4339537ece0737d6",
-            "type": "leaf",
-            "state": {
-              "type": "advanced-tables-toolbar",
-              "state": {},
-              "icon": "spreadsheet",
-              "title": "Advanced Tables"
+              "title": "对自己说的话 的大纲"
             }
           }
         ],
@@ -161,77 +166,50 @@
       }
     ],
     "direction": "horizontal",
-    "width": 283.5
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:新建数据库": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
       "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
       "command-palette:打开命令面板": false,
       "markdown-importer:打开 Markdown 格式转换器": false,
       "random-note:开始漫游笔记": false,
       "workspaces:管理工作区布局": false,
-      "bases:新建数据库": false,
       "i18n:I18N": false,
-      "obsidian-excalidraw-plugin:New drawing": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "pdf-plus:PDF++: Toggle auto-copy": true,
-      "pdf-plus:PDF++: Toggle auto-focus": true,
-      "pdf-plus:PDF++: Toggle auto-paste": true,
-      "templater-obsidian:Templater": false,
-      "vscode-editor:新建代码文件": false
+      "obsidian-excalidraw-plugin:新建绘图文件": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "f2bb166def7de195",
+  "active": "72584787ac1c1531",
   "lastOpenFiles": [
-    "问题记录/redis 哨兵模式从库无法访问导致服务访问报错.md",
-    "问题记录/python 环境问题(urllib3).md",
-    "问题记录/mysql长连接问题长时间不释放导致临时表空间过大.md",
-    "问题记录/mysql_初始化失败.md",
-    "问题记录/mysql 5.6 数据库目录迁移问题.md",
-    "问题记录/insert into select数据截断没有报错.md",
-    "问题记录/crontab 调用命令会报错，手动执行可以.md",
-    "问题记录/9-27回滚user_account表操作记录.md",
-    "虚拟机/Proxmox Ceph 搭建完整指南.md",
-    "虚拟机/Proxmox Ceph 搭建完整指南-mindmap.md",
-    "脚本与程序开发/脚本/wechat-OAuth",
-    "脚本与程序开发/脚本/Archery",
-    "脚本与程序开发/revoker_table_priv.sh",
-    "工作文档/迁移航天云/脚本/orchestrator.script/script/mysql_utils/__pycache__/__init__.cpython-311.pyc",
-    "工作文档/迁移航天云/脚本/orchestrator.script/script/mysql_utils/__pycache__/__init__.cpython-38.pyc",
-    "工作文档/迁移航天云/脚本/orchestrator.script/script/mysql_utils/__pycache__/mysql_utils.cpython-38.pyc",
-    "工作文档/迁移航天云/脚本/orchestrator.script/script/mysql_utils/__pycache__/ProxySql_utils.cpython-38.pyc",
-    "工作文档/迁移航天云/脚本/orchestrator.script/script/mysql_utils/__pycache__/ProxySql_utils.cpython-311.pyc",
-    "工作文档/迁移航天云/脚本/orchestrator.script/script/mysql_utils/__pycache__/mysql_utils.cpython-311.pyc",
-    "工作文档/迁移航天云/脚本/orchestrator.script/script/mysql_utils/__pycache__/mysql_get_set_info.cpython-38.pyc",
-    "工作文档/迁移航天云/images/pmm-package.png",
-    "工作文档/迁移航天云/images/PMM3.0-docker.png",
+    "读书笔记/非暴力沟通.md",
+    "日常/对自己说的话.md",
+    "日常/工作学习计划.md",
+    "日常/生活.md",
+    "读书笔记/伟人毛/毛选.md",
+    "读书笔记/伟人毛/参考资料.md",
+    "工作文档/高压分库分表场景专项学习/游戏DBA紧急备战7天学习计划表.md",
+    "基准测试/fio 磁盘测试.md",
     "工作文档/迁移航天云/监控搭建以及迁移配置信息--方案未完已弃用.md",
-    "工作文档/迁移航天云/数据库迁移及切换流程.md",
-    "工作文档/迁移航天云/redis 搭建.md",
-    "工作文档/迁移航天云/pmm 服务器搭建以及数据迁移.md",
+    "未命名.base",
     "工作文档/迁移航天云/mysql迁移.md",
-    "工作文档/迁移航天云/mysql 小版本升级.md",
-    "工作文档/迁移航天云/idc -备用环境数据库应用配置.md",
-    "工作文档/迁移航天云/HTY elasticsearch reindex.md",
-    "工作文档/迁移航天云/elasticearch+kibana搭建.md",
-    "工作文档/爱数备份一体机操作手册/images/分配用户.png",
-    "工作文档/爱数备份一体机操作手册/images/爱数客户端下载.png",
-    "工作文档/爱数备份一体机操作手册/客户端安装.md",
-    "工作文档/爱数备份一体机操作手册/image.png",
-    "工作文档/格式资料/sql 审核工具对比(yearnming vs archery).md",
-    "工作文档/格式资料/DBA 工作规范.md",
-    "工作文档/格式资料/2024-8-5数据库安全以及个人文档.md",
-    "工作文档/数据库相关文档/大专家架构图(3).jpg",
-    "工作文档/工作规范/运维不要怎么做.md",
-    "工作文档/工作规范/监控问题处理流程.md",
-    "工作文档/工作规范/数据库规范简单.md",
-    "工作文档/其他/运维管理平台.jpg",
-    "obsidian-images/Pasted image 20260423141920.png",
-    "obsidian-images/Pasted image 20260423141836.png",
-    "读书笔记/image/首因近因 copy.png",
-    "Untitled.canvas"
+    "数据库/mysql/mysql 日志/group commit.md",
+    "数据库/mysql/工具/ghost/ghost 综述和丢失数据的问题.md",
+    "数据库/mysql/大智小技2019/故障分析/多从库时半同步复制不工作的 BUG 分析.md",
+    "未命名.md",
+    "pdf/游戏设计/游戏设计艺术（第3版） (Jesse Schell, 刘嘉俊, 杨逸, 欧阳立博, 陈闻, 陆佳琪) (Z-Library).pdf",
+    "工作文档/高压分库分表场景专项学习",
+    "游戏设计学习/游戏开发学习计划.md",
+    "读书笔记/游戏设计学习/游戏设计艺术.md",
+    "读书笔记/游戏设计学习",
+    "pdf/游戏设计/游戏设计的236个技巧 游戏机制 关卡设计和镜头窍门 (图灵程序设计丛书) ([日]大野功二 [[日]大野功二]) (Z-Library).epub",
+    "pdf/游戏设计/通关！游戏设计之道（第2版） (【美】斯科特·罗杰斯, 孙懿, 高济润) (Z-Library).epub",
+    "pdf/游戏设计",
+    "游戏设计学习"
   ]
 }
