@@ -11,24 +11,12 @@
             "id": "72584787ac1c1531",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "日常/对自己说的话.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
+                "file": "pdf/游戏设计/游戏设计艺术（第3版） (Jesse Schell, 刘嘉俊, 杨逸, 欧阳立博, 陈闻, 陆佳琪) (Z-Library).pdf"
               },
-              "icon": "lucide-file",
-              "title": "对自己说的话"
+              "icon": "lucide-file-text",
+              "title": "游戏设计艺术（第3版） (Jesse Schell, 刘嘉俊, 杨逸, 欧阳立博, 陈闻, 陆佳琪) (Z-Library)"
             }
           }
         ]
@@ -152,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "日常/对自己说的话.md",
+                "file": "pdf/游戏设计/游戏设计艺术（第3版） (Jesse Schell, 刘嘉俊, 杨逸, 欧阳立博, 陈闻, 陆佳琪) (Z-Library).pdf",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "对自己说的话 的大纲"
+              "title": "游戏设计艺术（第3版） (Jesse Schell, 刘嘉俊, 杨逸, 欧阳立博, 陈闻, 陆佳琪) (Z-Library) 的大纲"
             }
           }
         ],
@@ -185,10 +173,21 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "72584787ac1c1531",
+  "active": "616984cbb1e72e55",
   "lastOpenFiles": [
-    "读书笔记/非暴力沟通.md",
+    "脚本与程序开发/sql_optimizer/remote_diag.py",
+    "脚本与程序开发/sql_optimizer/main.py",
+    "脚本与程序开发/sql_optimizer/check_out.log",
+    "脚本与程序开发/sql_optimizer/check_env.py",
+    "脚本与程序开发/sql_optimizer/apply_nginx_fix.py",
+    "脚本与程序开发/sql_optimizer/Dockerfile",
+    "脚本与程序开发/sql_optimizer/check_err.log",
+    "脚本与程序开发/sql_optimizer",
+    "脚本与程序开发/frp_0.52.3_windows_amd64/frps.toml",
+    "脚本与程序开发/frp_0.52.3_windows_amd64/LICENSE",
+    "脚本与程序开发/frp_0.52.3_windows_amd64/frps.exe",
     "日常/对自己说的话.md",
+    "读书笔记/非暴力沟通.md",
     "日常/工作学习计划.md",
     "日常/生活.md",
     "读书笔记/伟人毛/毛选.md",
@@ -196,20 +195,12 @@
     "工作文档/高压分库分表场景专项学习/游戏DBA紧急备战7天学习计划表.md",
     "基准测试/fio 磁盘测试.md",
     "工作文档/迁移航天云/监控搭建以及迁移配置信息--方案未完已弃用.md",
-    "未命名.base",
     "工作文档/迁移航天云/mysql迁移.md",
     "数据库/mysql/mysql 日志/group commit.md",
     "数据库/mysql/工具/ghost/ghost 综述和丢失数据的问题.md",
     "数据库/mysql/大智小技2019/故障分析/多从库时半同步复制不工作的 BUG 分析.md",
     "未命名.md",
-    "pdf/游戏设计/游戏设计艺术（第3版） (Jesse Schell, 刘嘉俊, 杨逸, 欧阳立博, 陈闻, 陆佳琪) (Z-Library).pdf",
-    "工作文档/高压分库分表场景专项学习",
     "游戏设计学习/游戏开发学习计划.md",
-    "读书笔记/游戏设计学习/游戏设计艺术.md",
-    "读书笔记/游戏设计学习",
-    "pdf/游戏设计/游戏设计的236个技巧 游戏机制 关卡设计和镜头窍门 (图灵程序设计丛书) ([日]大野功二 [[日]大野功二]) (Z-Library).epub",
-    "pdf/游戏设计/通关！游戏设计之道（第2版） (【美】斯科特·罗杰斯, 孙懿, 高济润) (Z-Library).epub",
-    "pdf/游戏设计",
-    "游戏设计学习"
+    "读书笔记/游戏设计学习/游戏设计艺术.md"
   ]
 }

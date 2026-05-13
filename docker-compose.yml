@@ -1,0 +1,18 @@
+services:
+  sql-optimizer:
+    build: ./sql-optimizer
+    container_name: sql-optimizer
+    restart: always
+    ports:
+      - "8001:8001"
+    environment:
+      - TZ=Asia/Shanghai
+
+  frpc:
+    image: snowdreamtech/frpc
+    container_name: frpc
+    restart: always
+    volumes:
+      - ./frp-client/frpc.ini:/etc/frp/frpc.ini
+    depends_on:
+      - sql-optimizer

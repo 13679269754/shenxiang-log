@@ -1,0 +1,5 @@
+fastapi
+uvicorn
+sqlparse
+openai
+pydantic
