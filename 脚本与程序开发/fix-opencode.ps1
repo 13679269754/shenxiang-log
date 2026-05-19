@@ -38,6 +38,8 @@ Write-Host "供应商:" -ForegroundColor Yellow
 Write-Host "  • OpenCode Go    — 高阶任务（deepseek-v4-pro, qwen3.6-plus）"
 Write-Host "  • OpenCode Zen   — 免费/快速任务（deepseek-v4-flash-free, gemini-3-flash）"
 Write-Host "  • Ollama（本地） — 轻量任务（qwen2.5-coder:14b）"
+Write-Host "MCP:" -ForegroundColor Yellow
+Write-Host "  • filesystem — 桌面文件访问（npx @modelcontextprotocol/server-filesystem）"
 Write-Host ""
 
 Write-Host "按任意键退出..." -ForegroundColor Gray
